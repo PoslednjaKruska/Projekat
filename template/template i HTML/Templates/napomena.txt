@@ -1,0 +1,7 @@
+1. Slucajno sam sacuvala mainTemplate kao active server page i ne znam sta to znaci,
+ali s obzirom da se pominje neki server, ostavila sam ga, mozda zatreba za nesto. :D
+a ovaj template.dwt je klasican template. :)
+
+2. Ako radite u DW-u, kad hocete da sacuvate html stranicu (cuvajte ih u folderu HTML),
+ako vas pita da kopira slike koje stranica koristi, ne kopirajte ih jer ce on sam da
+promeni putanje iz template-a.

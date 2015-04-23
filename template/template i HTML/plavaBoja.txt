@@ -1,0 +1,3 @@
+16698b hex = 22 105 152 dec tamno plava
+
+62c2e8   svetlo plava
