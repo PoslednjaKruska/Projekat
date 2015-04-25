@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	font-family: arial;
+	color: #e3f2f2;
+	margin-top: 0px;
+	padding-top: 0px;
+	margin-left: 0px;
+	padding-right: 0px;
+	margin-right: 0px;
+	padding-right: 0px;
+	background-image: url();
+	background-color: white;
+}
+
+table{font-size:80%;background:#62c2e8}
+
+a{color:#e3f2f2;text-decoration:none;font:bold}
+
+a:hover{color:#16698b;}	<!-- OVO JE ZA PLAVU BOJU ZAMENA: 16698b --!>
+
+td.menu{
+	width:auto;
+	text-align:center;
+	background:#62c2e8;
+	font-size:16;
+	white-space: nowrap;
+    overflow: hidden;
+	font-weight:normal;
+	text-align:center;
+}
+
+table.menu{
+	position:fixed;
+	visibility:hidden;
+}
+
+table.center{
+	position:fixed;
+}
+  
+td.center{
+	text-align:center;
+	font-size:20px;
+	font-weight:bold;
+	white-space:nowrap;
+	width:10%;
+	color:#e3f2f2;
+	// c8c8b4
+}
+
+footer {    
+    position:relative;
+    left: 0;
+    bottom: 0;
+	right:0;
+    height: 20px;
+	font-size:11px;
+    width: 100%;
+    overflow:hidden;
+	text-align:center;
+	margin-bottom:0px;
+	padding-bottom:0px;
+	color:#16698b;  <!-- 62c2e8 --!>
+}
+
+p{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:28px;
+	vertical-align:middle;
+	font-style:italic;
+	font-weight:bolder;
+}
+
+.ispodSlika {
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#filteri {
+	width: 20%;
+	height: 400px;
+	background-color: #62c2e8;
+	margin: 0% 2% 2% 2%;
+	border-radius: 15px 50px;
+	float: left;
+}
+
+#naslov {
+	text-align:left;
+	font-size:20px;
+	font-weight:bold;
+	color:#e3f2f2;
+	margin: 10%;
+}
+
+#slova {
+	color: #16698b;
+	text-align:left;
+	font-size:17px;
+	margin: 10%;
+}
+
+#tekst {
+	margin-left: 10%;
+	width: 75%;
+}
+
+#dugme {
+    background-color: #16698b;
+	border-radius: 15px;
+	width: 50%;
+}
+
+#pretraga {
+	float: right;
+	width: 75%;
+}
+
+#naslov2 {
+	text-align:left;
+	font-size:20px;
+	font-weight:bold;
+	color:#16698b;
+	margin: 2%;
+}
+
+#radnja {
+	border-top-color: #16698b;
+	border-top-style: dashed;
+	width: 75%;
+	height: 15%; 
+}
+
+#opis {
+	float: right;
+	width: 70%;
+}
