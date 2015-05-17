@@ -1,30 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-<link rel="shortcut icon" href="file:///C|/Users/PC/Desktop/PSI%20Projekat/Implementacija/slike/logo1.png" />
+<link rel="shortcut icon" href="../../Slike/logo1.png" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Admin's Page</title>
-
- <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
- 
-  <link rel="stylesheet" type="text/css" href="../Stil/Admin.css">
- 
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-  
-  <script>
-  $(document).ready(function() {
-    $("#datepicker").datepicker();
-  });
-  </script>
-  <script type="text/javascript">
-        function showValue(newValue, id)
-        {
-          document.getElementById(id).innerHTML=newValue;
-    }
-    	</script>
+<title>Log In</title>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
@@ -57,7 +38,7 @@ document.getElementById(elmnt).style.visibility="hidden"
    <table class="center" width="100%" height="50"  > 	
  <tr bgcolor="#62c2e8">
   <td class="center">
-   <a href="index.html"><img name="logo" src="file:///C|/Users/PC/Desktop/PSI%20Projekat/Implementacija/slike/logoNatpis3.png" onmouseover="document.logo.src='../../slike/logoNatpis4.png'" onmouseout="document.logo.src='../../slike/logoNatpis3.png'" height="50"></a><br />
+   <a href="index.html"><img name="logo" src="../../Slike/logoNatpis3.png" onmouseover="document.logo.src='../../slike/logoNatpis4.png'" onmouseout="document.logo.src='../../slike/logoNatpis3.png'" height="50"></a><br />
   </td>
   <td class="center">
    <a href="Restorani.html">Restorani</a><br/>
@@ -108,12 +89,25 @@ document.getElementById(elmnt).style.visibility="hidden"
 
 <!-- InstanceBeginEditable name="EditRegion3" -->
 <div style="text-align:center" id="slova">
-  Dobrodošli! </br>Ulogovani ste na sistem u svojstvu administratora.</br></br></br>
-   <a class="admin" href="PregledSajta.html" style="color:#16698b">Pregled sajta</a></br></br></br>
-   <a class="admin" href="PregledNoveUsluge.html" style="color:#16698b">Pregled najnovijih usluga</a></br></br></br>
-   <a class="admin" href="PregledNoviNalozi.html" style="color:#16698b">Pregled najnovijih naloga</a></br></br></br>
-   <a class="admin" href="PregledIzmene.html" style="color:#16698b">Hronološki pregled svih skorašnjih izmena</a></br>
-  </div>
+  Unesite Vaše korisničko ime i lozinku kako biste se uspešno prijavili na sistem.</br></br></br>
+	<table class="logovanje" align="center" cellpadding="3">
+	<tr>
+	<td align="right">Korisničko ime: &nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<td><input type="textarea" size="20"></td>
+	</tr>
+	<tr>
+	<td align="right">Lozinka: &nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<td><input type="password" size="20"></td>
+	</tr>
+	<tr>
+	<td></td>
+	<td align="left"><input type="button" value="Potvrdi"></td> <!-- treba napisati fju za on action za dugme -->
+	</tr>
+	</table>
+</div>
+</br></br></br></br></br></br></br>
+<!-- InstanceEndEditable -->
+</div>
 <!-- InstanceEndEditable -->
 </div>
 
