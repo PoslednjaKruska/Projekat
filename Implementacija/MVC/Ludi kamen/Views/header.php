@@ -6,7 +6,7 @@
             <a href="#"><img name="logo" src="http://localhost:8080/Slike/logoNatpis3.png" onmouseover="document.logo.src='http://localhost:8080/Slike/logoNatpis4.png'" onmouseout="document.logo.src='http://localhost:8080/Slike/logoNatpis3.png'" height="50"></a><br />
         </td>
         <td class="center">
-            <a href="#">Restorani</a><br/>
+            <a href="http://localhost:8080/LudiKamen/Codeigniter/index.php/Pretraga/Restorani">Restorani</a><br/>
         </td>
         <td class="center">
             <a href="#">Torte<br />

@@ -31,7 +31,7 @@
         
         <center> 
             <form name="rezervacija">
-                <font id="naslov2" style="font-size:30px"> Rezervacija Hotela Majdan**** </font>
+                <font id="naslov2" style="font-size:30px"> Rezervacija: <?=$naziv?> </font>
                 <br><br>
                 <div id="tabela-rez">
                     <br>
