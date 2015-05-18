@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="shortcut icon" href="../../slike/logo1.png" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="stylesheet" type="text/css" href="../Stil/stilovi.css">
+
+<!-- TemplateBeginEditable name="EditRegion6" --><!-- TemplateEndEditable -->
+
+<script language="javascript">
+function showmenu(elmnt)
+{
+document.getElementById(elmnt).style.visibility="visible"
+}
+function hidemenu(elmnt)
+{
+document.getElementById(elmnt).style.visibility="hidden"
+}
+</script>
+</head>
+
+<!-- TemplateBeginEditable name="EditRegion4" -->
+<body >
+
+
+
+<!-- TemplateEndEditable -->
+
+<div class="center">
+
+     
+   <table class="center" width="100%" height="50"  > 	
+ <tr bgcolor="#62c2e8">
+  <td class="center">
+   <a href="../HTML/index.html"><img name="logo" src="../../slike/logoNatpis3.png" onmouseover="document.logo.src='../../slike/logoNatpis4.png'" onmouseout="document.logo.src='../../slike/logoNatpis3.png'" height="50"></a><br />
+  </td>
+  <td class="center">
+   <a href="../HTML/Restorani.html">Restorani</a><br/>
+  </td>
+ 
+  <td class="center">
+  <a href="../HTML/Torte.html">Torte<br />
+  </td>
+ 
+   <td class="center" >
+   <a href="../HTML/Muzika.html">Muzika</a><br />
+  </td>
+   <td class="center" >
+   <a href="../HTML/Burme.html">Burme</a><br />
+  </td>
+  
+  
+  <td class="center">
+  <a href="../HTML/Pozivnice.html">Pozivnice</a><br />
+   
+   <table class="menu" id="meni5" width="120">
+   <tr><td class="menu">&nbsp;</td></tr>
+   </table>
+  </td>
+  
+<td class="center"  >
+   <a href="../HTML/Pokloni.html">Pokloni</a><br />
+  </td> 
+ <td class="center" >
+   <a href="../HTML/Kontakt.html">Kontakt</a><br />
+  </td>
+  <!-- TemplateBeginEditable name="Language" -->
+  <td class="center" >
+   <a href="../HTML/logForma.html"><img src="../../slike/login.jpeg" width="80" height="35" ></a>&nbsp;&nbsp;<a href="../HTML/signup.html"><img src="../../slike/signup.jpg" width="80" height="35"></a><br />
+ 
+  </td>
+   <!-- TemplateEndEditable -->
+ </tr>
+ 
+   
+</table>
+<br /><br /><br />
+<!-- TemplateBeginEditable name="EditRegion7" -->
+     
+  <!-- TemplateEndEditable -->
+</div>
+
+
+<!-- TemplateBeginEditable name="EditRegion3" -->
+EditRegion3<!-- TemplateEndEditable -->
+</div>
+
+<footer>
+  <i>  &copy;&nbsp;Copyright 2015, Tim Poslednja Kruška, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta u Beogradu</i>  
+</footer>
+</div>
+</body>
+
+</html>

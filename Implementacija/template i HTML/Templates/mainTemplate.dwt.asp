@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link rel="shortcut icon" href="../slike/logo1.png" />
+<link rel="shortcut icon" href="../../slike/logo1.png" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- TemplateBeginEditable name="doctitle" -->
@@ -126,7 +126,7 @@ document.getElementById(elmnt).style.visibility="hidden"
    <table class="center" width="100%" height="50"  > 	
  <tr bgcolor="#62c2e8">
   <td class="center">
-   <a href="index.html"><img name="logo" src="../slike/logoNatpis3.png" onmouseover="document.logo.src='../slike/logoNatpis4.png'" onmouseout="document.logo.src='../slike/logoNatpis3.png'" height="50"></a><br />
+   <a href="index.html"><img name="logo" src="../../slike/logoNatpis3.png" onmouseover="document.logo.src='../../slike/logoNatpis4.png'" onmouseout="document.logo.src='../../slike/logoNatpis3.png'" height="50"></a><br />
   </td>
   <td class="center">
    <a href="Restorani.html">Restorani</a><br/>
@@ -162,7 +162,7 @@ document.getElementById(elmnt).style.visibility="hidden"
   </td>
   <!-- TemplateBeginEditable name="Language" -->
   <td class="center" >
-   <a href="logForma.html"><img src="../slike/login.jpeg" width="80" height="35" ></a>&nbsp;&nbsp;<a href="signup.html"><img src="../slike/signup.jpg" width="80" height="35"></a><br />
+   <a href="logForma.html"><img src="../../slike/login.jpeg" width="80" height="35" ></a>&nbsp;&nbsp;<a href="signup.html"><img src="../../slike/signup.jpg" width="80" height="35"></a><br />
  
   </td>
    <!-- TemplateEndEditable -->
