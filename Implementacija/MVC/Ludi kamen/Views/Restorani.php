@@ -33,7 +33,7 @@
             <br />
             <font id="naslov"> Filteri </font>
             <br /><br />
-            <form name="forma-filteri" method='POST'>
+            <form name="forma-filteri" method='POST' action="http://localhost:8080/LudiKamen/Codeigniter/index.php/Pretraga/Restorani">
                 <font id="slova"> Grad: </font>
                 <br />
                 <input type="text" name="grad" id="tekst"/>
@@ -49,13 +49,11 @@
                 <br /><br />
                 <font id="slova"> Cena po osobi (u €): </font>
                 <br />
-                <input type="range" name="cena" min="10" max="100" value="0" onchange="showValue(this.value, 'c')" style="margin-left: 10%; width: 70%"/>
-                <span id="c">10</span>
+                <input type="range" name="cena" min="0" max="99" value="0" onchange="showValue(this.value, 'c')" style="margin-left: 10%; width: 70%"/>
+                <span id="c">0</span>
                 <br /><br />
                 <center> 
-                    <button form="forma-filteri" id="dugme" type="submit" action='http://localhost:8080/LudiKamen/Codeigniter/index.php/Pretraga/Restorani'> 
-                        <font style="color:#e3f2f2;"> POTVRDI </font>
-                    </button> 
+                    <input name="dugme" type="image" value="" src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/> 
                 </center>
             </form>
         </div>
@@ -65,7 +63,12 @@
             <font id="naslov2" style="font-size:30px"> Pregled restorana </font>
             <br /><br />
             
-            <?php foreach ($query as $row) { 
+            <?php 
+            if ($brRedova == 0) {
+                echo "<font id='naslov2'> Nema rezultata. </font> <br><br>";
+            }
+            else {
+            foreach ($query as $row) { 
                 $slika = 'http://localhost:8080/Slike/' . $row->ImePrezime . '.jpg';
                 $ime = str_replace(' ', '', $row->ImePrezime);
                 $link = 'http://localhost:8080/LudiKamen/Codeigniter/index.php/Pregled/Restoran/' . $ime;
@@ -75,44 +78,31 @@
 		<br>
 		<table id="tabela">
 			<tr> 
-                            <td rowspan="3" width="30%"> <?php echo "<a href='{$link}'/>"; ?> <?php echo "<img src='{$slika}' height='170' width='220'/>"; ?> </a> </td>
-                            <td colspan="4"> <?php echo "<a href='{$link}'/>"; ?> <font id="naslov2"> <u> <?php echo $row->ImePrezime; ?> </u> </font> </a> </td>
+                            <td rowspan="3" width="30%"> <?php echo "<a href='{$link}'/>"; ?> <?php echo "<img src='{$slika}' height='170' width='220' id='slika'/>"; ?> </a> </td>
+                            <td colspan="4"> <?php echo "<a href='{$link}'/>"; ?> <font id="naslov2"> &nbsp;&nbsp; <u> <?php echo $row->ImePrezime; ?> </u> </font> </a> </td>
 			</tr>
 			<tr>
                             <td colspan="4"> 
                                 <font color="#16698b" size="3"> 
-                                    <?php echo $row->Opis; ?>
+                                    &nbsp;&nbsp; <?php echo $row->Opis; ?>
                                 </font> 
                             </td>
 			</tr>
 			<tr>  
-                            <td> <font color="red" size="4"> Ocena: <b> <?php echo $row->Ocena; ?> </b> </font> </td>
+                            <td> <font color="red" size="4"> &nbsp;&nbsp; Ocena: <b> <?php echo $row->Ocena; ?> </b> </font> </td>
                             <td> <font color="#62c2e8" size="4"> Cena po osobi: <b> <?php echo $row->Cena; ?> € </b> </font> </td>
-                            <td colspan="2"> <?php echo "<a href='{$link}'/>"; ?> <font color="#16698b" size="4"> <b> DUGME </b> </font> </a> </td>
+                            <td colspan="2"> <?php echo "<a href='{$link}'/>"; ?> <font color="#16698b" size="4"> <image src="http://localhost:8080/Slike/detaljnije.jpeg" width="120" height="35"/> </font> </a> </td>
 			</tr> 
 		</table>
 		<br>
             </div>
             
-            <?php } 
+            <?php } }
             ?>
-        
-            <div id="linkovi">
-                <table id="tabela">
-                    <tr>
-                        <td width="33%" align="center"> <a href="#"> <font color="#16698b" size="4"> Prethodna </font> </a> </td>
-                        <td width="33%" align="center"> 
-                            <a href="#"> <font color="#16698b" size="4"> 1 </font> </a>
-                            <font color="#16698b" size="4"> | </font>
-                            <a href="#"> <font color="#16698b" size="4"> 2 </font> </a>
-                            <font color="#16698b" size="4"> | </font>
-                            <a href="#"> <font color="#16698b" size="4"> 3 </font> </a>
-                        </td>
-                        <td width="33%" align="center"> <a href="#"> <font color="#16698b" size="4"> Sledeća </font> </a> </td>
-                    </tr>
-                </table>
-            </div>
-            <br><br>
+ 
+            <div id="linkovi"> </div>
+            
+            <br>
             
         </div>
         

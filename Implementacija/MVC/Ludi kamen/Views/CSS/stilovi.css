@@ -70,7 +70,7 @@ footer {
     text-align:center;
     margin-bottom:0px;
     padding-bottom:0px;
-    color:#16698b;  
+    color:#16698b;
 }
 
 p {
@@ -115,12 +115,6 @@ p {
     width: 75%;
 }
 
-#dugme {
-    background-color: #16698b;
-    border-radius: 15px;
-    width: 50%;
-}
-
 #pretraga {
     float: right;
     width: 75%;
@@ -146,7 +140,6 @@ p {
     border-bottom-color: #16698b;
     border-bottom-style: solid;
     width: 75%;
-    height: 15%; 
 }
 
 #tabela {
@@ -161,3 +154,13 @@ p {
     width: 50%;
 }
 
+#slika {
+    border-color: #16698b;
+    border-style: solid;
+}
+
+#ukupno {
+    border-color: #16698b;
+    border-style: solid;
+    background-color: white;
+}

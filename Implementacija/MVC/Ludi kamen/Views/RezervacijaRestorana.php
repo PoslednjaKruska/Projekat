@@ -79,7 +79,7 @@
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Datum isteka </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="datumisteka" size="30" /> </td>
+                            <td width="50%" align="center"> <input type="text" value="mm/dd/gggg" name="datumisteka" size="30" /> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Sigurnosni broj </font> </td>
@@ -96,8 +96,8 @@
                             <td colspan="2" height="20"> </td>
                         </tr>
                         <tr>
-                            <td width="50%" align="center"> <font color="#16698b" size="3"> <b> POTVRDI </b> </font> </td>
-                            <td width="50%" align="center"> <font color="#16698b" size="3"> <b> ODUSTANI </b> </font> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="3"> <image src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/> </font> </td>
+                            <td width="50%" align="right"> <font color="#16698b" size="3"> <image src="http://localhost:8080/Slike/odustani.jpeg" width="120" height="35"/> </font> </td>
                         </tr>
                     </table>
                     <br>
