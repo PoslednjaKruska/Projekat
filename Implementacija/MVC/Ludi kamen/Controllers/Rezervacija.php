@@ -2,8 +2,9 @@
 
 class Rezervacija extends CI_Controller {
     
-    function Restoran () {
-        $this->load->view('RezervacijaRestorana');
+    function Restoran ($naziv='') {
+        $data['naziv'] = $naziv;
+        $this->load->view('RezervacijaRestorana', $data);
     }
     
 }
