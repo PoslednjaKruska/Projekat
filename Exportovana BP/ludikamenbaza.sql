@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2015 at 01:15 PM
+-- Generation Time: May 19, 2015 at 02:15 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `IDKorisnik` int(10) NOT NULL,
   PRIMARY KEY (`IDKorisnik`)
@@ -45,7 +44,6 @@ INSERT INTO `admin` (`IDKorisnik`) VALUES
 -- Table structure for table `bend`
 --
 
-DROP TABLE IF EXISTS `bend`;
 CREATE TABLE IF NOT EXISTS `bend` (
   `IDKorisnik` int(10) NOT NULL,
   `Cena` varchar(10) NOT NULL,
@@ -66,7 +64,6 @@ INSERT INTO `bend` (`IDKorisnik`, `Cena`, `Kategorija`) VALUES
 -- Table structure for table `burma`
 --
 
-DROP TABLE IF EXISTS `burma`;
 CREATE TABLE IF NOT EXISTS `burma` (
   `IDUsluga` int(10) NOT NULL,
   `Velicina` varchar(10) NOT NULL,
@@ -87,13 +84,12 @@ INSERT INTO `burma` (`IDUsluga`, `Velicina`, `Dostupnost`) VALUES
 -- Table structure for table `korisnik`
 --
 
-DROP TABLE IF EXISTS `korisnik`;
 CREATE TABLE IF NOT EXISTS `korisnik` (
   `IDKorisnik` int(10) NOT NULL AUTO_INCREMENT,
   `Username` varchar(20) NOT NULL,
   `Password` varchar(20) NOT NULL,
   `Email` varchar(30) NOT NULL,
-  `Ime i Prezime` varchar(50) NOT NULL,
+  `ImePrezime` varchar(50) NOT NULL,
   PRIMARY KEY (`IDKorisnik`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
@@ -101,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `korisnik` (
 -- Dumping data for table `korisnik`
 --
 
-INSERT INTO `korisnik` (`IDKorisnik`, `Username`, `Password`, `Email`, `Ime i Prezime`) VALUES
+INSERT INTO `korisnik` (`IDKorisnik`, `Username`, `Password`, `Email`, `ImePrezime`) VALUES
 (1, 'nensi119', 'nensiNensi', 'mn120110d@student.etf.rs', 'Nevena Milinkovic'),
 (2, 'muzicari', 'music123', 'muzicari@gmail.com', 'Muzicari koji piju'),
 (3, 'zlato', 'srebroDukati', 'zlatara@gmail.com', 'Zlatara Safir'),
@@ -116,7 +112,6 @@ INSERT INTO `korisnik` (`IDKorisnik`, `Username`, `Password`, `Email`, `Ime i Pr
 -- Table structure for table `korisnikusluga`
 --
 
-DROP TABLE IF EXISTS `korisnikusluga`;
 CREATE TABLE IF NOT EXISTS `korisnikusluga` (
   `IDKorisnik` int(10) NOT NULL,
   PRIMARY KEY (`IDKorisnik`)
@@ -135,7 +130,6 @@ INSERT INTO `korisnikusluga` (`IDKorisnik`) VALUES
 -- Table structure for table `koristi`
 --
 
-DROP TABLE IF EXISTS `koristi`;
 CREATE TABLE IF NOT EXISTS `koristi` (
   `IDKorisnik` int(10) NOT NULL,
   `IDUsluga` int(10) NOT NULL,
@@ -157,7 +151,6 @@ INSERT INTO `koristi` (`IDKorisnik`, `IDUsluga`, `DatumRezervacije`) VALUES
 -- Table structure for table `poslasticarnica`
 --
 
-DROP TABLE IF EXISTS `poslasticarnica`;
 CREATE TABLE IF NOT EXISTS `poslasticarnica` (
   `IDKorisnik` int(10) NOT NULL,
   `RadnoVreme` varchar(30) NOT NULL,
@@ -177,7 +170,6 @@ INSERT INTO `poslasticarnica` (`IDKorisnik`, `RadnoVreme`) VALUES
 -- Table structure for table `pruzalacusluga`
 --
 
-DROP TABLE IF EXISTS `pruzalacusluga`;
 CREATE TABLE IF NOT EXISTS `pruzalacusluga` (
   `IDKorisnik` int(10) NOT NULL,
   `Opis` varchar(200) NOT NULL,
@@ -204,7 +196,6 @@ INSERT INTO `pruzalacusluga` (`IDKorisnik`, `Opis`, `Adresa`, `Grad`, `Ocena`) V
 -- Table structure for table `restoran`
 --
 
-DROP TABLE IF EXISTS `restoran`;
 CREATE TABLE IF NOT EXISTS `restoran` (
   `IDKorisnik` int(10) NOT NULL,
   `Cena` varchar(10) NOT NULL,
@@ -226,7 +217,6 @@ INSERT INTO `restoran` (`IDKorisnik`, `Cena`, `Kapacitet`, `Kategorija`) VALUES
 -- Table structure for table `salonvencanica`
 --
 
-DROP TABLE IF EXISTS `salonvencanica`;
 CREATE TABLE IF NOT EXISTS `salonvencanica` (
   `IDKorisnik` int(10) NOT NULL,
   PRIMARY KEY (`IDKorisnik`)
@@ -245,7 +235,6 @@ INSERT INTO `salonvencanica` (`IDKorisnik`) VALUES
 -- Table structure for table `torta`
 --
 
-DROP TABLE IF EXISTS `torta`;
 CREATE TABLE IF NOT EXISTS `torta` (
   `IDUsluga` int(10) NOT NULL,
   `Tezina` varchar(10) NOT NULL,
@@ -265,7 +254,6 @@ INSERT INTO `torta` (`IDUsluga`, `Tezina`) VALUES
 -- Table structure for table `usluga`
 --
 
-DROP TABLE IF EXISTS `usluga`;
 CREATE TABLE IF NOT EXISTS `usluga` (
   `IDUsluga` int(10) NOT NULL AUTO_INCREMENT,
   `Naziv` varchar(50) NOT NULL,
@@ -292,7 +280,6 @@ INSERT INTO `usluga` (`IDUsluga`, `Naziv`, `Opis`, `Cena`, `Ocena`, `IDKorisnik`
 -- Table structure for table `vencanica`
 --
 
-DROP TABLE IF EXISTS `vencanica`;
 CREATE TABLE IF NOT EXISTS `vencanica` (
   `IDUsluga` int(10) NOT NULL,
   `Velicina` varchar(5) NOT NULL,
