@@ -235,3 +235,20 @@ p {
     margin-top: 50px;
     margin-bottom: 0px;
 }
+
+
+#tekstRegistracija {
+    color: #16698b;
+    margin-top: 0px;   
+    text-align:left;
+    font-size:17px;  
+}
+
+
+#tabelaRegistracija {
+    width: 350px;
+    height: 270px;
+    background-color: #62c2e8;
+    border-radius: 15px 50px;
+    float: center;
+}
