@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title> Pretraga restorana </title>
+        <title> Pretraga muzike </title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
@@ -33,7 +33,7 @@
             <br />
             <font id="naslov"> Filteri </font>
             <br /><br />
-            <form name="forma-filteri" method='POST' action="http://localhost:8080/LudiKamen/Codeigniter/index.php/Pretraga/Restorani">
+            <form name="forma-filteri" method='POST' action="http://localhost:8080/LudiKamen/Codeigniter/index.php/Pretraga/Muzika">
                 <font id="slova"> Grad: </font>
                 <br />
                 <input type="text" name="grad" id="tekst"/>
@@ -42,14 +42,9 @@
                 <br />
                 <input id="datepicker" name='datum' style="margin-left: 10%; width: 75%"/>
                 <br /><br />
-                <font id="slova"> Broj gostiju: </font>
+                <font id="slova"> Cena po satu (u €): </font>
                 <br />
-                <input type="range" name="gosti" min="0" max="500" value="0" onchange="showValue(this.value, 'g')" style="margin-left: 10%; width: 70%"/>
-                <span id="g">0</span>
-                <br /><br />
-                <font id="slova"> Cena po osobi (u €): </font>
-                <br />
-                <input type="range" name="cena" min="0" max="100" value="0" onchange="showValue(this.value, 'c')" style="margin-left: 10%; width: 70%"/>
+                <input type="range" name="cena" min="0" max="300" value="0" onchange="showValue(this.value, 'c')" style="margin-left: 10%; width: 70%"/>
                 <span id="c">0</span>
                 <br /><br />
                 <center> 
@@ -60,7 +55,7 @@
         
         <div id="pretraga">
             
-            <font id="naslov2" style="font-size:30px"> Pregled restorana </font>
+            <font id="naslov2" style="font-size:30px"> Pregled muzike </font>
             <br /><br />
             
             <?php 
@@ -71,7 +66,7 @@
             foreach ($query as $row) { 
                 $slika = 'http://localhost:8080/Slike/' . $row->ImePrezime . '.jpg';
                 $ime = str_replace(' ', '', $row->ImePrezime);
-                $link = 'http://localhost:8080/LudiKamen/Codeigniter/index.php/Pregled/Restoran/' . $ime;
+                $link = 'http://localhost:8080/LudiKamen/Codeigniter/index.php/Pregled/Bend/' . $ime;
             ?>
             
             <div id="radnja">
@@ -90,7 +85,7 @@
 			</tr>
 			<tr>  
                             <td> <font color="red" size="4"> &nbsp;&nbsp; Ocena: <b> <?php echo $row->Ocena; ?> </b> </font> </td>
-                            <td> <font color="#62c2e8" size="4"> Cena po osobi: <b> <?php echo $row->Cena; ?> € </b> </font> </td>
+                            <td> <font color="#62c2e8" size="4"> Cena po satu: <b> <?php echo $row->Cena; ?> € </b> </font> </td>
                             <td colspan="2"> <?php echo "<a href='{$link}'/>"; ?> <font color="#16698b" size="4"> <image src="http://localhost:8080/Slike/detaljnije.jpeg" width="120" height="35"/> </font> </a> </td>
 			</tr> 
 		</table>
@@ -112,5 +107,6 @@
         
     </body>
 </html>
+
 
 
