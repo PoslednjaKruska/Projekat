@@ -32,14 +32,18 @@
                     <select name="kateg" style="width: 150px;">
                         <option>Mlada</option>
                         <option>Mladoženja</option>
-                        <option>Pružalac usluga</option>
+                        <option>Poslastičarnica</option>
+                        <option>Muzika</option>
+                        <option>Salon venčanica</option>
+                        <option>Izrađivač pozivnica</option>
+                        <option>Restoran</option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <!-- treba napisati fju za on action za dugme -->
-                <td align="center">
+                <td align="center"><?php echo "<a href='{$}'/>"; ?>
                     <input name="dugme" type="image" value="" src="http://localhost:8080/Slike/potvrdi.jpeg" width="100" height="25"/> 
                 </td>
             </tr>
