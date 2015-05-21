@@ -3,21 +3,12 @@
 <html>
     
     <head>
-        <title> Pretraga restorana </title>
+        <title> Pretraga štamparija za pozivnice </title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
         <script>
             <?php include 'JavaScript/meniScript.js'; ?>
-        </script>
-        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-  
-        <script>
-            $(document).ready(function() {
-                $("#datepicker").datepicker();
-            });
         </script>
     </head>
     
@@ -33,24 +24,10 @@
             <br />
             <font id="naslov"> Filteri </font>
             <br /><br />
-            <form name="forma-filteri" method='POST' action="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pretraga/Restorani">
+            <form name="forma-filteri" method='POST' action="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pretraga/Pozivnice">
                 <font id="slova"> Grad: </font>
-                <br />
+                <br /><br>
                 <input type="text" name="grad" id="tekst"/>
-                <br /><br />
-                <font id="slova"> Datum: </font>
-                <br />
-                <input id="datepicker" name='datum' style="margin-left: 10%; width: 75%"/>
-                <br /><br />
-                <font id="slova"> Broj gostiju: </font>
-                <br />
-                <input type="range" name="gosti" min="0" max="500" value="0" onchange="showValue(this.value, 'g')" style="margin-left: 10%; width: 70%"/>
-                <span id="g">0</span>
-                <br /><br />
-                <font id="slova"> Cena po osobi (u €): </font>
-                <br />
-                <input type="range" name="cena" min="0" max="100" value="0" onchange="showValue(this.value, 'c')" style="margin-left: 10%; width: 70%"/>
-                <span id="c">0</span>
                 <br /><br />
                 <center> 
                     <input name="dugme" type="image" value="" src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/> 
@@ -60,7 +37,7 @@
         
         <div id="pretraga">
             
-            <font id="naslov2" style="font-size:30px"> Pregled restorana </font>
+            <font id="naslov2" style="font-size:30px"> Pregled štamparija za pozivnice </font>
             <br /><br />
             
             <?php 
@@ -71,7 +48,7 @@
             foreach ($query as $row) { 
                 $slika = 'http://localhost:8080/Slike/' . $row->ImePrezime . '.jpg';
                 $ime = str_replace(' ', '', $row->ImePrezime);
-                $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/Restoran/' . $ime;
+                $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/Pozivnice/' . $ime;
             ?>
             
             <div id="radnja">
@@ -84,13 +61,13 @@
 			<tr>
                             <td colspan="4"> 
                                 <font color="#16698b" size="3"> 
-                                    &nbsp;&nbsp;&nbsp; <?php echo $row->Opis; ?>
+                                    &nbsp;&nbsp;&nbsp; <?php echo $row->Adresa; ?>
                                 </font> 
                             </td>
 			</tr>
 			<tr>  
-                            <td> <font color="red" size="4"> &nbsp;&nbsp; Ocena: <b> <?php echo $row->Ocena; ?> </b> </font> </td>
-                            <td> <font color="#62c2e8" size="4"> Cena po osobi: <b> <?php echo $row->Cena; ?> € </b> </font> </td>
+                            <td> </td>
+                            <td> </td>
                             <td colspan="2"> <?php echo "<a href='{$link}'/>"; ?> <font color="#16698b" size="4"> <image src="http://localhost:8080/Slike/detaljnije.jpeg" width="120" height="35"/> </font> </a> </td>
 			</tr> 
 		</table>
@@ -112,5 +89,6 @@
         
     </body>
 </html>
+
 
 

@@ -1,12 +1,11 @@
 <?php
 
-class RestoranModel extends CI_Model {
+class MuzikaModel extends CI_Model {
     
     function numRows() {
         $this->load->database();
         
         $grad = $this->input->post('grad');
-        $gosti = $this->input->post('gosti');
         $cena = $this->input->post('cena');
         $datum = $this->input->post('datum');
         
@@ -15,7 +14,7 @@ class RestoranModel extends CI_Model {
         if ($datum != "") {
             $this->db->select('k.IDKorisnik');
             $this->db->from('korisnik k');
-            $this->db->where('k.Kategorija', 7);
+            $this->db->where('k.Kategorija', 4);
             $r = $this->db->get('korisnik')->result();
             $i = 0;
             $res = array();
@@ -51,10 +50,9 @@ class RestoranModel extends CI_Model {
         $this->db->distinct();
         $this->db->from('usluga u');
         $this->db->join('korisnik k', 'u.IDPruzalac = k.IDKorisnik', 'left');
-        $this->db->where('k.Kategorija', 7);
+        $this->db->where('k.Kategorija', 4);
         
         if ($grad != "") { $this->db->like('k.Grad', $grad); }
-        if ($gosti > 0) { $this->db->where('u.Velicina >=', $gosti); }
         if ($cena > 0) { $this->db->where('u.Cena <=', $cena); }
         
         if ($datum != "" && count($rezervisane)>0) { $this->db->where_not_in('u.IDUsluga', $rezervisane); }
@@ -68,7 +66,6 @@ class RestoranModel extends CI_Model {
         $this->load->database();
         
         $grad = $this->input->post('grad');
-        $gosti = $this->input->post('gosti');
         $cena = $this->input->post('cena');
         $datum = $this->input->post('datum');
         
@@ -77,7 +74,7 @@ class RestoranModel extends CI_Model {
         if ($datum != "") {
             $this->db->select('k.IDKorisnik');
             $this->db->from('korisnik k');
-            $this->db->where('k.Kategorija', 7);
+            $this->db->where('k.Kategorija', 4);
             $r = $this->db->get('korisnik')->result();
             $i = 0;
             $res = array();
@@ -113,10 +110,9 @@ class RestoranModel extends CI_Model {
         $this->db->distinct();
         $this->db->from('usluga u');
         $this->db->join('korisnik k', 'u.IDPruzalac = k.IDKorisnik', 'left');
-        $this->db->where('k.Kategorija', 7);
+        $this->db->where('k.Kategorija', 4);
         
         if ($grad != "") { $this->db->like('k.Grad', $grad); }
-        if ($gosti > 0) { $this->db->where('u.Velicina >=', $gosti); }
         if ($cena > 0) { $this->db->where('u.Cena <=', $cena); }
         
         if ($datum != "" && count($rezervisane)>0) { $this->db->where_not_in('u.IDUsluga', $rezervisane); }
