@@ -31,7 +31,7 @@
             
             function promeniSliku (br) {
                 if (br === 1) {
-                    document.getElementById('slike').style.backgroundImage="url("+<?php echo $slike[1]?>+")";
+                    document.getElementById('slike').style.backgroundImage="url('http://localhost:8080/Slike/RestoranGajic.jpg')";
                 }
                 if (br === 2) {
                     document.getElementById("slike").style.backgroundImage="url("+<?php echo $slike[2]?>+")";
