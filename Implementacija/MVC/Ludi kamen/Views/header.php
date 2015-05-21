@@ -9,19 +9,19 @@
             <a href="http://localhost:8080/LudiKamen/Codeigniter/index.php/Pretraga/Restorani">Restorani</a><br/>
         </td>
         <td class="center">
-            <a href="#">Torte<br />
+            <a href="http://localhost:8080/LudiKamen/Codeigniter/index.php/Pretraga/Torte">Torte<br />
         </td>
         <td class="center" >
-            <a href="#">Muzika</a><br />
+            <a href="http://localhost:8080/LudiKamen/Codeigniter/index.php/Pretraga/Muzika">Muzika</a><br />
         </td>
         <td class="center" >
-            <a href="#">Burme</a><br />
+            <a href="http://localhost:8080/LudiKamen/Codeigniter/index.php/Pretraga/Vencanice">Venčanice</a><br />
         </td>
         <td class="center">
-            <a href="#">Pozivnice</a><br />
+            <a href="http://localhost:8080/LudiKamen/Codeigniter/index.php/Pretraga/Pozivnice">Pozivnice</a><br />
         </td>
         <td class="center"  >
-            <a href="#">Pokloni</a><br />
+            <a href="#">Galerija</a><br />
         </td> 
         <td class="center" >
             <a href="#">Kontakt</a><br />

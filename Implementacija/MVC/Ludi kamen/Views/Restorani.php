@@ -49,7 +49,7 @@
                 <br /><br />
                 <font id="slova"> Cena po osobi (u €): </font>
                 <br />
-                <input type="range" name="cena" min="0" max="99" value="0" onchange="showValue(this.value, 'c')" style="margin-left: 10%; width: 70%"/>
+                <input type="range" name="cena" min="0" max="100" value="0" onchange="showValue(this.value, 'c')" style="margin-left: 10%; width: 70%"/>
                 <span id="c">0</span>
                 <br /><br />
                 <center> 
@@ -84,7 +84,7 @@
 			<tr>
                             <td colspan="4"> 
                                 <font color="#16698b" size="3"> 
-                                    &nbsp;&nbsp; <?php echo $row->Opis; ?>
+                                    &nbsp;&nbsp;&nbsp; <?php echo $row->Opis; ?>
                                 </font> 
                             </td>
 			</tr>
