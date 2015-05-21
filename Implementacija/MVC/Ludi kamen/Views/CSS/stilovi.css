@@ -164,3 +164,17 @@ p {
     border-style: solid;
     background-color: white;
 }
+
+#logo {
+    float: left;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+#l {
+    width: 50%;
+}
+
+.error {
+    font-size: 150%;
+}

@@ -15,13 +15,13 @@
             <a href="#">Muzika</a><br />
         </td>
         <td class="center" >
-            <a href="#">Burme</a><br />
+            <a href="#">Venčanice</a><br />
         </td>
         <td class="center">
             <a href="#">Pozivnice</a><br />
         </td>
         <td class="center"  >
-            <a href="#">Pokloni</a><br />
+            <a href="#">Galerija</a><br />
         </td> 
         <td class="center" >
             <a href="#">Kontakt</a><br />

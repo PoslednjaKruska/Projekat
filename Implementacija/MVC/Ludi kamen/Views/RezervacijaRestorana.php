@@ -29,35 +29,67 @@
         
         <br /><br />
         
-        <center> 
-            <form name="rezervacija">
+        <?php
+            $i = $string = preg_replace('/\s+/', '', $naziv);
+            $link = "http://localhost:8080/LudiKamen/Codeigniter/index.php/Rezervacija/Provera/" . $i;
+        ?>
+        
+        <center>
+            <form name="rezervacija" method="post" <?php echo "action='{$link}'/>"; ?>>
                 <font id="naslov2" style="font-size:30px"> Rezervacija: <?=$naziv?> </font>
                 <br><br>
+                
+                <div id="l">
+                    <div id="logo">
+                        <image src="http://localhost:8080/Slike/logoHD.png" width="250" height="285"/>
+                    </div>
+                </div>
+                
                 <div id="tabela-rez">
                     <br>
                     <table style="background-color:#e3f2f2" width="50%">
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Ime i prezime </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="ime" size="30" /> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="3"> <input type="text" name="ime" size="30" value="<?php echo set_value('ime'); ?>" /> </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" align="center"> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="1"> <?php echo form_error('ime'); ?> </font> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Adresa </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="adresa" size="30" /> </td>
+                            <td width="50%" align="center"> <input type="text" name="adresa" size="30" value="<?php echo set_value('adresa'); ?>"/> </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" align="center"> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="1"> <?php echo form_error('adresa'); ?> </font> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> E-mail </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="email" size="30" /> </td>
+                            <td width="50%" align="center"> <input type="text" name="email" size="30" value="<?php echo set_value('email'); ?>"/> </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" align="center"> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="1"> <?php echo form_error('email'); ?> </font> </td>
                         </tr>
                         <tr>
                             <td colspan="2" height="20"> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Datum venčanja </font> </td>
-                            <td width="50%" align="center"> <input id="datepicker" size="30"/> </td>
+                            <td width="50%" align="center"> <input name="datum" id="datepicker" size="30" value="<?php echo set_value('datum'); ?>"/> </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" align="center"> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="1"> <?php echo form_error('datum'); ?> </font> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Broj gostiju </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="brgosti" size="30" /> </td>
+                            <td width="50%" align="center"> <input type="text" name="brgosti" size="30" value="<?php echo set_value('brgosti'); ?>"/> </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" align="center"> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="1"> <?php echo form_error('brgosti'); ?> </font> </td>
                         </tr>
                         <tr>
                             <td colspan="2" height="20"> </td>
@@ -75,15 +107,27 @@
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Broj kartice </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="brkartice" size="30" /> </td>
+                            <td width="50%" align="center"> <input type="text" name="brkartice" size="30" value="<?php echo set_value('brkartice'); ?>"/> </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" align="center"> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="1"> <?php echo form_error('brkartice'); ?> </font> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Datum isteka </font> </td>
-                            <td width="50%" align="center"> <input type="text" value="mm/dd/gggg" name="datumisteka" size="30" /> </td>
+                            <td width="50%" align="center"> <input type="text" name="datumisteka" size="30" value="<?php echo set_value('datumisteka'); ?>"/> </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" align="center"> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="1"> <?php echo form_error('datumisteka'); ?> </font> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Sigurnosni broj </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="sigurnosnibr" size="30" /> </td>
+                            <td width="50%" align="center"> <input type="text" name="sigurnosnibr" size="30" value="<?php echo set_value('sigurnosnibr'); ?>"/> </td>
+                        </tr>
+                        <tr>
+                            <td width="50%" align="center"> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="1"> <?php echo form_error('sigurnosnibr'); ?> </font> </td>
                         </tr>
                         <tr>
                             <td colspan="2" height="20"> </td>
@@ -96,8 +140,8 @@
                             <td colspan="2" height="20"> </td>
                         </tr>
                         <tr>
-                            <td width="50%" align="center"> <font color="#16698b" size="3"> <image src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/> </font> </td>
-                            <td width="50%" align="right"> <font color="#16698b" size="3"> <image src="http://localhost:8080/Slike/odustani.jpeg" width="120" height="35"/> </font> </td>
+                            <td width="50%" align="center"> <input name="dugme" type="image" value="" src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/> </td>
+                            <td width="50%" align="right"> <image src="http://localhost:8080/Slike/odustani.jpeg" width="120" height="35"/> </td>
                         </tr>
                     </table>
                     <br>
