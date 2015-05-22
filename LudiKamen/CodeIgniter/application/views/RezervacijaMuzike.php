@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title> Rezervacija restorana </title>
+        <title> Rezervacija muzike </title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
@@ -21,8 +21,8 @@
         </script>
         
         <script>
-        function showPrice(naziv, brgosti) {
-            if (brgosti === "") {
+        function showPrice(naziv, brsati) {
+            if (brsati === "") {
                 document.getElementById('ukupno').innerHTML = "0 €";
                 return;
             }
@@ -39,7 +39,7 @@
                     document.getElementById('ukupno').innerHTML = xmlhttp.responseText;
                 }
             };
-            xmlhttp.open("GET", "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/CenaRestoran/" + naziv + "/" + brgosti, true);
+            xmlhttp.open("GET", "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/CenaMuzika/" + naziv + "/" + brsati, true);
             xmlhttp.send();
         }
 </script>
@@ -55,8 +55,8 @@
         
         <?php
             $i = $string = preg_replace('/\s+/', '', $naziv);
-            $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/ProveraRestoran/" . $i;
-            $povratak = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/Restoran/" . $i;
+            $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/ProveraMuzika/" . $i;
+            $povratak = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/Muzika/" . $i;
         ?>
         
         <center>
@@ -109,12 +109,12 @@
                             <td width="50%" align="center"> <font color="#16698b" size="1"> <?php echo form_error('datum'); ?> </font> </td>
                         </tr>
                         <tr>
-                            <td width="50%" align="center"> <font color="#16698b" size="3"> Broj gostiju </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="brgosti" size="30" onkeyup="showPrice('<?php echo $i; ?>', this.value)" value="<?php echo set_value('brgosti'); ?>"/> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="3"> Broj sati </font> </td>
+                            <td width="50%" align="center"> <input type="text" name="brsati" size="30" onkeyup="showPrice('<?php echo $i; ?>', this.value)" value="<?php echo set_value('brsati'); ?>"/> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> </td>
-                            <td width="50%" align="center"> <font color="#16698b" size="1"> <?php echo form_error('brgosti'); ?> </font> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="1"> <?php echo form_error('brsati'); ?> </font> </td>
                         </tr>
                         <tr>
                             <td colspan="2" height="20"> </td>
@@ -182,5 +182,6 @@
         
     </body>
 </html>
+
 
 

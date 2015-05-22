@@ -163,6 +163,9 @@ p {
     border-color: #16698b;
     border-style: solid;
     background-color: white;
+    color: #16698b;
+    font-weight: bold;
+    size: 20px;
 }
 
 #logo {
