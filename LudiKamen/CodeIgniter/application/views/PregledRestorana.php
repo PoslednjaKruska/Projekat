@@ -12,15 +12,6 @@
         </script>
         
         <script>
-            var br = 1;
-            
-            function sledecaSlika () {
-                promeniSliku (br);
-                br++;
-                if (br === 5) br = 1;
-                setTimeout ("sledecaSlika()", 6000);
-            }
-            
             function promeniSliku(ime, br) {
                 var xmlhttp;
                 if (window.XMLHttpRequest) {
@@ -31,42 +22,46 @@
                 }
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                        document.getElementById("slike").innerHTML = xmlhttp.responseText;
+               //         alert (xmlhttp.responseText);
+                      document.getElementById('slike').style.backgroundImage = xmlhttp.responseText;
                     }
-                }
-                xmlhttp.open("GET", "http://localhost:8080/Projekat/LudiKamen/index.php/Pregled/GetImage/" + ime + "/" + br, true);
+                };
+                xmlhttp.open("GET", "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/GetImage/" + ime + "/" + br, true);
                 xmlhttp.send();
             }
         </script>
         
     </head>
     
-    <body onLoad='sledecaSlika()'>
+    <body>
         
         <?php
            include_once("header.php");
+        ?>
+        
+        <?php
+            $i = preg_replace('/\s+/', '', $naziv);
+            $slika = "http://localhost:8080/Slike/" . $i . "1.jpg";
         ?>
         
         <br /><br />
         
         <div id="zajedno">
             
-            <div id="slike" style="border-color:'black';border-style:solid">
-                <div id="dugme1" onMouseOver="style.background='#363636'; promeniSliku(1)" onMouseOut="style.background='#6F6F6F'"> 
+            <div id="slike" style="background-image: url('<?php echo $slika; ?>')">
+                <div id="dugme1" onMouseOver="style.background='#363636'; promeniSliku('<?php echo $i; ?>', 4);" onMouseOut="style.background='#6F6F6F'"> 
                     <div id="broj"> 4 </div> 
 		</div>
-		<div id="dugme1" onMouseOver="style.background='#363636' ;promeniSliku(3)" onMouseOut="style.background='#6F6F6F'" > 
+		<div id="dugme1" onMouseOver="style.background='#363636' ;promeniSliku('<?php echo $i; ?>', 3);" onMouseOut="style.background='#6F6F6F'" > 
                     <div id="broj"> 3 </div> 
 		</div>
-		<div id="dugme1" onMouseOver="style.background='#363636' ;promeniSliku(2)" onMouseOut="style.background='#6F6F6F'" > 
+		<div id="dugme1" onMouseOver="style.background='#363636' ;promeniSliku('<?php echo $i; ?>', 2);" onMouseOut="style.background='#6F6F6F'" > 
                     <div id="broj"> 2 </div> 
 		</div>
-		<div id="dugme1" onMouseOver="style.background='#363636' ;promeniSliku(1)" onMouseOut="style.background='#6F6F6F'" > 
+		<div id="dugme1" onMouseOver="style.background='#363636' ;promeniSliku('<?php echo $i; ?>', 1);" onMouseOut="style.background='#6F6F6F'" > 
                     <div id="broj"> 1 </div> 
 		</div> 	
             </div>
-            
-            <!--
 
             <div id="pretraga1">
                 <font id="naslov2" style="font-size:30px"> Restoran Hotela Majdan </font>
@@ -79,7 +74,7 @@
                 </div>
             </div>
             
-            <div id="cena">
+    <!--        <div id="cena">
 		<font id="naslov2" style="font-size:30px"> Cena po osobi je:  ...  </font>	
             </div>
             
