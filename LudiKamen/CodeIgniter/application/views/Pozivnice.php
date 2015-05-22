@@ -46,8 +46,8 @@
             }
             else {
             foreach ($query as $row) { 
-                $slika = 'http://localhost:8080/Slike/' . $row->ImePrezime . '.jpg';
                 $ime = str_replace(' ', '', $row->ImePrezime);
+                $slika = 'http://localhost:8080/Slike/' . $ime . '.jpg';
                 $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/Pozivnice/' . $ime;
             ?>
             

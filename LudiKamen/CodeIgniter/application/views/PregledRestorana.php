@@ -42,6 +42,7 @@
         <?php
             $i = preg_replace('/\s+/', '', $naziv);
             $slika = "http://localhost:8080/Slike/" . $i . "1.jpg";
+            $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/Restoran/" . $i;
         ?>
         
         <br /><br />
@@ -64,31 +65,33 @@
             </div>
 
             <div id="pretraga1">
-                <font id="naslov2" style="font-size:30px"> Restoran Hotela Majdan </font>
-                <br /><br />
+                <font id="naslov2" style="font-size:30px"> Naziv </font>
+                <br />
                 <div id="radnja">
                     <div id="opis1">
                         <br /> <br />
-                        Opis restorana
+                        <font color="red"> 
+                            Ocena: <br><br>
+                        </font>
+                        <font color="#16698b"> 
+                            Grad: <br><br>
+                            Adresa: <br><br>
+                            Opis: <br><br>
+                            Kapacitet: <br><br>
+                        </font> 
+                        <font id="naslov2" style="font-size:30px"> Cena po osobi je:  ...  </font> <br><br>
+                        <a href="<?php echo $link; ?>"> <image src="http://localhost:8080/Slike/rezervisi.jpg" width="120" height="35" /> </a>
                     </div>
                 </div>
             </div>
             
-    <!--        <div id="cena">
-		<font id="naslov2" style="font-size:30px"> Cena po osobi je:  ...  </font>	
+            <div id="cena">
+                
             </div>
-            
-            <center> 
-                <button form="forma-filteri" id="rezervisi" type="submit"> 
-                    <font style="color:#e3f2f2;"> REZERVISITE </font>
-                </button> 
-            </center>
-            
-            -->
             
         </div>
         
-        <br><br>
+        <br><br><br><br>
         
         <?php
            include_once("footer.php");

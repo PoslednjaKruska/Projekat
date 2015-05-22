@@ -191,6 +191,8 @@ p {
     background-color: white;
     margin: 4% 2% 2% 2%;
     float: left;
+    border-color: #16698b;
+    border-style: solid;
 }
 
 #dugme1 {
@@ -219,7 +221,6 @@ p {
     float: right;
     width: 52%;
     height: 400px; 
-    margin-top: 4%;
 }
 
 #opis1 {
@@ -229,11 +230,12 @@ p {
 
 #cena{
     float: left;
-    width: 100%;
+    width: 550px;;
     height: 50px;
     position: left;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 0px;
+    margin-left: 50px;
 }
 
 

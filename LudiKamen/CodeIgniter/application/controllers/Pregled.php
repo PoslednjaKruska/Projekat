@@ -9,6 +9,11 @@ class Pregled extends CI_Controller {
         $this->load->view('PregledRestorana', $data);
     }
     
+    function GetImage ($ime, $broj) {
+        $slika = "url('http://localhost:8080/Slike/" . $ime . $broj . ".jpg')";
+        echo $slika;
+    }
+  
 }
 
 ?>
