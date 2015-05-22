@@ -9,7 +9,14 @@ class Rezervacija extends CI_Controller {
         $this->load->view('RezervacijaRestorana', $data);
     }
     
-    function Provera ($ime='') {
+    function Muzika ($ime='') {
+        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
+        $data['naziv'] = $naziv;
+        $this->load->helper(array('form', 'url'));
+        $this->load->view('RezervacijaMuzike', $data);
+    }
+    
+    function ProveraRestoran ($ime='') {
         $this->load->helper(array('form', 'url'));
 
 	$this->load->library('form_validation');
@@ -32,7 +39,77 @@ class Rezervacija extends CI_Controller {
             $data['naziv'] = $naziv;
             $this->load->view('RezervacijaRestorana', $data);
 	}
-	else {
+	else {    
+    /*        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
+            $from = "ludikamen@gmail.com";
+            
+            $emailKor = $this->input->post('email');
+            $subjectKor = "Potvrda rezervacije";
+            $commentKor = "neki tekst"; // napisati...
+
+            mail($emailKor, $subjectKor, $commentKor, $from);
+            
+            $this->load->model('PomocniModel');
+            $query = $this->PomocniModel->getEmail($naziv);
+            $emailUsl = null;
+            foreach ($query as $row) {
+                $emailUsl = $row->Email;
+            }
+
+            $subjectUsl = "Rezervacija Vase usluge";
+            $commentUsl = "neki tekst"; // napisati...
+            
+            mail($emailUsl, $subjectUsl, $commentUsl, $from);  */
+            
+            $this->load->view('UspesnaRezervacija');
+	}
+    }
+    
+    function ProveraMuzika ($ime='') {
+        $this->load->helper(array('form', 'url'));
+
+	$this->load->library('form_validation');
+        
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+        
+        $this->form_validation->set_rules('ime', ' ', 'required|alpha');
+	$this->form_validation->set_rules('adresa', ' ', 'required|alpha_dash');
+	$this->form_validation->set_rules('email', ' ', 'required|valid_email');
+        
+        $this->form_validation->set_rules('datum', ' ', 'required|callback_date_check');
+	$this->form_validation->set_rules('brsati', ' ', 'required|is_natural_no_zero');
+        
+        $this->form_validation->set_rules('brkartice', ' ', 'required');
+	$this->form_validation->set_rules('datumisteka', ' ', 'required|callback_date_check');
+	$this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric');
+
+	if ($this->form_validation->run() == FALSE) {
+            $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
+            $data['naziv'] = $naziv;
+            $this->load->view('RezervacijaMuzike', $data);
+	}
+	else {    
+    /*        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
+            $from = "ludikamen@gmail.com";
+            
+            $emailKor = $this->input->post('email');
+            $subjectKor = "Potvrda rezervacije";
+            $commentKor = "neki tekst"; // napisati...
+
+            mail($emailKor, $subjectKor, $commentKor, $from);
+            
+            $this->load->model('PomocniModel');
+            $query = $this->PomocniModel->getEmail($naziv);
+            $emailUsl = null;
+            foreach ($query as $row) {
+                $emailUsl = $row->Email;
+            }
+
+            $subjectUsl = "Rezervacija Vase usluge";
+            $commentUsl = "neki tekst"; // napisati...
+            
+            mail($emailUsl, $subjectUsl, $commentUsl, $from);  */
+            
             $this->load->view('UspesnaRezervacija');
 	}
     }
@@ -55,6 +132,30 @@ class Rezervacija extends CI_Controller {
     
     function Potvrda () {
         $this->load->view('UspesnaRezervacija');
+    }
+    
+    function CenaRestoran ($ime, $brgosti) {
+        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
+        $this->load->model('PomocniModel');
+        $cena = $this->PomocniModel->getPrice($naziv);
+        $ukupno = null;
+        foreach ($cena as $row) {
+            $ukupno = $row->Cena * $brgosti;
+        }
+        $poruka = $ukupno . " €";
+        echo $poruka;
+    }
+    
+    function CenaMuzika ($ime, $brsati) {
+        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
+        $this->load->model('PomocniModel');
+        $cena = $this->PomocniModel->getPrice($naziv);
+        $ukupno = null;
+        foreach ($cena as $row) {
+            $ukupno = $row->Cena * $brsati;
+        }
+        $poruka = $ukupno . " €";
+        echo $poruka;
     }
     
 }
