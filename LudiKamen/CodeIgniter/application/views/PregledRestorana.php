@@ -63,27 +63,35 @@
                     <div id="broj"> 1 </div> 
 		</div> 	
             </div>
+            
+            <?php
+                foreach ($query as $row) { 
+            ?>
 
             <div id="pretraga1">
-                <font id="naslov2" style="font-size:30px"> Naziv </font>
+                <font id="naslov2" style="font-size:30px"> <?php echo $row->ImePrezime; ?> </font>
                 <br />
                 <div id="radnja">
                     <div id="opis1">
                         <br /> <br />
                         <font color="red"> 
-                            Ocena: <br><br>
+                            <b> Ocena: </b> <?php echo $row->Ocena; ?> <br><br>
                         </font>
                         <font color="#16698b"> 
-                            Grad: <br><br>
-                            Adresa: <br><br>
-                            Opis: <br><br>
-                            Kapacitet: <br><br>
+                            <b> Grad: </b> <?php echo $row->Grad; ?> <br><br>
+                            <b> Adresa: </b> <?php echo $row->Adresa; ?> <br><br>
+                            <b> Opis: </b> <?php echo $row->Opis; ?> <br><br>
+                            <b> Kapacitet: </b> <?php echo $row->Velicina; ?> osoba <br><br>
                         </font> 
-                        <font id="naslov2" style="font-size:30px"> Cena po osobi je:  ...  </font> <br><br>
+                        <font id="naslov2" style="font-size:30px"> Cena po osobi je:  <?php echo $row->Cena; ?> €  </font> <br><br>
                         <a href="<?php echo $link; ?>"> <image src="http://localhost:8080/Slike/rezervisi.jpg" width="120" height="35" /> </a>
                     </div>
                 </div>
             </div>
+            
+            <?php
+                }
+            ?>
             
             <div id="cena">
                 
