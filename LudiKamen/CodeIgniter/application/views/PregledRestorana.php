@@ -80,6 +80,7 @@
                         <font color="#16698b"> 
                             <b> Grad: </b> <?php echo $row->Grad; ?> <br><br>
                             <b> Adresa: </b> <?php echo $row->Adresa; ?> <br><br>
+                            <b> E-mail: </b> <?php echo $row->Email; ?> <br><br>
                             <b> Opis: </b> <?php echo $row->Opis; ?> <br><br>
                             <b> Kapacitet: </b> <?php echo $row->Velicina; ?> osoba <br><br>
                         </font> 

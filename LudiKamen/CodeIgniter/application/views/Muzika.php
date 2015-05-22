@@ -66,7 +66,7 @@
             foreach ($query as $row) { 
                 $ime = str_replace(' ', '', $row->ImePrezime);
                 $slika = 'http://localhost:8080/Slike/' . $ime . '.jpg';
-                $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/Bend/' . $ime;
+                $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/Muzika/' . $ime;
             ?>
             
             <div id="radnja">

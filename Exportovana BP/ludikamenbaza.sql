@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2015 at 05:06 PM
+-- Generation Time: May 22, 2015 at 05:28 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `korisnik`
 --
 
-DROP TABLE IF EXISTS `korisnik`;
 CREATE TABLE IF NOT EXISTS `korisnik` (
   `IDKorisnik` int(11) NOT NULL AUTO_INCREMENT,
   `Username` varchar(20) NOT NULL,
@@ -39,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `korisnik` (
   `DatumReg` varchar(11) NOT NULL,
   `DatumIzmene` varchar(11) NOT NULL COMMENT 'poslednja izmena naloga',
   PRIMARY KEY (`IDKorisnik`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `korisnik`
@@ -47,11 +46,12 @@ CREATE TABLE IF NOT EXISTS `korisnik` (
 
 INSERT INTO `korisnik` (`IDKorisnik`, `Username`, `Password`, `Email`, `Adresa`, `ImePrezime`, `Kategorija`, `Grad`, `DatumReg`, `DatumIzmene`) VALUES
 (1, 'mn120110', 'nensiCaoPoz', 'mn120110d@student.etf.rs', NULL, 'Nevena Milinkovic', 1, 'Banjica City', '19/05/2015', '19/05/2015'),
-(2, 'muzicari', 'music123', 'muzicari@gmail.com', NULL, 'Muzicari koji piju', 4, 'Beograd', '20/05/2015', '20/05/2015'),
+(2, 'muzicari', 'music123', 'muzicari@gmail.com', NULL, 'Muzicari Koji Piju', 4, 'Beograd', '20/05/2015', '20/05/2015'),
 (3, 'udavaca', 'cucaSibac', 'teodora.nema.hotmail@gmail.com', 'Pored sabacke deponije', 'Teodora Aleksic', 2, 'Sibac', '20/05/2015', '20/05/2015'),
 (4, 'srceBgd', 'cesrCesr', 'srceBg@hotmail.com', 'Terazije 9', 'Poslasticarnica Srce', 3, 'Beograd', '20/05/2015', '20/05/2015'),
 (5, 'restoran', 'restGajic', 'gajici@gmail.com', 'Zaobilazni put', 'Restoran Gajic', 7, 'Lozana City', '21/05/2015', '21/05/2015'),
-(6, 'salon123', 'bubamara', 'bubamara@gmail.com', 'Bulevar Kralja Aleksandra bb', 'Salon vencanica Bubamara', 5, 'Beli grad', '22/05/2015', '22/05/2015');
+(6, 'salon123', 'bubamara', 'bubamara@gmail.com', 'Bulevar Kralja Aleksandra bb', 'Salon Vencanica Bubamara', 5, 'Beli grad', '22/05/2015', '22/05/2015'),
+(7, 'comLab', 'comLab', 'comlab@gmail.com', 'Dunavski kej 20', 'ComLab', 6, 'Beograd', '22/05/2015', 'NULL');
 
 -- --------------------------------------------------------
 
@@ -59,7 +59,6 @@ INSERT INTO `korisnik` (`IDKorisnik`, `Username`, `Password`, `Email`, `Adresa`,
 -- Table structure for table `koristi`
 --
 
-DROP TABLE IF EXISTS `koristi`;
 CREATE TABLE IF NOT EXISTS `koristi` (
   `IDKorisnik` int(11) NOT NULL,
   `IDUsluga` int(11) NOT NULL,
@@ -82,7 +81,6 @@ INSERT INTO `koristi` (`IDKorisnik`, `IDUsluga`, `DatumRezervacije`) VALUES
 -- Table structure for table `logovanjeadmina`
 --
 
-DROP TABLE IF EXISTS `logovanjeadmina`;
 CREATE TABLE IF NOT EXISTS `logovanjeadmina` (
   `IDKorisnik` int(11) NOT NULL,
   `Datum` varchar(11) NOT NULL COMMENT 'zadnji log admina',
@@ -102,7 +100,6 @@ INSERT INTO `logovanjeadmina` (`IDKorisnik`, `Datum`) VALUES
 -- Table structure for table `usluga`
 --
 
-DROP TABLE IF EXISTS `usluga`;
 CREATE TABLE IF NOT EXISTS `usluga` (
   `IDUsluga` int(11) NOT NULL AUTO_INCREMENT,
   `Naziv` varchar(40) NOT NULL,

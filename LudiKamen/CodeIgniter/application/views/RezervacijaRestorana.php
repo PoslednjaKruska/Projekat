@@ -32,6 +32,7 @@
         <?php
             $i = $string = preg_replace('/\s+/', '', $naziv);
             $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/Provera/" . $i;
+            $povratak = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/Restoran/" . $i;
         ?>
         
         <center>
@@ -141,7 +142,7 @@
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <input name="dugme" type="image" value="" src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/> </td>
-                            <td width="50%" align="right"> <image src="http://localhost:8080/Slike/odustani.jpeg" width="120" height="35"/> </td>
+                            <td width="50%" align="right"> <a href="<?php echo $povratak; ?>"> <image src="http://localhost:8080/Slike/odustani.jpeg" width="120" height="35"/> </a> </td>
                         </tr>
                     </table>
                     <br>
