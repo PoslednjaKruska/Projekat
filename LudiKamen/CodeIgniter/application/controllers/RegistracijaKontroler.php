@@ -24,7 +24,9 @@ class RegistracijaKontroler extends CI_Controller {
         $data['username'] = $this->input->post('korime');
         $data['password'] = $this->input->post('lozinka');
         $data['kategorija'] = $this->input->post('kategorija');
-        
+        if ($data['kategorija'] == 1) {
+            $data['kategorija'] = 2;
+        }
         $pomoc = $this->input->post('imePrezime');
         $data['ime'] = explode(" ", $pomoc);
         
