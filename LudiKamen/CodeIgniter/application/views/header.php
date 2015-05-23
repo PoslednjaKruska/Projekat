@@ -27,7 +27,7 @@
             <a href="#">Kontakt</a><br />
         </td>
         <td class="center" >
-            <a href="#"><img src="http://localhost:8080/Slike/login.jpeg" width="80" height="35" /></a>&nbsp;&nbsp;
+            <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/Login"><img src="http://localhost:8080/Slike/login.jpeg" width="80" height="35" /></a>&nbsp;&nbsp;
             <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/RegistracijaKontroler/Registracija"><img src="http://localhost:8080/Slike/signup.jpg" width="80" height="35" /></a><br />
         </td>
     </tr>

@@ -18,23 +18,11 @@
         <?php include_once 'header.php'; ?>  <br/> <br/>
         <br/><br/><br/>
         <div style="text-align:center" id="tekstRegistracija">
-            <?php if ($flag == 4) {
-                ?>  
-                <b><i>Korisničko ime mora sadržati barem 6 karaktera.</b> </br></br>
-                Molimo Vas da ponovite unos.</i>
-        <?php } else if ($flag == 1) {
-            ?>  
-            <b><i>Username koji ste uneli već postoji u bazi.</b> </br></br>
-            Molimo Vas da ponovite unos.</i>
-    <?php } else if ($flag == 2) { ?>
-        <b><i>  Lozinka mora sadržati barem 6 karaktera.</b> </br></br>
-        Molimo Vas da ponovite unos.</i>
-<?php } else if ($flag == 3) { ?>
-    <b><i>  Unesene lozinke se ne poklapaju.</b> </br></br>
+    <?php if ($flag == 1) { ?>
+    <b><i>  Nekorektno ste uneli podatke.</b> </br></br>
     Molimo Vas da ponovite unos.</i>
 <?php } else { ?>
-    <b><i>  Dozvolite da Vam pomognemo da isplanirate Vaše savršeno venčanje!</b> </br></br>
-    Registracija, kao i korišćenje našeg sajta, su besplatni.</i>
+        <b><i>  Login</b> </br></br></i>
 <?php } ?>
     <br/></br></br></br>
 <form method="post" action="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/RegistracijaKontroler/provera">
