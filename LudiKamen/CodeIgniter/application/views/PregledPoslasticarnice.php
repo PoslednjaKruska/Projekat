@@ -41,7 +41,6 @@
         <?php
             $i = preg_replace('/\s+/', '', $naziv);
             $slika = "http://localhost:8080/Slike/" . $i . "1.jpg";
-            $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/Restoran/" . $i;
         ?>
         
         <br /><br />
@@ -73,18 +72,11 @@
                 <div id="radnja">
                     <div id="opis1">
                         <br /> <br />
-                        <font color="red"> 
-                            <b> Ocena: </b> <?php echo $row->Ocena; ?> <br><br>
-                        </font>
                         <font color="#16698b"> 
                             <b> Grad: </b> <?php echo $row->Grad; ?> <br><br>
                             <b> Adresa: </b> <?php echo $row->Adresa; ?> <br><br>
                             <b> E-mail: </b> <?php echo $row->Email; ?> <br><br>
-                            <b> Opis: </b> <?php echo $row->Opis; ?> <br><br>
-                            <b> Kapacitet: </b> <?php echo $row->Velicina; ?> osoba <br><br>
                         </font> 
-                        <font id="naslov2" style="font-size:30px"> Cena po osobi je:  <?php echo $row->Cena; ?> €  </font> <br><br>
-                        <a href="<?php echo $link; ?>"> <image src="http://localhost:8080/Slike/rezervisi.jpg" width="120" height="35" /> </a>
                     </div>
                 </div>
             </div>
@@ -96,6 +88,26 @@
         </div>
         
         <br><br><br><br>
+        
+		<table id="tabela-usluga">
+			<tr> 
+                            <td rowspan="3" width="30%"> <?php echo "<a href='#'/>"; ?> <?php echo "<img src='#' height='170' width='220' id='slika'/>"; ?> </a> </td>
+                            <td colspan="4"> <?php echo "<a href='#'/>"; ?> <font id="naslov2"> &nbsp;&nbsp; <u> ime </u> </font> </a> </td>
+			</tr>
+			<tr>
+                            <td colspan="4"> 
+                                <font color="#16698b" size="3"> 
+                                    &nbsp;&nbsp;&nbsp; adresa 
+                                </font> 
+                            </td>
+			</tr>
+			<tr>  
+                            <td> </td>
+                            <td> </td>
+                            <td colspan="2"> <?php echo "<a href='#'/>"; ?> <font color="#16698b" size="4"> <image src="http://localhost:8080/Slike/detaljnije.jpeg" width="120" height="35"/> </font> </a> </td>
+			</tr> 
+		</table>
+		<br>
         
         <?php
            include_once("footer.php");

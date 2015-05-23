@@ -184,8 +184,7 @@ p {
 
 #zajedno{
     float: center;
-    width : 100%;
-    height: 100%;	
+    width : 100%;	
 }
 
 #slike {
@@ -256,4 +255,19 @@ p {
     background-color: #62c2e8;
     border-radius: 15px 50px;
     float: center;
+}
+
+#usluga {
+    border-top-color: #16698b;
+    border-top-style: dashed;
+    width: 100%;
+}
+
+#tabela-usluga {
+    border-top-color: #16698b;
+    border-top-style: dashed;
+    border-bottom-color: #16698b;
+    border-bottom-style: dashed;
+    width: 70%;
+    background-color: white;
 }
