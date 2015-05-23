@@ -41,7 +41,8 @@ class RegistracijaModel extends CI_Model {
     }
     
     function category () {
-        
+        $this->load->database();
+        $opcija = $this->input->post('kategorija');
     }
 }
 

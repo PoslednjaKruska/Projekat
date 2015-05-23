@@ -19,11 +19,7 @@ class RegistracijaKontroler extends CI_Controller {
             $this->load->view('Registracija', $data);
        
         $data['kategorija'] = $this->RegistracijaModel->category();
-        // ako je sve korektno,
-        // dovuci select
-        // proveriti kategoriju
-        // usmeriti na odgovarajuci view
-        $this->load->view('Registracija', $data);  // nece ici na ovu stranu registracije
+        $this->load->view('Registracija2', $data);  // nece ici na ovu stranu registracije
     }
 
 }

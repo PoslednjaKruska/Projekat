@@ -60,14 +60,14 @@
         <tr>
             <td align="right">Kategorija:&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td align="center">
-                <select name="kateg" style="width: 150px;">
-                    <option>Mlada</option>
-                    <option>Mladoženja</option>
-                    <option>Poslastičarnica</option>
-                    <option>Muzika</option>
-                    <option>Salon venčanica</option>
-                    <option>Izrađivač pozivnica</option>
-                    <option>Restoran</option>
+                <select name="kategorija" style="width: 150px;">
+                    <option value="1">Mlada</option>
+                    <option value="2">Mladoženja</option>
+                    <option value="3">Poslastičarnica</option>
+                    <option value="4">Muzika</option>
+                    <option value="5">Salon venčanica</option>
+                    <option value="6">Izrađivač pozivnica</option>
+                    <option value="7">Restoran</option>
                 </select>
             </td>
         </tr>
