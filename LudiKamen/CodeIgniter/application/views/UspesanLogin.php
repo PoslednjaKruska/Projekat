@@ -35,7 +35,7 @@
                     Možete nastaviti sa pretraživanjem sadržaja. <br><br><br></b>
                     </font>
                     <center>
-                        <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pocetna"> <image src="http://localhost:8080/Slike/pocetna.jpeg" width="120" height="35"/> </a>
+                        <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Pocetna"> <image src="http://localhost:8080/Slike/pocetna.jpeg" width="120" height="35"/> </a>
                     </center>
                 </div>
             </div>

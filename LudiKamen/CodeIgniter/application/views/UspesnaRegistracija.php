@@ -32,7 +32,7 @@
                     Uskoro ćete dobiti potvrdu na Vašu e-mail adresu. <br><br><br>
                     </font>
                     <center>
-                        <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pocetna"> <image src="http://localhost:8080/Slike/pocetna.jpeg" width="120" height="35"/> </a>
+                        <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Pocetna"> <image src="http://localhost:8080/Slike/pocetna.jpeg" width="120" height="35"/> </a>
                     </center>
                 </div>
             </div>

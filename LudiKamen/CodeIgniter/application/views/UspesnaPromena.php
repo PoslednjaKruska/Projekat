@@ -6,7 +6,7 @@
 <html>
     
     <head>
-        <title>Goodbye</title>
+        <title>Success</title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
@@ -18,7 +18,7 @@
     <body>
         
         <?php
-           include_once("header.php");
+           include_once("header2.php");
         ?>
         
         <br /><br />
@@ -31,8 +31,8 @@
                 <div style="margin:50px">
                     <font color="#16698b" size="3"> 
                     <b>
-                    Uspešno ste se izlogovali sa Vašeg naloga. <br><br>
-                    Hvala Vam što koristite naše usluge. <br><br><br></b>
+                    Uspešno ste ažurirali svoje podatke! <br><br>
+                    Možete nastaviti sa pretraživanjem sadržaja. <br><br><br></b>
                     </font>
                     <center>
                         <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Pocetna"> <image src="http://localhost:8080/Slike/pocetna.jpeg" width="120" height="35"/> </a>

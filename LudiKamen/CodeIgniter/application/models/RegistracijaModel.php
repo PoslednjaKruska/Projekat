@@ -74,4 +74,8 @@ class RegistracijaModel extends CI_Model {
         
         $this->db->insert('Korisnik', $red);
     }
+    
+    function updateUser ($data, $user) {
+        
+    }
 }
