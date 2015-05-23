@@ -118,11 +118,19 @@ p{
 	width: 75%;
 }
 
+#pretraga1 {
+	float: right;
+	width: 52%;
+	height: 400px; 
+	margin-top: 2%;
+}
+
 #naslov2 {
 	text-align:left;
 	font-size:20px;
 	font-weight:bold;
 	color:#16698b;
+	margin: 2%;
 }
 
 #radnja {
@@ -130,6 +138,11 @@ p{
 	border-top-style: dashed;
 	width: 75%;
 	height: 15%; 
+}
+
+#opis {
+	float: right;
+	width: 70%;
 }
 
 #linkovi {
@@ -184,14 +197,14 @@ p{
 }
 
 #dugme2 {
-	background-color: #62c2e8;
+	background-color:  #6F6F6F;
 	height: 26px;
 	width: 30px;
 	opacity: 0.7;
 	border-style: solid;
 	border-width: 2px;
-	border-color:  #16698b;
-	margin-top: 465px;
+	border-color:  #454545;
+	margin-top: 397px;
 	float: right;
 	border-radius: 15px;
 }
