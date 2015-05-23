@@ -47,7 +47,7 @@
             $link1 = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pretraga/Restorani";
             
             if ($brRedova == 0) {
-                echo "<font id='naslov2' style='margin: 5%'> Restoran još uvek nije izbacio svoju ponudu. </font> <br><br>";
+                echo "<font id='naslov2' style='margin: 5%'> Restoran još uvek nije pripremio svoju ponudu. </font> <br><br>";
             }
             else {
         ?>

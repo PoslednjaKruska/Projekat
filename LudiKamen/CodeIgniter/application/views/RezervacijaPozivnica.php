@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title> Rezervacija venčanice </title>
+        <title> Rezervacija pozivnica </title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
@@ -38,7 +38,7 @@
                     document.getElementById('ukupno').innerHTML = xmlhttp.responseText;
                 }
             };
-            xmlhttp.open("GET", "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/CenaVencanica/" + naziv + "/" + kolicina, true);
+            xmlhttp.open("GET", "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/CenaPozivnica/" + naziv + "/" + kolicina, true);
             xmlhttp.send();
         }
 </script>
@@ -54,14 +54,14 @@
         
         <?php
             $iS = $string = preg_replace('/\s+/', '', $nazivS);
-            $iV = $string = preg_replace('/\s+/', '', $nazivV);
-            $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/ProveraVencanica/" . $iS . "/" . $iV;
-            $povratak = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/Salon/" . $iS;
+            $iP = $string = preg_replace('/\s+/', '', $nazivP);
+            $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/ProveraPozivnica/" . $iS . "/" . $iP;
+            $povratak = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/Stamparija/" . $iS;
         ?>
         
         <center>
             <form name="rezervacija" method="post" <?php echo "action='{$link}'/>"; ?>>
-                <font id="naslov2" style="font-size:30px"> Rezervacija: <?=$nazivS?> - <?=$nazivV?> </font>
+                <font id="naslov2" style="font-size:30px"> Rezervacija: <?=$nazivS?> - <?=$nazivP?> </font>
                 <br><br>
                 
                 <div id="l">
@@ -110,7 +110,7 @@
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Količina </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="kolicina" size="30" onkeyup="showPrice('<?php echo $iV; ?>', this.value)" value="<?php echo set_value('kolicina'); ?>"/> </td>
+                            <td width="50%" align="center"> <input type="text" name="kolicina" size="30" onkeyup="showPrice('<?php echo $iP; ?>', this.value)" value="<?php echo set_value('kolicina'); ?>"/> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> </td>
