@@ -1,91 +1,146 @@
 <!DOCTYPE html>
 
 <html>
+
     <head>
-        <title>Registracija</title>
-        <style><?php include 'CSS/stilovi.css' ?></style>
-        <style type="text/css">
-            html, body {
-                overflow: hidden;
-            }
+        <title> Registracija </title>
+        <style>
+<?php include 'CSS/stilovi.css'; ?>
         </style>
+        <script>
+<?php include 'JavaScript/meniScript.js'; ?>
+        </script>
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
     </head>
-    <?php
-    $provera = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/RegistracijaKontroler/provera/";
-    ?>
 
     <body>
-        <?php include_once 'header.php'; ?>  <br/> <br/>
-        <br/><br/><br/>
-        <div style="text-align:center" id="tekstRegistracija">
-            <?php if ($flag == 4) {
+
+        <?php
+        include_once("header.php");
+        ?>
+
+        <br /><br />
+
+        <?php
+        $i = $string = preg_replace('/\s+/', '', $flag);
+        $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/RegistracijaKontroler/Provera/";
+        ?>
+
+    <center>
+        <form name="rezervacija" method="post" <?php echo "action='{$link}'/>"; ?>
+              <div style="text-align:center" id="tekstRegistracija">
+                        <?php if ($flag == 4) {
                 ?>  
                 <b><i>Korisničko ime mora sadržati barem 6 karaktera.</b> </br></br>
-                Molimo Vas da ponovite unos.</i>
+                Molimo Vas da ponovite unos.</i><br/><br/>
         <?php } else if ($flag == 1) {
             ?>  
             <b><i>Username koji ste uneli već postoji u bazi.</b> </br></br>
-            Molimo Vas da ponovite unos.</i>
+            Molimo Vas da ponovite unos.</i><br/><br/>
     <?php } else if ($flag == 2) { ?>
         <b><i>  Lozinka mora sadržati barem 6 karaktera.</b> </br></br>
-        Molimo Vas da ponovite unos.</i>
+        Molimo Vas da ponovite unos.</i><br/><br/>
 <?php } else if ($flag == 3) { ?>
     <b><i>  Unesene lozinke se ne poklapaju.</b> </br></br>
-    Molimo Vas da ponovite unos.</i>
+    Molimo Vas da ponovite unos.</i><br/><br/>
 <?php } else { ?>
-    <b><i>  Dozvolite da Vam pomognemo da isplanirate Vaše savršeno venčanje!</b> </br></br>
-    Registracija, kao i korišćenje našeg sajta, su besplatni.</i>
+              
+              <font id="naslov2" style="font-size:30px"> Registracija</font>
+            <br><br><br/>
 <?php } ?>
-    <br/></br></br></br>
-<form method="post" action="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/RegistracijaKontroler/provera">
-    <table class="logovanje" align="center" cellpadding="5" id="tabelaRegistracija">
-        <tr>
-            <td align="right">Korisničko ime: &nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div id="l">
+                <div id="logo" style="margin-top: 120px;">
+                    <image src="http://localhost:8080/Slike/logoHD.png" width="250" height="285"/>
+                </div>
+            </div>
 
-            </td>
-            <td><input type="text" name="korime" style="width: 150px;" required></td>
-        </tr>
-        <tr>
-            <td align="right">Lozinka: &nbsp;&nbsp;&nbsp;&nbsp;
-            </td>
-            <td><input type="password" name="lozinka" style="width: 150px;" required>
-            </td>
-        </tr>
+            <div id="tabela-rez">
+                <br>
+                <table style="background-color:#e3f2f2" width="50%">
+                    <tr>
+                        <td width="50%" align="left"> <font color="#16698b" size="3"><br/> *Korisničko ime:<br/><br/></font> </td>
+                        <td width="50%" align="center"> <font color="#16698b" size="3"> <br/><input type="text" name="korime" size="20" required/> <br/><br/></td>
+                    </tr>
+                    <tr>
+                        <td width="50%" align="left"> <font color="#16698b" size="3"> *Lozinka:<br/></font> </td>
+                        <td width="50%" align="center"> <font color="#16698b" size="3"> <br/><input type="password" name="lozinka" size="20" required/> <br/><br/></td>
+                    </tr>
+                    <tr>
+                        <td width="50%" align="left"> <font color="#16698b" size="3"><br/> *Ponovite lozinku:<br/><br/><br/></font> </td>
+                        <td width="50%" align="center"> <font color="#16698b" size="3"> <br/><input type="password" name="lozinkaPonovo" size="20" required/> <br/><br/><br/></td>
+                    </tr>
+                    <tr>
+                        <td width="50%" align="left"><font color="#16698b" size="3">*Kategorija:&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+                        <td width="50%" align="center">
+                            <select name="kategorija" style="width: 174px; margin-left: -5px;">
+                                <option value="1">Mlada</option>
+                                <option value="2">Mladoženja</option>
+                                <option value="3">Poslastičarnica</option>
+                                <option value="4">Muzika</option>
+                                <option value="5">Salon venčanica</option>
+                                <option value="6">Izrađivač pozivnica</option>
+                                <option value="7">Restoran</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" align="left"> <font color="#16698b" size="3"><br/> *Vaše ime:<br/></font> </td>
+                        <td width="50%" align="center"> <font color="#16698b" size="3"> <br/><br/><input type="text" name="imePrezime" size="20" required/> <br/><br/></td>
+                    </tr>
+                    <tr>
+                        <td width="50%" align="center"> </td>
+                        <td width="50%" align="center"> <font color="#16698b" size="1"></font> </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" align="left"> <font color="#16698b" size="3"><br/> *E-mail adresa:</font> </td>
+                        <td width="50%" align="center"> <br/><input type="text" name="email" size="20" required/> </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" align="center"> </td>
+                        <td width="50%" align="center"> <font color="#16698b" size="1"> </font> </td>
+                    </tr>                       
+                    <tr>
+                        <td width="50%" align="left"> <font color="#16698b" size="3"> <br/><br/>Vaša adresa: </font> </td>
+                        <td width="50%" align="center"> <br/><br/><input type="text" name="adresa" size="20"/> </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" align="center"> </td>
+                        <td width="50%" align="center"> <font color="#16698b" size="1"></font> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" height="20"> </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" align="left"> <font color="#16698b" size="3"> *Grad: </font> </td>
+                        <td width="50%" align="center"> <input name="grad" size="20" required/> </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" align="center"> </td>
+                        <td width="50%" align="center"> <font color="#16698b" size="1"></font> </td>
+                    </tr>
 
-        <tr>
-            <td align="right">Ponovite lozinku: &nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td><input type="password" name="lozinkaPonovo" style="width: 150px;" required></td>
-        </tr>
+                    <tr>
+                        <td width="50%" align="center"><br/> </td>
+                        <td width="50%" align="center"> <br/><input name="dugme" type="image" value="" src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/> </td>
+                    </tr>
+                    <tr>
+                        <td width="50%" align="center"></td>
+                        <td width="50%" align="center"> <font color="#16698b" size="2"><b><br/>*Polja označena zvezdicom su obavezna.</font></b></td>
+                    </tr>
 
-        <tr>
-            <td align="right">Kategorija:&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td align="center">
-                <select name="kategorija" style="width: 150px;">
-                    <option value="1">Mlada</option>
-                    <option value="2">Mladoženja</option>
-                    <option value="3">Poslastičarnica</option>
-                    <option value="4">Muzika</option>
-                    <option value="5">Salon venčanica</option>
-                    <option value="6">Izrađivač pozivnica</option>
-                    <option value="7">Restoran</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td align="center">
-                <input type="image" name="dugme" src="http://localhost:8080/Slike/potvrdi.jpeg" width="100" height="25"/> 
-            </td>
-        </tr>
-    </table>
-</form>
-</div>
+                </table>
+                <br>
+            </div>
+        </form> 
+    </center>
 
+    <br><br/><br/>
+    <?php
+    include_once("footer.php");
+    ?>
 
-</br></br></br></br>
-<?php include_once 'footer.php'; ?>  <br/> <br/>
 </body>
 </html>
-//print_r($podaci);
-
-//echo $podaci;?>

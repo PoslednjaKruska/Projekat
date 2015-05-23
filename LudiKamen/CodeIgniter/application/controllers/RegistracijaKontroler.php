@@ -1,9 +1,10 @@
 <?php
-session_start();
+
+//session_start();
 
 class RegistracijaKontroler extends CI_Controller {
 
-  //  protected $data = array("flag"=>"", "kategorija"=>"", "ime"=>"", "grad"=>"", "username"=>"" );
+    //  protected $data = array("flag"=>"", "kategorija"=>"", "ime"=>"", "grad"=>"", "username"=>"" );
 
     function Registracija() {
         //    $this->load->model('RegistracijaModel');
@@ -16,20 +17,29 @@ class RegistracijaKontroler extends CI_Controller {
         $data['flag'] = $this->RegistracijaModel->checkIfExists();
         if ($data['flag'] == 1 || $data['flag'] == 4) {
             $this->load->view('Registracija', $data);
+            return;
         }
         $data['flag'] = $this->RegistracijaModel->checkPassword();
         if ($data['flag'] == 2 || $data['flag'] == 3) {
             $this->load->view('Registracija', $data);
+            return;
         }
 
-        $_SESSION["username"] = $this->input->post('korime');
-        $_SESSION["password"] = $this->input->post('lozinka');
-        $this->load->view('Registracija2', $data);
+        $data['username'] = $this->input->post('korime');
+        $data['password'] = $this->input->post('lozinka');
+        $data['kategorija'] = $this->input->post('kategorija');
+        
+        //    $_SESSION['username'] = $this->input->post('korime');
+        //    $_SESSION['password'] = $this->input->post('lozinka');
+
+        $this->load->view('Registracija', $data);
     }
 
     function proveraDetalji() {
         $this->load->model('RegistracijaModel');
-     //   print_r($_SESSION);
+        echo 'username je: ';
+        //   echo $_SESSION['username'];
+        print_r($_SESSION);
         $this->load->view('UspesnaRegistracija');  // prosledi parametre
     }
 
