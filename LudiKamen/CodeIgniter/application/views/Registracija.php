@@ -45,6 +45,15 @@
 <?php } else if ($flag == 3) { ?>
     <b><i>  Unesene lozinke se ne poklapaju.</b> </br></br>
     Molimo Vas da ponovite unos.</i><br/><br/>
+    <?php } else if ($flag == 5) { ?>
+    <b><i>  Ime može da sadrži samo karaktere i svaka reč mora početi velikim slovom.</b> </br></br>
+    Molimo Vas da ponovite unos.</i><br/><br/>
+     <?php } else if ($flag == 6) { ?>
+    <b><i>  Format e-mail adrese nije korektan.</b> </br></br>
+    Molimo Vas da ponovite unos.</i><br/><br/>
+     <?php } else if ($flag == 7) { ?>
+    <b><i>  Naziv grada nije unesen u odgovarajućem formatu.</b> </br></br>
+    Molimo Vas da ponovite unos.</i><br/><br/>
 <?php } else { ?>
               
               <font id="naslov2" style="font-size:30px"> Registracija</font>

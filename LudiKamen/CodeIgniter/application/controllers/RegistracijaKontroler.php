@@ -1,13 +1,9 @@
 <?php
 
-//session_start();
 
 class RegistracijaKontroler extends CI_Controller {
 
-    //  protected $data = array("flag"=>"", "kategorija"=>"", "ime"=>"", "grad"=>"", "username"=>"" );
-
     function Registracija() {
-        //    $this->load->model('RegistracijaModel');
         $data['flag'] = 0;
         $this->load->view('Registracija', $data);
     }
@@ -29,18 +25,37 @@ class RegistracijaKontroler extends CI_Controller {
         $data['password'] = $this->input->post('lozinka');
         $data['kategorija'] = $this->input->post('kategorija');
         
-        //    $_SESSION['username'] = $this->input->post('korime');
-        //    $_SESSION['password'] = $this->input->post('lozinka');
-
-        $this->load->view('Registracija', $data);
-    }
-
-    function proveraDetalji() {
-        $this->load->model('RegistracijaModel');
-        echo 'username je: ';
-        //   echo $_SESSION['username'];
-        print_r($_SESSION);
-        $this->load->view('UspesnaRegistracija');  // prosledi parametre
+        $pomoc = $this->input->post('imePrezime');
+        $data['ime'] = explode(" ", $pomoc);
+        
+        $data['ime'] = $this->RegistracijaModel->formatMe($data['ime']);
+        if (sizeof($data['ime']) == 0)
+        {
+            $data['flag'] = 5;
+              $this->load->view('Registracija', $data);
+            return;
+        }
+        
+        $data['email'] = $this->input->post('email');
+        $ret = preg_match("/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/", $data['email']);
+        if ($ret==0)
+        {
+            $data['flag'] = 6;
+            $this->load->view('Registracija', $data);
+            return;
+        }
+        $data['adresa'] = $this->input->post('adresa');
+        $pomocna = $this->input->post('grad');
+        $data['grad'] = explode(" ", $pomocna);
+        $data['grad'] = $this->RegistracijaModel->formatMe($data['grad']);
+        if (sizeof($data['grad']) == 0)
+        {
+            $data['flag'] = 7;
+            $this->load->view('Registracija', $data);
+            return;
+        }
+        $this->RegistracijaModel->insertUser($data);
+        $this->load->view('UspesnaRegistracija', $data);
     }
 
 }
