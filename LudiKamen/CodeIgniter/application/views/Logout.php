@@ -1,9 +1,12 @@
+<?php
+?>
+
  <!DOCTYPE html>
 
 <html>
     
     <head>
-        <title>Success</title>
+        <title>Goodbye</title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
@@ -19,7 +22,7 @@
         ?>
         
         <br /><br />
-        
+<br /><br />        
         <center>
             <div id="tabela-rez" height="100%">
                 <div style="margin:30px">
@@ -27,9 +30,9 @@
                 </div>
                 <div style="margin:50px">
                     <font color="#16698b" size="3"> 
-                    <b> Čestitamo! </b> <br><br>
-                    Uspešno ste se registrovali na naš sajt! <br><br>
-                    Uskoro ćete dobiti potvrdu na Vašu e-mail adresu. <br><br><br>
+                    <b>
+                    Uspešno ste se izlogovali sa Vašeg naloga. <br><br>
+                    Hvala Vam što koristite naše usluge. <br><br><br></b>
                     </font>
                     <center>
                         <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pocetna"> <image src="http://localhost:8080/Slike/pocetna.jpeg" width="120" height="35"/> </a>
@@ -39,7 +42,7 @@
         </center>
         
         <br>
-    
+        <font color="black"><!--<p>Ovde bi mogli linkovi za najnovije ponude...--></font></p>
         <?php
            include_once("footer.php");
         ?>

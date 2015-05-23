@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class Rezervacija extends CI_Controller {
     
     function Restoran ($ime='') {

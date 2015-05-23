@@ -30,4 +30,12 @@ class LoginModel extends CI_Model {
         return $flag;
     }
 
+    function getParams ($data) {
+        $this->load->database();
+        $this->db->select('*');
+        $this->db->from('korisnik k');
+        $this->db->where('k.Username', $data['username']);
+        $ret = $this->db->get();
+        
+    }
 }
