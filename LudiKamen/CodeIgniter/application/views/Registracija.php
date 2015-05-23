@@ -73,7 +73,6 @@
         </tr>
         <tr>
             <td></td>
-            <!-- treba napisati fju za on action za dugme -->
             <td align="center">
                 <input type="image" name="dugme" src="http://localhost:8080/Slike/potvrdi.jpeg" width="100" height="25"/> 
             </td>
