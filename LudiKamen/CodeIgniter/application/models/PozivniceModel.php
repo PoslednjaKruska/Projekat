@@ -6,7 +6,6 @@ class PozivniceModel extends CI_Model {
         $this->load->database();
         
         $grad = $this->input->post('grad');
-        
         $this->db->select('k.ImePrezime, k.Adresa');
         $this->db->distinct();
         $this->db->from('korisnik k');
