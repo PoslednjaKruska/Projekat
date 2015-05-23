@@ -25,7 +25,7 @@
         
        <?php
             $i = $string = preg_replace('/\s+/', '', $flag);
-            $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/RegistracijaKontroler/Provera/";
+            $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/RegistracijaKontroler/ProveraDetalji/";
         ?>
         
         <center>
@@ -94,7 +94,6 @@
         </center>
         
         <br><br/><br/><br/>
-    
         <?php
            include_once("footer.php");
         ?>
