@@ -43,12 +43,12 @@ document.getElementById(elmnt).style.visibility="hidden"
 <script language="JavaScript">
 		
 			var br = 1;
-			var slike = [ '../../Slike/Vencanje1.jpg', '../../Slike/Vencanje2.jpg', '../../Slike/Vencanje3.jpg', '../../Slike/Vencanje4.jpg' ];
+			var slike = [ '../../Slike/Logo.jpg', '../../Slike/Vencanje1.jpg', '../../Slike/Vencanje2.jpg', '../../Slike/Vencanje3.jpg', '../../Slike/Vencanje4.jpg' ];
 			
 			function sledecaSlika () {
 				promeniSliku (br);
 				br++;
-				if (br == 5) br = 1;
+				if (br == 6) br = 1;
 				setTimeout ("sledecaSlika()", 6000);
 			}
 			
@@ -66,6 +66,9 @@ document.getElementById(elmnt).style.visibility="hidden"
 					document.getElementById("slike1").style.backgroundImage="url("+slike[3]+")";
 				}
 				
+				if (br == 5) {
+					document.getElementById("slike1").style.backgroundImage="url("+slike[4]+")";
+				}
 			}
 			
 		</script>
@@ -141,7 +144,10 @@ document.getElementById(elmnt).style.visibility="hidden"
     <br /><br />
     
  <div id="slike1">
-	
+		
+		<div id="dugme2" onMouseOver="style.background='#363636' ;promeniSliku(5)" onMouseOut="style.background='#6F6F6F'" > 
+			<div id="broj"> 5 </div> 
+		</div> 
 		<div id="dugme2" onMouseOver="style.background='#363636' ;promeniSliku(4)" onMouseOut="style.background='#6F6F6F'"> 
 			<div id="broj"> 4 </div> 
 		</div>
