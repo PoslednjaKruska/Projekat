@@ -3,7 +3,7 @@
 <table class="center" width="100%" height="50"  > 	
     <tr bgcolor="#62c2e8">
         <td class="center">
-            <a href="#"><img name="logo" src="http://localhost:8080/Slike/logoNatpis3.png" onmouseover="document.logo.src='http://localhost:8080/Slike/logoNatpis4.png'" onmouseout="document.logo.src='http://localhost:8080/Slike/logoNatpis3.png'" height="50"></a><br />
+            <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Pocetna"><img name="logo" src="http://localhost:8080/Slike/logoNatpis3.png" onmouseover="document.logo.src='http://localhost:8080/Slike/logoNatpis4.png'" onmouseout="document.logo.src='http://localhost:8080/Slike/logoNatpis3.png'" height="50"></a><br />
         </td>
         <td class="center">
             <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pretraga/Restorani">Restorani</a><br/>

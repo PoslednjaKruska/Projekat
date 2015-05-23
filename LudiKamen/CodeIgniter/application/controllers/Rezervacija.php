@@ -263,7 +263,7 @@ class Rezervacija extends CI_Controller {
 
 	if ($this->form_validation->run() == FALSE) {
             $nazivS = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeS);
-            $nazivV = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeP);
+            $nazivP = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeP);
             $data['nazivS'] = $nazivS;
             $data['nazivP'] = $nazivP;
             $this->load->view('RezervacijaPozivnica', $data);
