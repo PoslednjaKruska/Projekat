@@ -16,6 +16,19 @@ class PomocniModel extends CI_Model {
         return $query->result();
     }
     
+    function getPrice1 ($naziv) {
+        $this->load->database();
+         
+        $this->db->select('u.Cena');
+        $this->db->distinct();
+        $this->db->from('usluga u');
+        $this->db->where('u.Naziv', $naziv);
+        
+        $query = $this->db->get('usluga');
+        
+        return $query->result();
+    }
+    
     function getEmail ($naziv) {
         $this->load->database();
          

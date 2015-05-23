@@ -16,6 +16,24 @@ class Rezervacija extends CI_Controller {
         $this->load->view('RezervacijaMuzike', $data);
     }
     
+    function Torta ($imeP='', $imeT='') {
+        $nazivP = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeP);
+        $nazivT = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeT);
+        $data['nazivP'] = $nazivP;
+        $data['nazivT'] = $nazivT;
+        $this->load->helper(array('form', 'url'));
+        $this->load->view('RezervacijaTorte', $data);
+    }
+    
+    function Vencanica ($imeS='', $imeV='') {
+        $nazivS = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeS);
+        $nazivV = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeV);
+        $data['nazivS'] = $nazivS;
+        $data['nazivV'] = $nazivV;
+        $this->load->helper(array('form', 'url'));
+        $this->load->view('RezervacijaVencanice', $data);
+    }
+    
     function ProveraRestoran ($ime='') {
         $this->load->helper(array('form', 'url'));
 
@@ -114,6 +132,108 @@ class Rezervacija extends CI_Controller {
 	}
     }
     
+    function ProveraTorta ($imeP='', $imeT='') {
+        $this->load->helper(array('form', 'url'));
+
+	$this->load->library('form_validation');
+        
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+        
+        $this->form_validation->set_rules('ime', ' ', 'required|alpha');
+	$this->form_validation->set_rules('adresa', ' ', 'required|alpha_dash');
+	$this->form_validation->set_rules('email', ' ', 'required|valid_email');
+        
+        $this->form_validation->set_rules('datum', ' ', 'required|callback_date_check');
+	$this->form_validation->set_rules('kolicina', ' ', 'required|is_natural_no_zero');
+        
+        $this->form_validation->set_rules('brkartice', ' ', 'required');
+	$this->form_validation->set_rules('datumisteka', ' ', 'required|callback_date_check');
+	$this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric');
+
+	if ($this->form_validation->run() == FALSE) {
+            $nazivP = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeP);
+            $nazivT = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeT);
+            $data['nazivP'] = $nazivP;
+            $data['nazivT'] = $nazivT;
+            $this->load->view('RezervacijaTorte', $data);
+	}
+	else {    
+    /*        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
+            $from = "ludikamen@gmail.com";
+            
+            $emailKor = $this->input->post('email');
+            $subjectKor = "Potvrda rezervacije";
+            $commentKor = "neki tekst"; // napisati...
+
+            mail($emailKor, $subjectKor, $commentKor, $from);
+            
+            $this->load->model('PomocniModel');
+            $query = $this->PomocniModel->getEmail($naziv);
+            $emailUsl = null;
+            foreach ($query as $row) {
+                $emailUsl = $row->Email;
+            }
+
+            $subjectUsl = "Rezervacija Vase usluge";
+            $commentUsl = "neki tekst"; // napisati...
+            
+            mail($emailUsl, $subjectUsl, $commentUsl, $from);  */
+            
+            $this->load->view('UspesnaRezervacija');
+	}
+    }
+    
+    function ProveraVencanica ($imeS='', $imeV='') {
+        $this->load->helper(array('form', 'url'));
+
+	$this->load->library('form_validation');
+        
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+        
+        $this->form_validation->set_rules('ime', ' ', 'required|alpha');
+	$this->form_validation->set_rules('adresa', ' ', 'required|alpha_dash');
+	$this->form_validation->set_rules('email', ' ', 'required|valid_email');
+        
+        $this->form_validation->set_rules('datum', ' ', 'required|callback_date_check');
+	$this->form_validation->set_rules('kolicina', ' ', 'required|is_natural_no_zero');
+        
+        $this->form_validation->set_rules('brkartice', ' ', 'required');
+	$this->form_validation->set_rules('datumisteka', ' ', 'required|callback_date_check');
+	$this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric');
+
+	if ($this->form_validation->run() == FALSE) {
+            $nazivS = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeS);
+            $nazivV = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeV);
+            $data['nazivS'] = $nazivS;
+            $data['nazivV'] = $nazivV;
+            $this->load->view('RezervacijaVencanice', $data);
+	}
+	else {    
+    /*        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
+            $from = "ludikamen@gmail.com";
+            
+            $emailKor = $this->input->post('email');
+            $subjectKor = "Potvrda rezervacije";
+            $commentKor = "neki tekst"; // napisati...
+
+            mail($emailKor, $subjectKor, $commentKor, $from);
+            
+            $this->load->model('PomocniModel');
+            $query = $this->PomocniModel->getEmail($naziv);
+            $emailUsl = null;
+            foreach ($query as $row) {
+                $emailUsl = $row->Email;
+            }
+
+            $subjectUsl = "Rezervacija Vase usluge";
+            $commentUsl = "neki tekst"; // napisati...
+            
+            mail($emailUsl, $subjectUsl, $commentUsl, $from);  */
+            
+            $this->load->view('UspesnaRezervacija');
+	}
+    }
+    
     function date_check ($date) {
         $uzorak = '@(([0][1-9]|[1-2][0-9])/([0][1-9]|[1-2][0-9]|[3][0-1])/([0-9][0-9][0-9][0-9]))@';
         if (preg_match($uzorak, $date) != 1) {
@@ -153,6 +273,18 @@ class Rezervacija extends CI_Controller {
         $ukupno = null;
         foreach ($cena as $row) {
             $ukupno = $row->Cena * $brsati;
+        }
+        $poruka = $ukupno . " €";
+        echo $poruka;
+    }
+    
+    function CenaTorta ($ime, $kolicina) {
+        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
+        $this->load->model('PomocniModel');
+        $cena = $this->PomocniModel->getPrice1($naziv);
+        $ukupno = null;
+        foreach ($cena as $row) {
+            $ukupno = $row->Cena * $kolicina;
         }
         $poruka = $ukupno . " €";
         echo $poruka;
