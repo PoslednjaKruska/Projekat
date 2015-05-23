@@ -38,13 +38,19 @@
            include_once("header.php");
         ?>
         
+        <br /><br />
+        
         <?php
             $i = preg_replace('/\s+/', '', $naziv);
             $slika = "http://localhost:8080/Slike/" . $i . "1.jpg";
             $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/Restoran/" . $i;
+            $link1 = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pretraga/Restorani";
+            
+            if ($brRedova == 0) {
+                echo "<font id='naslov2' style='margin: 5%'> Restoran još uvek nije izbacio svoju ponudu. </font> <br><br>";
+            }
+            else {
         ?>
-        
-        <br /><br />
         
         <div id="zajedno">
             
@@ -85,12 +91,14 @@
                         </font> 
                         <font id="naslov2" style="font-size:30px"> Cena po osobi je:  <?php echo $row->Cena; ?> €  </font> <br><br>
                         <a href="<?php echo $link; ?>"> <image src="http://localhost:8080/Slike/rezervisi.jpg" width="120" height="35" /> </a>
+                        &nbsp; &nbsp; &nbsp;
+                        <a href="<?php echo $link1; ?>"> <image src="http://localhost:8080/Slike/nazad.jpeg" width="120" height="35" /> </a>
                     </div>
                 </div>
             </div>
             
             <?php
-                }
+            } }
             ?>
             
         </div>

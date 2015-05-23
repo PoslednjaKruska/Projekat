@@ -184,7 +184,7 @@ p {
 
 #zajedno{
     float: center;
-    width : 100%;	
+    width : 100%;
 }
 
 #slike {
@@ -222,7 +222,7 @@ p {
 #pretraga1 {
     float: right;
     width: 52%;
-    height: 400px; 
+    height: 500px;
 }
 
 #opis1 {
@@ -264,10 +264,11 @@ p {
 }
 
 #tabela-usluga {
-    border-top-color: #16698b;
-    border-top-style: dashed;
-    border-bottom-color: #16698b;
-    border-bottom-style: dashed;
-    width: 70%;
+    border-color: #16698b;
+    border-style: solid;
+    width: 60%;
     background-color: white;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: #e3f2f2;
 }

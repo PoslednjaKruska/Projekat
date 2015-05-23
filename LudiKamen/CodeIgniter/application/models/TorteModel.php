@@ -41,6 +41,19 @@ class TorteModel extends CI_Model {
         
         $this->db->select('k.ImePrezime, k.Grad, k.Adresa, k.Email');
         $this->db->distinct();
+        $this->db->from('korisnik k');
+        $this->db->where('k.ImePrezime', $naziv);
+
+        $query = $this->db->get('usluga');
+        
+        return $query->result();
+    }
+    
+    function getAllCakes ($naziv) {
+        $this->load->database();
+        
+        $this->db->select('u.Naziv, u.Opis, u.Velicina, u.Ocena, u.Cena');
+        $this->db->distinct();
         $this->db->from('usluga u');
         $this->db->join('korisnik k', 'u.IDPruzalac = k.IDKorisnik', 'left');
         $this->db->where('k.ImePrezime', $naziv);
@@ -48,6 +61,20 @@ class TorteModel extends CI_Model {
         $query = $this->db->get('usluga');
         
         return $query->result();
+    }
+    
+    function getNumCakes ($naziv) {
+        $this->load->database();
+        
+        $this->db->select('u.Naziv, u.Opis, u.Velicina, u.Ocena, u.Cena');
+        $this->db->distinct();
+        $this->db->from('usluga u');
+        $this->db->join('korisnik k', 'u.IDPruzalac = k.IDKorisnik', 'left');
+        $this->db->where('k.ImePrezime', $naziv);
+
+        $query = $this->db->get('usluga');
+        
+        return $query->num_rows();
     }
     
 }
