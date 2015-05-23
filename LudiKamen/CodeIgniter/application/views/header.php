@@ -28,7 +28,7 @@
         </td>
         <td class="center" >
             <a href="#"><img src="http://localhost:8080/Slike/login.jpeg" width="80" height="35" /></a>&nbsp;&nbsp;
-            <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/RegistracijaKontroler"><img src="http://localhost:8080/Slike/signup.jpg" width="80" height="35" /></a><br />
+            <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/RegistracijaKontroler/Registracija"><img src="http://localhost:8080/Slike/signup.jpg" width="80" height="35" /></a><br />
         </td>
     </tr>
 </table>

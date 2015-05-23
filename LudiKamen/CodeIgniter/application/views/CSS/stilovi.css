@@ -250,10 +250,10 @@ p {
 
 
 #tabelaRegistracija {
-    width: 350px;
+    width: 370px;
     height: 270px;
     background-color: #62c2e8;
-    border-radius: 15px 50px;
+    border-radius: 10px 40px;
     float: center;
 }
 

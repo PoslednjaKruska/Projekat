@@ -1,7 +1,25 @@
 <?php
 
 class RegistracijaKontroler extends CI_Controller {
-    function index () {
-        $this->load->view('Registracija');
+
+    function Registracija() {
+        //    $this->load->model('RegistracijaModel');
+        $data['flag'] = 0;
+        $this->load->view('Registracija', $data);
     }
+
+    function provera() {
+        $this->load->model('RegistracijaModel');
+        $data['flag'] = $this->RegistracijaModel->checkIfExists();
+        if ($data['flag'] == 1 || $data['flag'] == 4) {
+            $this->load->view('Registracija', $data);
+        }
+        $data['flag'] = $this->RegistracijaModel->checkPassword();
+        if ($data['flag'] == 2 || $data['flag'] == 3)
+            $this->load->view('Registracija', $data);
+       
+        $data['kategorija'] = $this->RegistracijaModel->category();
+        $this->load->view('Registracija2', $data);  // nece ici na ovu stranu registracije
+    }
+
 }
