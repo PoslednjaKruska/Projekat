@@ -5,7 +5,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Restorani | Majdan</title>
+<title>Kontakt</title>
 
  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -40,35 +40,7 @@ document.getElementById(elmnt).style.visibility="hidden"
 }
 </script>
 
-<script language="JavaScript">
-		
-			var br = 1;
-			var slike = [ '../../Slike/majdan1.jpg', '../../Slike/11.jpg', '../../Slike/21.jpg', '../../Slike/31.jpg' ];
-			
-			function sledecaSlika () {
-				promeniSliku (br);
-				br++;
-				if (br == 5) br = 1;
-				setTimeout ("sledecaSlika()", 6000);
-			}
-			
-			function promeniSliku (br) {
-				if (br == 1) {
-					document.getElementById('slike').style.backgroundImage="url("+slike[0]+")";
-				}
-				if (br == 2) {
-					document.getElementById("slike").style.backgroundImage="url("+slike[1]+")";
-				}
-				if (br == 3) {
-					document.getElementById("slike").style.backgroundImage="url("+slike[2]+")";
-				}
-				if (br == 4) {
-					document.getElementById("slike").style.backgroundImage="url("+slike[3]+")";
-				}
-				
-			}
-			
-		</script>
+
 		
 </head>
 
@@ -136,42 +108,21 @@ document.getElementById(elmnt).style.visibility="hidden"
 
 <!-- InstanceBeginEditable name="EditRegion3" -->
 <div id="zajedno">
- <div id="slike">
-	
-		<div id="dugme1" onMouseOver="style.background='#363636' ;promeniSliku(4)" onMouseOut="style.background='#6F6F6F'"> 
-			<div id="broj"> 4 </div> 
-		</div>
-		<div id="dugme1" onMouseOver="style.background='#363636' ;promeniSliku(3)" onMouseOut="style.background='#6F6F6F'" > 
-			<div id="broj"> 3 </div> 
-		</div>
-		<div id="dugme1" onMouseOver="style.background='#363636' ;promeniSliku(2)" onMouseOut="style.background='#6F6F6F'" > 
-			<div id="broj"> 2 </div> 
-		</div>
-		<div id="dugme1" onMouseOver="style.background='#363636' ;promeniSliku(1)" onMouseOut="style.background='#6F6F6F'" > 
-			<div id="broj"> 1 </div> 
-		</div> 
-		<!--<div id="cena">
-			<font id="naslov2" style="font-size:30px"> Cena je:  ...  </font>	
-		</div>
-		<center> <button form="forma-filteri" id="rezervisi" type="submit"> <font style="color:#e3f2f2;"> REZERVISI </font></button> </center>-->
-	
-</div>
-
-  <div id="pretraga1">
-  	<font id="naslov2" style="font-size:30px"> Restoran Hotela Majdan </font>
+<center>
+  	<font id="naslov4" style="font-size:30px"> <br /> Kontakt </font>
     <br /><br />
     <div id="radnja">
-        <div id="opis2">
+       <div id="opis2">
         	<br /> <br />
-            Opis restorana
+            Nesto o nama... ko ima inspiraciju neka pise
         </div>
 	</div>
-	
-   </div> 
+	</center>
+
    <div id="cena">
-			<font id="naslov2" style="font-size:23px"> Cena po osobi je:  ...  </font>	
+	<font id="naslov2" style="font-size:23px"> </font>	
    </div>
-   <center> <button form="forma-filteri" id="rezervisi" type="submit"> <font style="color:#e3f2f2;"> REZERVISITE </font></button> </center>
+ 
 <!-- InstanceEndEditable -->
 
 </div>
