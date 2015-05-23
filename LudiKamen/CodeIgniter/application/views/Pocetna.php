@@ -13,12 +13,12 @@
         
         <script>
             var br = 1;
-            var slike = ['http://localhost:8080/Slike/Vencanje1.jpg', 'http://localhost:8080/Slike/Vencanje2.jpg', 'http://localhost:8080/Slike/Vencanje3.jpg', 'http://localhost:8080/Slike/Vencanje4.jpg'];
+            var slike = ['http://localhost:8080/Slike/LogoPocetna.jpg', 'http://localhost:8080/Slike/Vencanje1.jpg', 'http://localhost:8080/Slike/Vencanje2.jpg', 'http://localhost:8080/Slike/Vencanje3.jpg', 'http://localhost:8080/Slike/Vencanje4.jpg'];
             
             function sledecaSlika () {
 		promeniSliku (br);
 		br++;
-		if (br === 5) br = 1;
+		if (br === 6) br = 1;
 		setTimeout ("sledecaSlika()", 6000);
             }
             
@@ -30,10 +30,13 @@
                     document.getElementById("slike1").style.backgroundImage="url("+slike[1]+")";
 		}
 		if (br === 3) {
-                	document.getElementById("slike1").style.backgroundImage="url("+slike[2]+")";
+                    document.getElementById("slike1").style.backgroundImage="url("+slike[2]+")";
 		}
 		if (br === 4) {
-                	document.getElementById("slike1").style.backgroundImage="url("+slike[3]+")";
+                    document.getElementById("slike1").style.backgroundImage="url("+slike[3]+")";
+		}
+                if (br === 5) {
+                    document.getElementById("slike1").style.backgroundImage="url("+slike[4]+")";
 		}
             }
         </script>
@@ -52,6 +55,9 @@
             <div id="pretraga2">
                 <font id="naslov3" style="font-size:30px"> <center> Naši zadovoljni mladenci </center></font>
                 <div id="slike1">
+                    <div id="dugme2" onMouseOver="style.background='#363636' ;promeniSliku(5)" onMouseOut="style.background='#6F6F6F'"> 
+                            <div id="broj"> 5 </div> 
+                    </div>
                     <div id="dugme2" onMouseOver="style.background='#363636' ;promeniSliku(4)" onMouseOut="style.background='#6F6F6F'"> 
                             <div id="broj"> 4 </div> 
                     </div>
