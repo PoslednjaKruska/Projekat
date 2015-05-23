@@ -48,8 +48,6 @@
            include_once("header.php");
         ?>
         
-        <br /><br />
-        
         <div id="zajedno">
             
             <div id="pretraga2">
