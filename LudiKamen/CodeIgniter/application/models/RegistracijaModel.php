@@ -68,10 +68,17 @@ class RegistracijaModel extends CI_Model {
             'ImePrezime' => $ime,
             'Kategorija' => $data['kategorija'],
             'Grad' => $grad,
-            'DatumReg' => 'danas', 
-            'DatumIzmene' => 'danas'
+            'DatumReg' => date("d/m/Y"), 
+            'DatumIzmene' => date("d/m/Y")
             );
         
         $this->db->insert('Korisnik', $red);
     }
+    
+    function updateUser ($data, $user) {
+        $this->load->database();
+  //      $this->db->where('k.username', $user);
+    //    $this->db->update('korisnik', $data);
+    }
+    
 }
