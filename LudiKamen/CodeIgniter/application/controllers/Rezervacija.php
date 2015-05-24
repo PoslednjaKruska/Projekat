@@ -322,7 +322,8 @@ class Rezervacija extends CI_Controller {
         foreach ($cena as $row) {
             $ukupno = $row->Cena * $brgosti;
         }
-        $poruka = $ukupno . " €";
+        if ($ukupno == null) { $poruka = "GREŠKA"; } 
+        else { $poruka = $ukupno . " €"; }
         echo $poruka;
     }
     
@@ -334,7 +335,8 @@ class Rezervacija extends CI_Controller {
         foreach ($cena as $row) {
             $ukupno = $row->Cena * $brsati;
         }
-        $poruka = $ukupno . " €";
+        if ($ukupno == null) { $poruka = "GREŠKA"; } 
+        else { $poruka = $ukupno . " €"; }
         echo $poruka;
     }
     
@@ -346,7 +348,8 @@ class Rezervacija extends CI_Controller {
         foreach ($cena as $row) {
             $ukupno = $row->Cena * $kolicina;
         }
-        $poruka = $ukupno . " €";
+        if ($ukupno == null) { $poruka = "GREŠKA"; } 
+        else { $poruka = $ukupno . " €"; }
         echo $poruka;
     }
     
@@ -358,7 +361,8 @@ class Rezervacija extends CI_Controller {
         foreach ($cena as $row) {
             $ukupno = $row->Cena * $kolicina;
         }
-        $poruka = $ukupno . " €";
+        if ($ukupno == null) { $poruka = "GREŠKA"; } 
+        else { $poruka = $ukupno . " €"; }
         echo $poruka;
     }
     
@@ -370,7 +374,8 @@ class Rezervacija extends CI_Controller {
         foreach ($cena as $row) {
             $ukupno = $row->Cena * $kolicina;
         }
-        $poruka = $ukupno . " €";
+        if ($ukupno == null) { $poruka = "GREŠKA"; } 
+        else { $poruka = $ukupno . " €"; }
         echo $poruka;
     }
     

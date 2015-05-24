@@ -72,8 +72,6 @@
                 <br><br>
             </div>
             
-            <br><br>
-            
             <div id="pretraga3">
                 <font id="naslov3" style="font-size:30px"> Naše najtraženije usluge  </font>
                 <br />
