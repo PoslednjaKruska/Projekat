@@ -23,8 +23,12 @@
     
     <body>
         
-        <?php
-           include_once("header.php");
+          <?php
+        if ($sesija) {
+            include_once("header2.php");
+        } else {
+            include_once('header.php');
+        }
         ?>
         
         <br /><br />

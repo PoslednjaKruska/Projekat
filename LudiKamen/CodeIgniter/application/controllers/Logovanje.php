@@ -29,8 +29,8 @@ class Logovanje extends CI_Controller {
     }
 
     function logout() {
-        //  echo 'parametri sesije koju brisem: ' .$_SESSION['username'];
         session_destroy();
+//        $_SESSION['is_open'] = FALSE;
         $this->load->view("Logout");
     }
 

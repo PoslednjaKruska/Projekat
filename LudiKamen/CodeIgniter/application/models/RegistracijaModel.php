@@ -76,6 +76,9 @@ class RegistracijaModel extends CI_Model {
     }
     
     function updateUser ($data, $user) {
-        
+        $this->load->database();
+  //      $this->db->where('k.username', $user);
+    //    $this->db->update('korisnik', $data);
     }
+    
 }
