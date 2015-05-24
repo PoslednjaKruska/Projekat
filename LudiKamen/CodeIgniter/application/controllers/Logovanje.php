@@ -126,6 +126,7 @@ class Logovanje extends CI_Controller {
             $this->load->view('Nalog', $data);
             return;
         }
+        
         $this->RegistracijaModel->updateUser($data, $_SESSION['username']);
         $this->load->view('UspesnaPromena', $data);
     }
