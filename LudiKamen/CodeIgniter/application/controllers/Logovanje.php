@@ -51,7 +51,7 @@ class Logovanje extends CI_Controller {
     }
 
     function proveraNaloga() {
-          $data = array(
+        $data = array(
             'flag' => 0,
             'username' => "",
             'password' => "",
@@ -65,25 +65,28 @@ class Logovanje extends CI_Controller {
         $this->load->model('RegistracijaModel');
         $this->load->model('LoginModel');
         $usern = $this->input->post('korime');
-        if ($usern != $_SESSION['username'])
+        if ($usern != $_SESSION['username']) {
             $data['flag'] = $this->RegistracijaModel->checkIfExists();
-        if ($data['flag'] == 1 || $data['flag'] == 4) {
-            $data['username'] = $_SESSION['username'];
-            $data['password'] = $_SESSION['password'];
-           $data = $this->LoginModel->getParams($data);
-            $this->load->view('Nalog', $data);
-            return;
+            if ($data['flag'] == 1 || $data['flag'] == 4) {
+                $data['username'] = $_SESSION['username'];
+                $data['password'] = $_SESSION['password'];
+                $data = $this->LoginModel->getParams($data);
+                $this->load->view('Nalog', $data);
+                return;
+            }
         }
         $data['flag'] = $this->RegistracijaModel->checkPassword();
         if ($data['flag'] == 2 || $data['flag'] == 3) {
             $data['username'] = $_SESSION['username'];
             $data['password'] = $_SESSION['password'];
             $data = $this->LoginModel->getParams($data);
-            $this->load->view('Registracija', $data);
+            $this->load->view('Nalog', $data);
             return;
         }
         $data['username'] = $this->input->post('korime');
         $data['password'] = $this->input->post('lozinka');
+        $data = $this->LoginModel->getParams($data);
+
         $data['kategorija'] = $this->input->post('kategorija');
         if ($data['kategorija'] == 1) {
             $data['kategorija'] = 2;
@@ -92,7 +95,7 @@ class Logovanje extends CI_Controller {
         $data['ime'] = explode(" ", $pomoc);
 
         $data['ime'] = $this->RegistracijaModel->formatMe($data['ime']);
-        if (sizeof($data['ime']) == 0) {    
+        if (sizeof($data['ime']) == 0) {
             $data['username'] = $_SESSION['username'];
             $data['password'] = $_SESSION['password'];
             $data = $this->LoginModel->getParams($data);
@@ -103,7 +106,7 @@ class Logovanje extends CI_Controller {
 
         $data['email'] = $this->input->post('email');
         $ret = preg_match("/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/", $data['email']);
-        if ($ret == 0) {   
+        if ($ret == 0) {
             $data['username'] = $_SESSION['username'];
             $data['password'] = $_SESSION['password'];
             $data = $this->LoginModel->getParams($data);
@@ -115,7 +118,7 @@ class Logovanje extends CI_Controller {
         $pomocna = $this->input->post('grad');
         $data['grad'] = explode(" ", $pomocna);
         $data['grad'] = $this->RegistracijaModel->formatMe($data['grad']);
-        if (sizeof($data['grad']) == 0) {    
+        if (sizeof($data['grad']) == 0) {
             $data['username'] = $_SESSION['username'];
             $data['password'] = $_SESSION['password'];
             $data = $this->LoginModel->getParams($data);
