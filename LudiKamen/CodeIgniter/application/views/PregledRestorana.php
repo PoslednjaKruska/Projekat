@@ -48,6 +48,7 @@
             
             if ($brRedova == 0) {
                 echo "<font id='naslov2' style='margin: 5%'> Restoran još uvek nije pripremio svoju ponudu. </font> <br><br>";
+                echo "<a style='margin: 5%' href='http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pretraga/Restorani'> <image src='http://localhost:8080/Slike/nazad.jpeg' width='120' height='35' /> </a>";
             }
             else {
         ?>

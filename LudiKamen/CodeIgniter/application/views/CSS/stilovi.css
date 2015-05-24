@@ -278,14 +278,14 @@ p {
     font-size:20px;
     font-weight:bold;
     color:#16698b;
-    margin: 4%;
+ /*   margin: 4%;*/
     margin-left: 150px;
 }
 
 #pretraga2 {
     float: left;
     width: 50%;
-    margin-top: 2%;
+/*    margin-top: 2%;*/
 }
 
 #slike1 {
@@ -302,7 +302,7 @@ p {
 #pretraga3 {
     float: right;
     width: 50%;
-    margin-top: 2%;
+    margin-top: 3%;
 }
 
 #dugme2 {
@@ -320,13 +320,12 @@ p {
 
 #radnja1 {
     width: 90%;
-    height: 15%; 
     margin-left: 30px;	
 }
 
 #desno {
     width: 540px;
-    height: 400px;
+/*    height: 400px;*/
     margin-left: 30px;
     float: left;
 }
