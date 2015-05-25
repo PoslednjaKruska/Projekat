@@ -77,6 +77,37 @@ class VencaniceModel extends CI_Model {
         return $query->num_rows();
     }
     
+    function rezervisi ($korisnik, $usluga, $datum) {
+        $this->load->database();
+        $idKor = null;
+        $idUsl = null;
+        
+        $this->db->select('k.IDKorisnik');
+        $this->db->from('Korisnik k');
+        $this->db->where('k.Username', $korisnik);
+        $query1 = $this->db->get('korisnik')->result();
+        foreach ($query1 as $row) {
+            $idKor = $row->IDKorisnik;
+        }
+        
+        $this->db->select('u.IDUsluga');
+        $this->db->from('Usluga u');
+        $this->db->where('u.Naziv', $usluga);
+        $query2 = $this->db->get('usluga')->result();
+        foreach ($query2 as $row) {
+            $idUsl = $row->IDUsluga;
+        }
+        
+        $red['IDKorisnik'] = $idKor;
+        $red['IDUsluga'] = $idUsl;
+        $red['DatumRezervacije'] = $datum;
+        
+        if ($idKor != null && $idUsl != null & $datum != null) {
+            $this->db->insert('Koristi', $red);           
+        }
+
+    }
+    
 }
 
 ?>

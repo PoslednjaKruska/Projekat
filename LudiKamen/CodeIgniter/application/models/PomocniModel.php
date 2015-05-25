@@ -42,6 +42,19 @@ class PomocniModel extends CI_Model {
         return $query->result();
     }
     
+    function getKorisnik ($username) {
+        $this->load->database();
+        
+        $this->db->select('k.ImePrezime, k.Adresa, k.Email');
+        $this->db->distinct();
+        $this->db->from('korisnik k');
+        $this->db->where('k.Username', $username);
+        
+        $query = $this->db->get('korisnik');
+        
+        return $query->result();
+    }
+    
 }
 
 ?>

@@ -15,7 +15,8 @@
     <body>
         
         <?php
-           include_once("header.php");
+        if ($sesija) { include_once("header2.php"); }
+        else { include_once("header.php"); }
         ?>
         
         <br /><br />
@@ -32,7 +33,7 @@
                     Uskoro ćete dobiti potvrdu na svoju e-mail adresu. <br><br><br>
                     </font>
                     <center>
-                        <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pocetna"> <image src="http://localhost:8080/Slike/povratak.jpeg" width="120" height="35"/> </a>
+                        <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Pocetna"> <image src="http://localhost:8080/Slike/povratak.jpeg" width="120" height="35"/> </a>
                     </center>
                 </div>
             </div>

@@ -1,9 +1,13 @@
 
 <?php
 
+session_start();
+
 class Pregled extends CI_Controller {
     
     function Restoran ($ime='') {
+        if ($_SESSION == TRUE) { $data['sesija'] = $_SESSION['username']; }
+        else { $data['sesija'] = 0; }
         $this->load->model('RestoranModel');
         $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
         $data['naziv'] = $naziv;
@@ -13,6 +17,8 @@ class Pregled extends CI_Controller {
     }
     
     function Muzika ($ime='') {
+        if ($_SESSION == TRUE) { $data['sesija'] = $_SESSION['username']; }
+        else { $data['sesija'] = 0; }
         $this->load->model('MuzikaModel');
         $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
         $data['naziv'] = $naziv;
@@ -22,6 +28,8 @@ class Pregled extends CI_Controller {
     }
     
     function Poslasticarnica ($ime='') {
+        if ($_SESSION == TRUE) { $data['sesija'] = $_SESSION['username']; }
+        else { $data['sesija'] = 0; }        
         $this->load->model('TorteModel');
         $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
         $data['naziv'] = $naziv;
@@ -32,6 +40,8 @@ class Pregled extends CI_Controller {
     }
     
     function Salon ($ime='') {
+        if ($_SESSION == TRUE) { $data['sesija'] = $_SESSION['username']; }
+        else { $data['sesija'] = 0; }        
         $this->load->model('VencaniceModel');
         $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
         $data['naziv'] = $naziv;
@@ -42,6 +52,8 @@ class Pregled extends CI_Controller {
     }
     
     function Stamparija ($ime='') {
+        if ($_SESSION == TRUE) { $data['sesija'] = $_SESSION['username']; }
+        else { $data['sesija'] = 0; }        
         $this->load->model('PozivniceModel');
         $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
         $data['naziv'] = $naziv;
