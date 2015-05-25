@@ -17,20 +17,32 @@ class LoginModel extends CI_Model {
             return $flag;
         }
 
-        $this->db->select('IDKorisnik');
+        $this->db->select('IDKorisnik, Kategorija');
         $this->db->from('Korisnik');
         $this->db->where('Username', $username);
         $this->db->where('Password', $lozinka);
-        $rez = $this->db->get();
-        if ($rez->num_rows() == 0) {
+        $rezultat2 = $this->db->get()->result();
+        if (!$rezultat2) {
             $flag = 2;
             return $flag;
         }
-        $flag = 0;
+        foreach ($rezultat2 as $red)
+        {
+            if ($red->Kategorija == 1) {
+                $flag = 10;  // admin
+                $niz = array(
+                    'IDKorisnik' => $red->IDKorisnik,
+                    'Datum' => date("d/m/Y")
+                );
+                $this->db->where('IDKorisnik', $niz['IDKorisnik']);
+                $this->db->update('logovanjeadmina', $niz);
+            } else
+                $flag = 0;
+        }
         return $flag;
     }
 
-    function getParams ($data) {
+    function getParams($data) {
         $this->load->database();
         $korime = $data['username'];
         $this->db->select('*');
@@ -46,4 +58,5 @@ class LoginModel extends CI_Model {
         }
         return $data;
     }
+
 }

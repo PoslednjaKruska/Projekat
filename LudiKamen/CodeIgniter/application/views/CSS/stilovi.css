@@ -351,3 +351,15 @@ p {
     width: 230px;
     height: 170px;
 }
+
+#admin {
+    color: #16698b;
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-style:italic;
+}
+
+a:hover {
+   text-decoration: underline; // changed from text:decoration:none
+}

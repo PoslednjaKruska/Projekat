@@ -20,12 +20,13 @@ class Logovanje extends CI_Controller {
         }
         $data['username'] = $this->input->post('korime');
         $data['lozinka'] = $this->input->post('lozinka');
-
+     
         $_SESSION['username'] = $data['username'];
         $_SESSION['password'] = $data['lozinka'];
-        //  echo 'parametri sesije: ' .$_SESSION['username'];
-
-        $this->load->view("UspesanLogin", $data);
+        if ($data['flag'] != 10)
+            $this->load->view("UspesanLogin", $data);
+        else
+            $this->load->view('AdminsPage', $data);
     }
 
     function logout() {
