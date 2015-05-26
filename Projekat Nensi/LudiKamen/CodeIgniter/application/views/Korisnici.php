@@ -24,12 +24,12 @@
             
             <?php 
             if ($empty == 1) {
-                echo "<font id='naslov2'> Nema rezultata. </font> <br><br>";
+                echo "<font id='naslov2'><br><br> Nema rezultata. </font> <br><br>";
             }
             else {
             foreach ($query as $red) { 
                 $ime = str_replace(' ', '', $red->ImePrezime);
-                $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/NalogKorisnika/red';
+                $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/NalogKorisnika/'.$red->Username;
             ?>
             <div id="radnja">
 		<br>

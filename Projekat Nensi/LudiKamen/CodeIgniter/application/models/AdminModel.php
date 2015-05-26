@@ -50,4 +50,19 @@ class AdminModel extends CI_Model {
             return $rez;
         }
     }
+    
+    function deleteUser () {
+        $this->load->database();
+        $user = $this->input->post('korime');
+        $this->db->from('korisnik');
+        $this->db->where('Username', $user);
+        $this->db->delete();
+    }
+    
+    function brisiUslugu ($ime) {
+        $this->load->database();
+        $this->db->from('usluga');
+        $this->db->where('Naziv', $ime);
+        $this->db->delete();
+    }
 }

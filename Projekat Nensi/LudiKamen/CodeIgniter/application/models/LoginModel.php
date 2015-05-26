@@ -48,6 +48,8 @@ class LoginModel extends CI_Model {
             $data['kategorija'] = $row->Kategorija;
             $data['email'] = $row->Email;
             $data['adresa'] = $row->Adresa;
+            if ($data['admin'] == 1)
+                $data['password'] = $row->Password;
         }
         return $data;
     }

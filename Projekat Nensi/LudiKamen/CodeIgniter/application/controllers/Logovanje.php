@@ -159,18 +159,20 @@ class Logovanje extends CI_Controller {
     }
 
     function nalogKorisnika($prom) {
-        foreach ($prom as $red)
+  
         $data = array(
-            'username' => $red->Username,
-            'password' => $red->Password,
-            'ime' => $red->ImePrezime,
-            'grad' => $red->Grad,
-            'kategorija' => $red->Kategorija,
-            'email' => $red->Email,
-            'adresa' => $red->Adresa,
+            'username' => $prom,
+            'password' => "",
+            'ime' => "",
+            'grad' => "",
+            'kategorija' => "",
+            'email' => "",
+            'adresa' => "",
             'flag' => 0,
             'admin' => 1
         );
+          $this->load->model('LoginModel');
+        $data = $this->LoginModel->getParams($data);
 //        $this->load->model('LoginModel');
 //        $data = $this->LoginModel->getParams($data);
         if ($data['kategorija'] == 0)

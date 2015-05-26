@@ -30,10 +30,14 @@
         <?php
         $i = $string = preg_replace('/\s+/', '', $flag);
         $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/ProveraNaloga/";
+        $link2 = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/AdminKontroler/Brisanje/";
         ?>
 
     <center>
+        <?php if ($admin == 0) { ?>
         <form name="rezervacija" method="post" <?php echo "action='{$link}'/>"; ?>
+        <?php } else ?><form name="rezervacija" method="post" <?php echo "action='{$link2}'/>"; ?>
+      
               <div style="text-align:center" id="tekstRegistracija">
                         <?php if ($flag == 4) {
                 ?>  
@@ -138,7 +142,9 @@
 
                     <tr>
                         <td width="50%" align="center"><br/> </td>
-                        <td width="50%" align="center"> <br/><input name="dugme" type="image" value="" src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/> </td>
+                        <td width="50%" align="center"> <br/> <?php if ($admin==0) { ?><input name="dugme" type="image" value="" src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/>
+                        <?php } else { ?><input name="dugme" type="image" value="" src="http://localhost:8080/Slike/obrisi.jpeg" width="120" height="35"/><?php } ?>
+                        </td>
                     </tr>
                     <tr>
                         <td width="50%" align="center"></td>
