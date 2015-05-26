@@ -23,7 +23,7 @@
     <body>
 
         <?php
-        include_once("header2.php");
+        include_once("header3.php");
         ?>
 
         <br /><br />
@@ -39,19 +39,26 @@
                     Dobrodošla, <?php echo $username ?>!<br></b><br><br>
                 </font><font size="3" color="#16698b">
                 Na sledećim linkovima su dostupne početna stranica i <br>izmene u bazi od tvog poslednjeg logovanja.<br><br>
-                <br>   <table align="center" cellpadding="17" style="background-color:#e3f2f2" >
+                <br>   <table align="center" cellpadding="6" style="background-color:#e3f2f2" >
+                    <tr>
+                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/Nalog">Moj nalog</font></a>
+                        </td>
+                    </tr>
+                    
                     <tr>
                         <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Pocetna">Početna</font></a>
                         </td>
                     </tr>
                     <tr>
-                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/AdminKontroler/Nalozi">Najnovije izmene naloga</font></a>
-
+                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/AdminKontroler/Nalozi">Najskorije izmene naloga</font></a>
                         </td>
                     </tr>
                     <tr>
-                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/AdminKontroler/Usluge">Najnovije izmene usluga</font></a>
-
+                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/AdminKontroler/Usluge">Najskorije izmene usluga</font></a>
+                        </td>
+                    </tr>
+                        <tr>
+                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/AdminKontroler/Rezervacije">Najskorije rezervacije</font></a>
                         </td>
                     </tr>
                 </table>

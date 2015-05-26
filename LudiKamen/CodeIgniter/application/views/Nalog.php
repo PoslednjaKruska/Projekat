@@ -17,8 +17,12 @@
 
     <body>
 
-        <?php
-        include_once("header2.php");
+    <?php
+        if ($admin == 1) {
+                include_once("header3.php");
+        }
+            else
+                include_once("header2.php");
         ?>
 
         <br /><br />
@@ -26,10 +30,14 @@
         <?php
         $i = $string = preg_replace('/\s+/', '', $flag);
         $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/ProveraNaloga/";
+        $link2 = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/AdminKontroler/Brisanje/";
         ?>
 
     <center>
+        <?php if ($admin == 0) { ?>
         <form name="rezervacija" method="post" <?php echo "action='{$link}'/>"; ?>
+        <?php } else ?><form name="rezervacija" method="post" <?php echo "action='{$link2}'/>"; ?>
+      
               <div style="text-align:center" id="tekstRegistracija">
                         <?php if ($flag == 4) {
                 ?>  
@@ -80,7 +88,7 @@
                     <tr>
                         <td width="50%" align="left"> <font color="#16698b" size="3"><br/> *Ponovite lozinku:<br/><br/><br/></font> </td>
                         <td width="50%" align="center"> <font color="#16698b" size="3"> <br/><input type="password" name="lozinkaPonovo" value="<?php echo $password ?>" size="20" required/> <br/><br/><br/></td>
-                    </tr>
+                    </tr><?php if ($kategorija > 0) { ?>
                     <tr>
                         <td width="50%" align="left"><font color="#16698b" size="3">*Kategorija:&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
                         <td width="50%" align="center">
@@ -95,6 +103,7 @@
                             </select>
                         </td>
                     </tr>
+                    <?php } ?>
                     <tr>
                         <td width="50%" align="left"> <font color="#16698b" size="3"><br/> *Vaše ime:<br/></font> </td>
                         <td width="50%" align="center"> <font color="#16698b" size="3"> <br/><br/><input type="text" name="imePrezime" value="<?php echo $ime ?>" size="20" required/> <br/><br/></td>
@@ -133,7 +142,9 @@
 
                     <tr>
                         <td width="50%" align="center"><br/> </td>
-                        <td width="50%" align="center"> <br/><input name="dugme" type="image" value="" src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/> </td>
+                        <td width="50%" align="center"> <br/> <?php if ($admin==0) { ?><input name="dugme" type="image" value="" src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/>
+                        <?php } else { ?><input name="dugme" type="image" value="" src="http://localhost:8080/Slike/obrisi.jpeg" width="120" height="35"/><?php } ?>
+                        </td>
                     </tr>
                     <tr>
                         <td width="50%" align="center"></td>

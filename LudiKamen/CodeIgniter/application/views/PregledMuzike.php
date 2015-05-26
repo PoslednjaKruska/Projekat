@@ -34,11 +34,17 @@
     </head>
     
     <body>
-        
+       
         <?php
-        if ($sesija) { include_once("header2.php"); }
-        else { include_once("header.php"); }
-        ?>
+       if ($sesija) {
+            if ($admin)
+                include_once("header3.php");
+            else
+                include_once("header2.php");
+        } else {
+            include_once('header.php');
+        }
+     ?>
         
         <br /><br />
         

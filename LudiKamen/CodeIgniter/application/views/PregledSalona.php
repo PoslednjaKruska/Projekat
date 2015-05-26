@@ -31,14 +31,18 @@
         </script>
         
     </head>
-    
-    <body>
-        
         <?php
-        if ($sesija) { include_once("header2.php"); }
-        else { include_once("header.php"); }
+        if ($sesija) {
+            if ($admin)
+                include_once("header3.php");
+            else
+                include_once("header2.php");
+        } else {
+            include_once('header.php');
+        }
         ?>
-        
+
+    <body>
         <?php
             $i = preg_replace('/\s+/', '', $naziv);
             $slika = "http://localhost:8080/Slike/" . $i . "1.jpg";
@@ -135,8 +139,3 @@
         
     </body>
 </html>
-
-
-
-
-

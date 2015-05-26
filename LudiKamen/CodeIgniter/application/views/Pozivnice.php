@@ -1,29 +1,32 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
-    
+
     <head>
         <title> Pretraga štamparija za pozivnice </title>
         <style>
-            <?php include 'CSS/stilovi.css'; ?>
+<?php include 'CSS/stilovi.css'; ?>
         </style>
         <script>
-            <?php include 'JavaScript/meniScript.js'; ?>
+<?php include 'JavaScript/meniScript.js'; ?>
         </script>
     </head>
-    
+
     <body>
-        
-         <?php
+
+        <?php
         if ($sesija) {
-            include_once("header2.php");
+            if ($admin)
+                include_once("header3.php");
+            else
+                include_once("header2.php");
         } else {
             include_once('header.php');
         }
         ?>
-        
+
         <br /><br />
-        
+
         <div id="filteri">
             <br />
             <font id="naslov"> Filteri </font>
@@ -38,59 +41,59 @@
                 </center>
             </form>
         </div>
-        
+
         <div id="pretraga">
-            
+
             <font id="naslov2" style="font-size:30px"> Pregled štamparija za pozivnice </font>
             <br /><br />
-            
-            <?php 
+
+            <?php
             if ($brRedova == 0) {
                 echo "<font id='naslov2'> Nema rezultata. </font> <br><br>";
-            }
-            else {
-            foreach ($query as $row) { 
-                $ime = str_replace(' ', '', $row->ImePrezime);
-                $slika = 'http://localhost:8080/Slike/' . $ime . '.jpg';
-                $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/Stamparija/' . $ime;
-            ?>
-            
-            <div id="radnja">
-		<br>
-		<table id="tabela">
-			<tr> 
-                            <td rowspan="3" width="30%"> <?php echo "<a href='{$link}'/>"; ?> <?php echo "<img src='{$slika}' height='170' width='220' id='slika'/>"; ?> </a> </td>
-                            <td colspan="4"> <?php echo "<a href='{$link}'/>"; ?> <font id="naslov2"> &nbsp;&nbsp; <u> <?php echo $row->ImePrezime; ?> </u> </font> </a> </td>
-			</tr>
-			<tr>
-                            <td colspan="4"> 
-                                <font color="#16698b" size="3"> 
+            } else {
+                foreach ($query as $row) {
+                    $ime = str_replace(' ', '', $row->ImePrezime);
+                    $slika = 'http://localhost:8080/Slike/' . $ime . '.jpg';
+                    $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pregled/Stamparija/' . $ime;
+                    ?>
+
+                    <div id="radnja">
+                        <br>
+                        <table id="tabela">
+                            <tr> 
+                                <td rowspan="3" width="30%"> <?php echo "<a href='{$link}'/>"; ?> <?php echo "<img src='{$slika}' height='170' width='220' id='slika'/>"; ?> </a> </td>
+                                <td colspan="4"> <?php echo "<a href='{$link}'/>"; ?> <font id="naslov2"> &nbsp;&nbsp; <u> <?php echo $row->ImePrezime; ?> </u> </font> </a> </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"> 
+                                    <font color="#16698b" size="3"> 
                                     &nbsp;&nbsp;&nbsp; <?php echo $row->Adresa; ?>
-                                </font> 
-                            </td>
-			</tr>
-			<tr>  
-                            <td> </td>
-                            <td> </td>
-                            <td colspan="2"> <?php echo "<a href='{$link}'/>"; ?> <font color="#16698b" size="4"> <image src="http://localhost:8080/Slike/detaljnije.jpeg" width="120" height="35"/> </font> </a> </td>
-			</tr> 
-		</table>
-		<br>
-            </div>
-            
-            <?php } }
+                                    </font> 
+                                </td>
+                            </tr>
+                            <tr>  
+                                <td> </td>
+                                <td> </td>
+                                <td colspan="2"> <?php echo "<a href='{$link}'/>"; ?> <font color="#16698b" size="4"> <image src="http://localhost:8080/Slike/detaljnije.jpeg" width="120" height="35"/> </font> </a> </td>
+                            </tr> 
+                        </table>
+                        <br>
+                    </div>
+
+                <?php }
+            }
             ?>
- 
+
             <div id="linkovi"> </div>
-            
+
             <br>
-            
+
         </div>
-        
+
         <?php
-           include_once("footer.php");
+        include_once("footer.php");
         ?>
-        
+
     </body>
 </html>
 

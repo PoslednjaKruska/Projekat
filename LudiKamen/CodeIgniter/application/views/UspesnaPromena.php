@@ -14,13 +14,14 @@
             <?php include 'JavaScript/meniScript.js'; ?>
         </script>
     </head>
-    
-    <body>
-        
         <?php
-           include_once("header2.php");
+            if ($admin == 1)
+                include_once("header3.php");
+            else
+                include_once("header2.php");
         ?>
-        
+
+    <body>
         <br /><br />
 <br /><br />        
         <center>

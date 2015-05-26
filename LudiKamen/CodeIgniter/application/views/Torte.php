@@ -11,17 +11,18 @@
             <?php include 'JavaScript/meniScript.js'; ?>
         </script>
     </head>
-    
-    <body>
-        
-         <?php
+        <?php
         if ($sesija) {
-            include_once("header2.php");
+            if ($admin == 0)
+                include_once("header3.php");
+            else
+                include_once("header2.php");
         } else {
             include_once('header.php');
         }
         ?>
-        
+
+    <body>
         <br /><br />
         
         <div id="filteri">
