@@ -35,6 +35,9 @@ class Logovanje extends CI_Controller {
     }
 
     function logout() {
+        $this->load->model('LoginModel');
+        $data['username'] = $_SESSION['username'];
+        $this->LoginModel->logout($data);
         session_destroy();
 //        $_SESSION['is_open'] = FALSE;
         $this->load->view("Logout");
@@ -71,6 +74,7 @@ class Logovanje extends CI_Controller {
             'grad' => "",
             'admin' => 0
         );
+
 
         $this->load->model('RegistracijaModel');
         $this->load->model('LoginModel');
@@ -147,9 +151,32 @@ class Logovanje extends CI_Controller {
             $this->load->view('Nalog', $data);
             return;
         }
+        if ($data['kategorija'] == 0)
+            $data['admin'] = 1;
 
         $this->RegistracijaModel->updateUser($data, $_SESSION['username']);
         $this->load->view('UspesnaPromena', $data);
+    }
+
+    function nalogKorisnika($prom) {
+        foreach ($prom as $red)
+        $data = array(
+            'username' => $red->Username,
+            'password' => $red->Password,
+            'ime' => $red->ImePrezime,
+            'grad' => $red->Grad,
+            'kategorija' => $red->Kategorija,
+            'email' => $red->Email,
+            'adresa' => $red->Adresa,
+            'flag' => 0,
+            'admin' => 1
+        );
+//        $this->load->model('LoginModel');
+//        $data = $this->LoginModel->getParams($data);
+        if ($data['kategorija'] == 0)
+            $data['admin'] = 1;
+
+        $this->load->view("Nalog", $data);
     }
 
 }

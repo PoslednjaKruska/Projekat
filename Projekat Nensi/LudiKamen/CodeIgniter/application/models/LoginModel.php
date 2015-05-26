@@ -26,16 +26,9 @@ class LoginModel extends CI_Model {
             $flag = 2;
             return $flag;
         }
-        foreach ($rezultat2 as $red)
-        {
+        foreach ($rezultat2 as $red) {
             if ($red->Kategorija == 0) {
                 $flag = 10;  // admin
-                $niz = array(
-                    'IDKorisnik' => $red->IDKorisnik,
-                    'Datum' => date("d/m/Y")
-                );
-                $this->db->where('IDKorisnik', $niz['IDKorisnik']);
-                $this->db->update('logovanjeadmina', $niz);
             } else
                 $flag = 0;
         }
@@ -57,6 +50,25 @@ class LoginModel extends CI_Model {
             $data['adresa'] = $row->Adresa;
         }
         return $data;
+    }
+
+    function logout($data) {
+        $this->load->database();
+        $niz = array(
+            'IDKorisnik' => "",
+            'Datum' => date("d/m/Y")
+        );
+        $this->db->select('*');
+        $this->db->from('Korisnik');
+        $this->db->where('Username', $data['username']);
+        $ret = $this->db->get()->result();
+        foreach ($ret as $red) {
+            if ($red->Kategorija == 0) {
+                $niz['IDKorisnik'] = $red->IDKorisnik;
+                $this->db->where('IDKorisnik', $red->IDKorisnik);
+                $this->db->update('logovanjeadmina', $niz);
+            }
+        }
     }
 
 }
