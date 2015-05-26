@@ -3,8 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/Projekat/LudiKamen/CodeIgniter/application/views/CSS/stilovi.css</file>
-            <file>file:/C:/wamp/www/Projekat/LudiKamen/CodeIgniter/application/views/Pocetna.php</file>
+            <file>file:/C:/wamp/www/Projekat/LudiKamen/CodeIgniter/application/views/UnosUsluge.php</file>
+            <file>file:/C:/wamp/www/Projekat/LudiKamen/CodeIgniter/application/controllers/Usluga.php</file>
+            <file>file:/C:/wamp/www/Projekat/LudiKamen/CodeIgniter/application/models/PomocniModel.php</file>
         </group>
     </open-files>
 </project-private>

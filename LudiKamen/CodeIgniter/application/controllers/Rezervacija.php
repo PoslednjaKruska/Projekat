@@ -178,16 +178,16 @@ class Rezervacija extends CI_Controller {
 
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
-        $this->form_validation->set_rules('ime', ' ', 'required|alpha');
+        $this->form_validation->set_rules('ime', ' ', 'required');
         $this->form_validation->set_rules('adresa', ' ', 'required');
         $this->form_validation->set_rules('email', ' ', 'required|valid_email');
 
         $this->form_validation->set_rules('datum', ' ', 'required|callback_date_check');
         $this->form_validation->set_rules('brgosti', ' ', 'required|is_natural_no_zero');
 
-        $this->form_validation->set_rules('brkartice', ' ', 'required');
+        $this->form_validation->set_rules('brkartice', ' ', 'required|callback_card_check');
         $this->form_validation->set_rules('datumisteka', ' ', 'required|callback_date_check');
-        $this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric');
+        $this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric|callback_safetyno_check');
 
         if ($this->form_validation->run() == FALSE) {
             $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
@@ -240,9 +240,21 @@ class Rezervacija extends CI_Controller {
             $korisnik = $_SESSION['username'];
             $usluga = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
             $datum = $this->input->post('datum');
-            $this->RestoranModel->rezervisi($korisnik, $usluga, $datum);            
-
-            $this->load->view('UspesnaRezervacija', $data);
+            $rezultat = $this->RestoranModel->rezervisi($korisnik, $usluga, $datum);     
+            
+            if ($rezultat == 1) {
+                $this->load->view('UspesnaRezervacija', $data);
+            }
+            else if ($rezultat == 2) {
+                $this->load->view('VecRezervisano', $data);
+            }
+            else if ($rezultat == 3) {
+                $this->load->view('Nedostupno', $data);
+            }
+            else {
+                $this->load->view('Greska', $data);
+            }
+            
         }
     }
 
@@ -259,16 +271,16 @@ class Rezervacija extends CI_Controller {
 
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
-        $this->form_validation->set_rules('ime', ' ', 'required|alpha');
+        $this->form_validation->set_rules('ime', ' ', 'required');
         $this->form_validation->set_rules('adresa', ' ', 'required');
         $this->form_validation->set_rules('email', ' ', 'required|valid_email');
 
         $this->form_validation->set_rules('datum', ' ', 'required|callback_date_check');
         $this->form_validation->set_rules('brsati', ' ', 'required|is_natural_no_zero');
 
-        $this->form_validation->set_rules('brkartice', ' ', 'required');
+        $this->form_validation->set_rules('brkartice', ' ', 'required|callback_card_check');
         $this->form_validation->set_rules('datumisteka', ' ', 'required|callback_date_check');
-        $this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric');
+        $this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric|callback_safetyno_check');
 
         if ($this->form_validation->run() == FALSE) {
             $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
@@ -321,9 +333,20 @@ class Rezervacija extends CI_Controller {
             $korisnik = $_SESSION['username'];
             $usluga = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
             $datum = $this->input->post('datum');
-            $this->MuzikaModel->rezervisi($korisnik, $usluga, $datum);            
-
-            $this->load->view('UspesnaRezervacija', $data);
+            $rezultat = $this->MuzikaModel->rezervisi($korisnik, $usluga, $datum);     
+            
+            if ($rezultat == 1) {
+                $this->load->view('UspesnaRezervacija', $data);
+            }
+            else if ($rezultat == 2) {
+                $this->load->view('VecRezervisano', $data);
+            }
+            else if ($rezultat == 3) {
+                $this->load->view('Nedostupno', $data);
+            }
+            else {
+                $this->load->view('Greska', $data);
+            }
         }
     }
 
@@ -340,16 +363,16 @@ class Rezervacija extends CI_Controller {
 
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
-        $this->form_validation->set_rules('ime', ' ', 'required|alpha');
+        $this->form_validation->set_rules('ime', ' ', 'required');
         $this->form_validation->set_rules('adresa', ' ', 'required');
         $this->form_validation->set_rules('email', ' ', 'required|valid_email');
 
         $this->form_validation->set_rules('datum', ' ', 'required|callback_date_check');
         $this->form_validation->set_rules('kolicina', ' ', 'required|is_natural_no_zero');
 
-        $this->form_validation->set_rules('brkartice', ' ', 'required');
+        $this->form_validation->set_rules('brkartice', ' ', 'required|callback_card_check');
         $this->form_validation->set_rules('datumisteka', ' ', 'required|callback_date_check');
-        $this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric');
+        $this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric|callback_safetyno_check');
 
         if ($this->form_validation->run() == FALSE) {
             $nazivP = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeP);
@@ -404,9 +427,17 @@ class Rezervacija extends CI_Controller {
             $korisnik = $_SESSION['username'];
             $usluga = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeT);
             $datum = $this->input->post('datum');
-            $this->TorteModel->rezervisi($korisnik, $usluga, $datum);            
-
-            $this->load->view('UspesnaRezervacija', $data);
+            $rezultat = $this->TorteModel->rezervisi($korisnik, $usluga, $datum);     
+            
+            if ($rezultat == 1) {
+                $this->load->view('UspesnaRezervacija', $data);
+            }
+            else if ($rezultat == 2) {
+                $this->load->view('VecRezervisano', $data);
+            }
+            else {
+                $this->load->view('Greska', $data);
+            }
         }
     }
 
@@ -423,16 +454,16 @@ class Rezervacija extends CI_Controller {
 
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
-        $this->form_validation->set_rules('ime', ' ', 'required|alpha');
+        $this->form_validation->set_rules('ime', ' ', 'required');
         $this->form_validation->set_rules('adresa', ' ', 'required');
         $this->form_validation->set_rules('email', ' ', 'required|valid_email');
 
         $this->form_validation->set_rules('datum', ' ', 'required|callback_date_check');
         $this->form_validation->set_rules('kolicina', ' ', 'required|is_natural_no_zero');
 
-        $this->form_validation->set_rules('brkartice', ' ', 'required');
+        $this->form_validation->set_rules('brkartice', ' ', 'required|callback_card_check');
         $this->form_validation->set_rules('datumisteka', ' ', 'required|callback_date_check');
-        $this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric');
+        $this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric|callback_safetyno_check');
 
         if ($this->form_validation->run() == FALSE) {
             $nazivS = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeS);
@@ -487,9 +518,20 @@ class Rezervacija extends CI_Controller {
             $korisnik = $_SESSION['username'];
             $usluga = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeV);
             $datum = $this->input->post('datum');
-            $this->VencaniceModel->rezervisi($korisnik, $usluga, $datum);              
-
-            $this->load->view('UspesnaRezervacija', $data);
+            $rezultat = $this->VencaniceModel->rezervisi($korisnik, $usluga, $datum);     
+            
+            if ($rezultat == 1) {
+                $this->load->view('UspesnaRezervacija', $data);
+            }
+            else if ($rezultat == 2) {
+                $this->load->view('VecRezervisano', $data);
+            }
+            else if ($rezultat == 3) {
+                $this->load->view('Nedostupno', $data);
+            }
+            else {
+                $this->load->view('Greska', $data);
+            }
         }
     }
 
@@ -506,16 +548,16 @@ class Rezervacija extends CI_Controller {
 
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
-        $this->form_validation->set_rules('ime', ' ', 'required|alpha');
+        $this->form_validation->set_rules('ime', ' ', 'required');
         $this->form_validation->set_rules('adresa', ' ', 'required');
         $this->form_validation->set_rules('email', ' ', 'required|valid_email');
 
         $this->form_validation->set_rules('datum', ' ', 'required|callback_date_check');
         $this->form_validation->set_rules('kolicina', ' ', 'required|is_natural_no_zero');
 
-        $this->form_validation->set_rules('brkartice', ' ', 'required');
+        $this->form_validation->set_rules('brkartice', ' ', 'required|callback_card_check');
         $this->form_validation->set_rules('datumisteka', ' ', 'required|callback_date_check');
-        $this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric');
+        $this->form_validation->set_rules('sigurnosnibr', ' ', 'required|numeric|callback_safetyno_check');
 
         if ($this->form_validation->run() == FALSE) {
             $nazivS = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeS);
@@ -570,9 +612,17 @@ class Rezervacija extends CI_Controller {
             $korisnik = $_SESSION['username'];
             $usluga = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeP);
             $datum = $this->input->post('datum');
-            $this->PozivniceModel->rezervisi($korisnik, $usluga, $datum);             
-
-            $this->load->view('UspesnaRezervacija', $data);
+            $rezultat = $this->PozivniceModel->rezervisi($korisnik, $usluga, $datum);     
+            
+            if ($rezultat == 1) {
+                $this->load->view('UspesnaRezervacija', $data);
+            }
+            else if ($rezultat == 2) {
+                $this->load->view('VecRezervisano', $data);
+            }
+            else {
+                $this->load->view('Greska', $data);
+            }
         }
     }
 
@@ -590,6 +640,27 @@ class Rezervacija extends CI_Controller {
                 $this->form_validation->set_message('date_check', 'The field %s must contain a valid date in mm/dd/gggg format.');
                 return FALSE;
             }
+        }
+    }
+    
+    function card_check($card) {
+        $card = preg_replace('/\s+/', '', $card);
+        $uzorak = '@(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})@';
+        if (preg_match($uzorak, $card) != 1) {
+            $this->form_validation->set_message('card_check', 'The field %s must contain a valid credit card number.');
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+    
+    function safetyno_check ($no) {
+        if ($no < 100 || $no > 999) {
+            $this->form_validation->set_message('safetyno_check', 'The field %s must contain a valid safety number.');
+            return FALSE;
+        }
+        else {
+            return TRUE;
         }
     }
 

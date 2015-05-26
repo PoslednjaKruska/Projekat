@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title> Rezervacija restorana </title>
+        <title> Uspešna rezervacija </title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
