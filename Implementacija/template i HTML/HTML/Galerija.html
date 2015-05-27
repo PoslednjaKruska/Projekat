@@ -10,6 +10,9 @@
  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/lightbox.min.js"></script>
+  <link href="css/lightbox.css" rel="stylesheet" />
   
   <script>
   $(document).ready(function() {
@@ -40,58 +43,6 @@ document.getElementById(elmnt).style.visibility="hidden"
 }
 </script>
 
-<script>
-jQuery(document).ready(function($) {
-     
-    $('.lightbox_trigger').click(function(e) {
-         
-        //prevent default action (hyperlink)
-        e.preventDefault();
-         
-        //Get clicked link href
-        var image_href = $(this).attr("href");
-         
-        /* 
-        If the lightbox window HTML already exists in document,
-        change the img src to to match the href of whatever link was clicked
-         
-        If the lightbox window HTML doesn't exists, create it and insert it.
-        (This will only happen the first time around)
-        */
-         
-        if ($('#lightbox').length > 0) { // #lightbox exists
-             
-            //place href as img src value
-            $('#content').html('<img src="' + image_href + '" />');
-             
-            //show lightbox window - you could use .show('fast') for a transition
-            $('#lightbox').show();
-        }
-         
-        else { //#lightbox does not exist - create and insert (runs 1st time only)
-             
-            //create HTML markup for lightbox window
-            var lightbox =
-            '<div id="lightbox">' +
-                '<p>Click to close</p>'+
-                '<div id="content">' + //insert clicked link's href into img src
-                    '<img src="' + image_href +'" />' +
-                '</div>' +   
-            '</div>';
-                 
-            //insert lightbox HTML into page
-            $('body').append(lightbox);
-        }
-         
-    });
-     
-    //Click anywhere on the page to get rid of lightbox window
-    $('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
-        $('#lightbox').hide();
-    });
- 
-});
-</script>
 		
 </head>
 
@@ -102,46 +53,46 @@ jQuery(document).ready(function($) {
 
 </body><!-- InstanceEndEditable -->
 
-<div class="center">
+<div rel="center">
 
      
-   <table class="center" width="100%" height="50"  > 	
+   <table rel="center" width="100%" height="50"  > 	
  <tr bgcolor="#62c2e8">
-  <td class="center">
+  <td rel="center">
    <a href="index.html"><img name="logo" src="file:///C|/Users/PC/Desktop/PSI%20Projekat/Implementacija/slike/logoNatpis3.png" onmouseover="document.logo.src='../../slike/logoNatpis4.png'" onmouseout="document.logo.src='../../slike/logoNatpis3.png'" height="50"></a><br />
   </td>
-  <td class="center">
+  <td rel="center">
    <a href="Restorani.html">Restorani</a><br/>
   </td>
  
-  <td class="center">
+  <td rel="center">
   <a href="Torte.html">Torte<br />
   </td>
  
-   <td class="center" >
+   <td rel="center" >
    <a href="Muzika.html">Muzika</a><br />
   </td>
-   <td class="center" >
+   <td rel="center" >
    <a href="Burme.html">Burme</a><br />
   </td>
   
   
-  <td class="center">
+  <td rel="center">
   <a href="Pozivnice.html">Pozivnice</a><br />
    
-   <table class="menu" id="meni5" width="120">
-   <tr><td class="menu">&nbsp;</td></tr>
+   <table rel="menu" id="meni5" width="120">
+   <tr><td rel="menu">&nbsp;</td></tr>
    </table>
   </td>
   
-<td class="center"  >
+<td rel="center"  >
    <a href="Pokloni.html">Pokloni</a><br />
   </td> 
- <td class="center" >
+ <td rel="center" >
    <a href="Kontakt.html">Kontakt</a><br />
   </td>
   <!-- InstanceBeginEditable name="Language" -->
-  <td class="center" >
+  <td rel="center" >
    <a href="logForma.html"><img src="../../Slike/login.jpeg" width="80" height="35" /></a>&nbsp;&nbsp;<a href="signup.html"><img src="../../Slike/signup.jpg" width="80" height="35" /></a><br />
  
   </td>
@@ -166,32 +117,33 @@ jQuery(document).ready(function($) {
         <div id="wrap">
 					<table>
 						<tr>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/1.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/1.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/2.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/2.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/3.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/3.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/1.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/1.jpg"  height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/2.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/2.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/3.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/3.jpg" height="250" width="300"></a> </td>
 						</tr>
 						<tr>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/4.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/4.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/5.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/5.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/6.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/6.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/4.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/4.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/5.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/5.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/6.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/6.jpg" height="250" width="300"></a> </td>
 						</tr>
 						<tr>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/7.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/7.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/8.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/8.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/9.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/9.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/7.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/7.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/8.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/8.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/9.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/9.jpg" height="250" width="300"></a> </td>
 						</tr>
 						<tr>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/10.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/10.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/11.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/11.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/12.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/12.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/10.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/10.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/11.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/11.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/12.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/12.jpg" height="250" width="300"></a> </td>
 						</tr>
 						<tr>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/13.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/13.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/14.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/14.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="../../Slike/Galerija/15.jpg" class="lightbox_trigger"><img src="../../Slike/Galerija/15.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/13.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/13.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/14.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/14.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="../../Slike/Galerija/15.jpg" rel="lightbox[wrap]"><img src="../../Slike/Galerija/15.jpg" height="250" width="300"></a> </td>
 						</tr>
 					</table>
 				</div>
+
 	</div>
 	</center>
 
