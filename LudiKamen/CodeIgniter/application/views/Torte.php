@@ -13,7 +13,7 @@
     </head>
         <?php
         if ($sesija) {
-            if ($admin == 0)
+            if ($admin == 1)
                 include_once("header3.php");
             else
                 include_once("header2.php");
