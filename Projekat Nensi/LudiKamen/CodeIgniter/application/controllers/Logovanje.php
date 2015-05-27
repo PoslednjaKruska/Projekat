@@ -59,7 +59,10 @@ class Logovanje extends CI_Controller {
         $data = $this->LoginModel->getParams($data);
         if ($data['kategorija'] == 0)
             $data['admin'] = 1;
-        $this->load->view("Nalog", $data);
+        if ($data['kategorija'] > 2)
+            $this->load->view('NalogPruzaoca', $data);
+        else
+            $this->load->view("Nalog", $data);  // if kategorija pruzaoca, usmeri na drugi view !!!
     }
 
     function proveraNaloga() {
@@ -158,7 +161,7 @@ class Logovanje extends CI_Controller {
         $this->load->view('UspesnaPromena', $data);
     }
 
-    function nalogKorisnika($prom) {
+    function nalogKorisnika($prom) {    // za admina!!!
   
         $data = array(
             'username' => $prom,
@@ -178,7 +181,31 @@ class Logovanje extends CI_Controller {
         if ($data['kategorija'] == 0)
             $data['admin'] = 1;
 
-        $this->load->view("Nalog", $data);
+        $this->load->view("PodesavanjaNaloga", $data);
+    }
+    
+    function korisnikPodesavanja () {   
+        $data = array(
+            'username' => $_SESSION['username'],
+            'password' => $_SESSION['password'],
+            'ime' => "",
+            'grad' => "",
+            'kategorija' => "",
+            'email' => "",
+            'adresa' => "",
+            'flag' => 0,
+            'admin' => 0
+        );
+          $this->load->model('LoginModel');
+        $data = $this->LoginModel->getParams($data);
+//        $this->load->model('LoginModel');
+//        $data = $this->LoginModel->getParams($data);
+        if ($data['kategorija'] == 0)
+            $data['admin'] = 1;
+
+        $this->load->view("PodesavanjaNaloga", $data);
+   
+        
     }
 
 }

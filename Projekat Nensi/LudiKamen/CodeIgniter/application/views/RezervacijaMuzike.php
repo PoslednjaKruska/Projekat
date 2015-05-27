@@ -83,7 +83,7 @@
                     <table style="background-color:#e3f2f2" width="50%">
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Ime i prezime </font> </td>
-                            <td width="50%" align="center"> <font color="#16698b" size="3"> <input type="text" name="ime" size="30" disabled value="<?php echo $imePrezime; ?>" /> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="3"> <input type="text" name="ime" size="30" value="<?php echo $imePrezime; ?>" /> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> </td>
@@ -91,7 +91,7 @@
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Adresa </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="adresa" size="30" disabled value="<?php echo $adresa; ?>"/> </td>
+                            <td width="50%" align="center"> <input type="text" name="adresa" size="30" value="<?php echo $adresa; ?>"/> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> </td>
@@ -99,7 +99,7 @@
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> E-mail </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="email" size="30" disabled value="<?php echo $email; ?>"/> </td>
+                            <td width="50%" align="center"> <input type="text" name="email" size="30" value="<?php echo $email; ?>"/> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> </td>

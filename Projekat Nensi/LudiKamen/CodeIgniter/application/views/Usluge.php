@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title>Najnovije usluge</title>
+        <title>Usluge</title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
@@ -11,16 +11,21 @@
             <?php include 'JavaScript/meniScript.js'; ?>
         </script>
     </head>
-        <?php
+    <?php
+           if ($admin)
                 include_once("header3.php");
-        ?>
+            else
+                include_once("header2.php");
+            ?>
 
     <body>
         <br /><br />
         
         <div id="pretraga">
-            
+            <?php if ($admin==1)
+            { ?>
             <font id="naslov2" style="font-size:30px"> Najnovije usluge </font>
+            <?php } else { ?>             <font id="naslov2" style="font-size:30px"> Vaše usluge </font> <?php } ?>
             
             <?php 
             if ($empty == 1) {

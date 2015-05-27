@@ -21,8 +21,8 @@
     </head>
 
     <body>
-<?php
-                include_once("header2.php");
+        <?php
+        include_once("header2.php");
         ?>
 
 
@@ -38,28 +38,37 @@
                 <b>
                     Dobrodošli, <?php echo $username ?>!<br></b><br><br>
                 </font><font size="3" color="#16698b">
-                Na sledećim linkovima su dostupne informacije o<br>Vašem nalogu i Vaše rezervacije.<br><br>
+                Na sledećim linkovima su dostupne informacije o<br>Vašem nalogu i uslugama koje pružate.<br><br>
                 <br>   <table align="center" cellpadding="6" style="background-color:#e3f2f2" >
                     <tr>
                         <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php//LudiKamen/Pocetna">Početna</font></a>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/korisnikPodesavanja">Podešavanja naloga</font></a>
                         </td>
                     </tr>
                     <tr>
-                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/Rezervacije">Vaše rezervacije</font></a>
+                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/Pruzalac">Vaše usluge</font></a>
                         </td>
                     </tr>
+                    <tr>
+                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Usluga/Unos">Dodajte novu uslugu</font></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/PruzalacSlike">Dodajte slike za Vaš nalog</font></a>
+                        </td>
+                    </tr>
+
                 </table>
                 </font>
             </div>
         </div>
     </center>
 
-    <br><br><br><br><br>
+    <br><br><br><br>
     <font color="black"><!--<p>Ovde bi mogli linkovi za najnovije ponude...--></font></p>
 <?php
 include_once("footer.php");

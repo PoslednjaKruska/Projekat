@@ -184,13 +184,37 @@ class RestoranModel extends CI_Model {
             $idUsl = $row->IDUsluga;
         }
         
-        $red['IDKorisnik'] = $idKor1;
-        $red['IDUsluga'] = $idUsl;
-        $red['DatumRezervacije'] = $datum;
-        
-        if ($idKor1 != null && $idUsl != null & $datum != null) {
-            $this->db->insert('Koristi', $red);           
+        if ($idKor1 == null || $idUsl == null || $datum == null) {
+            return 4;
         }
+        
+        $this->db->select('r.DatumRezervacije');
+        $this->db->from('koristi r');
+        $this->db->where('r.DatumRezervacije', $datum);
+        $this->db->where('r.IDUsluga', $idUsl);
+        $proveraDat = $this->db->get('koristi');
+        if ($proveraDat->num_rows() != 0) { 
+            return 3; 
+        }
+        
+        $this->db->select('r.IDKorisnik');
+        $this->db->from('koristi r');
+        $this->db->where('r.IDKorisnik', $idKor1);
+        $this->db->where('r.IDUsluga', $idUsl);
+        $provera = $this->db->get('koristi');
+        if ($provera->num_rows() != 0) { 
+            return 2; 
+        }
+        else {
+            $red['IDKorisnik'] = $idKor1;
+            $red['IDUsluga'] = $idUsl;
+            $red['DatumRezervacije'] = $datum;
+
+            $this->db->insert('Koristi', $red);        
+            return 1;          
+        }
+        
+        return 4;
 
     }
     

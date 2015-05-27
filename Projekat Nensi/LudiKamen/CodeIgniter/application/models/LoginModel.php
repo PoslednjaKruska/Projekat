@@ -73,4 +73,44 @@ class LoginModel extends CI_Model {
         }
     }
 
+    function getReserv($data) {
+        $this->load->database();
+        $this->db->select('IDKorisnik');
+        $this->db->from('Korisnik');
+        $this->db->where('Username', $data['username']);
+        $rez = $this->db->get()->result();
+        $ID;
+        foreach ($rez as $red)
+            $ID = $red->IDKorisnik;
+        $this->db->select('*');
+        $this->db->from('Koristi');
+        $this->db->where('IDKorisnik', $ID);
+        $rez = $this->db->get()->result();
+        $i = 0;
+        $niz = array();
+        $niz1 = array();
+        $niz2 = array();
+        foreach ($rez as $red) {
+            $niz[$i] = $red->DatumUnosa;
+            $this->db->select('Username');
+            $this->db->from('korisnik');
+            $this->db->like('IDKorisnik', $red->IDKorisnik);
+            $pom = $this->db->get()->result();
+            foreach ($pom as $prom)
+                $niz1[$i] = $prom->Username;
+            $this->db->select('Naziv');
+            $this->db->from('usluga');
+            $this->db->like('IDUsluga', $red->IDUsluga);
+            $pom2 = $this->db->get()->result();
+            foreach ($pom2 as $prom2)
+                $niz2[$i++] = $prom2->Naziv;
+        }
+        $data['numOfRows'] = $i;
+        $data['dates'] = $niz;
+        $data['users'] = $niz1;
+        $data['services'] = $niz2;
+        return $data;
+        
+    }
+
 }

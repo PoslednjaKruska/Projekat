@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title> Uspešna rezervacija </title>
+        <title> Uspešan unos </title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
@@ -11,15 +11,11 @@
             <?php include 'JavaScript/meniScript.js'; ?>
         </script>
     </head>
-        <?php
-    if ($sesija) {
-            if ($admin)
+          <?php
+            if ($admin == 1)
                 include_once("header3.php");
             else
                 include_once("header2.php");
-        } else {
-            include_once('header.php');
-        }
         ?>
 
     <body>
@@ -32,13 +28,15 @@
                     <image src="http://localhost:8080/Slike/logoHD.png" width="150" height="171" style="float:left"/>
                 </div>
                 <div style="margin:50px">
-                    <font color="#16698b" size="3"> 
-                    <b> Čestitamo! </b> <br><br>
-                    Uspešno ste obavili rezervaciju! <br><br>
-                    Uskoro ćete dobiti potvrdu na svoju e-mail adresu. <br><br><br>
+                     <?php if ($flag == 1) { ?>
+                  <font color="#16698b" size="3"> Slika/slike su uspešno dodate! 
+                    <?php } else { ?>   <font color="#16698b" size="3"> Niste dodali nijednu sliku! <?php } ?>
+                    <br><br>
+                    
+                    <br><br>
                     </font>
                     <center>
-                        <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Pocetna"> <image src="http://localhost:8080/Slike/povratak.jpeg" width="120" height="35"/> </a>
+                        <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/pruzalacSlike"> <image src="http://localhost:8080/Slike/povratak.jpeg" width="120" height="35"/> </a>
                     </center>
                 </div>
             </div>

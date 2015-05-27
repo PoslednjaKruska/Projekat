@@ -44,7 +44,6 @@ class Pretraga extends CI_Controller {
         $data['query'] = $this->TorteModel->getAll();
         if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
             $data['admin'] = 1;
-
         $this->load->view('Torte', $data);
     }
 

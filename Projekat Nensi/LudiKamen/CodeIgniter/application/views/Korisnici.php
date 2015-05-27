@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title>Najnoviji korisnici</title>
+        <title>Aktivnosti korisnika</title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
@@ -20,7 +20,7 @@
         
         <div id="pretraga">
             
-            <font id="naslov2" style="font-size:30px"> Najnoviji korisnici </font>
+            <font id="naslov2" style="font-size:30px">Najskorije aktivnosti korisnika</font>
             
             <?php 
             if ($empty == 1) {

@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title> Uspešna rezervacija </title>
+        <title> Neuspešan unos </title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
@@ -33,9 +33,8 @@
                 </div>
                 <div style="margin:50px">
                     <font color="#16698b" size="3"> 
-                    <b> Čestitamo! </b> <br><br>
-                    Uspešno ste obavili rezervaciju! <br><br>
-                    Uskoro ćete dobiti potvrdu na svoju e-mail adresu. <br><br><br>
+                    Došlo je do greške prilikom unosa! <br><br>
+                    Već postoji ponuda za vašu uslugu. <br><br>
                     </font>
                     <center>
                         <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Pocetna"> <image src="http://localhost:8080/Slike/povratak.jpeg" width="120" height="35"/> </a>

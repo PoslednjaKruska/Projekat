@@ -104,6 +104,29 @@ class PozivniceModel extends CI_Model {
         if ($idKor != null && $idUsl != null & $datum != null) {
             $this->db->insert('Koristi', $red);           
         }
+        
+        if ($idKor == null || $idUsl == null || $datum == null) {
+            return 3;
+        }
+        
+        $this->db->select('r.IDKorisnik');
+        $this->db->from('koristi r');
+        $this->db->where('r.IDKorisnik', $idKor);
+        $this->db->where('r.IDUsluga', $idUsl);
+        $provera = $this->db->get('koristi');
+        if ($provera->num_rows() != 0) { 
+            return 2; 
+        }
+        else {
+            $red['IDKorisnik'] = $idKor;
+            $red['IDUsluga'] = $idUsl;
+            $red['DatumRezervacije'] = $datum;
+
+            $this->db->insert('Koristi', $red);        
+            return 1;          
+        }
+        
+        return 3;
 
     }
     

@@ -363,3 +363,18 @@ p {
 a:hover {
    text-decoration: underline; // changed from text:decoration:none
 }
+
+
+#divAdmin {
+    border-bottom-color: #16698b;
+    border-bottom-style: solid;
+    width: 75%;
+}
+
+
+#adminRez {
+    border-bottom-color: #16698b;
+    border-bottom-style: dashed;
+    width: 75%;
+    height: 15%; 
+}
