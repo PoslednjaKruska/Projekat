@@ -90,11 +90,13 @@ class PomocniModel extends CI_Model {
         $red['Opis'] = $opis;
         $red['Cena'] = $cena;
         $red['Velicina'] = $velicina;
+        $red['DatumReg'] = date("d/m/Y");
+        $red['DatumIzmene'] = date("d/m/Y");
         $this->db->insert('Usluga', $red);        
         return 1;    
         
     }
-    
+   
 }
 
 ?>
