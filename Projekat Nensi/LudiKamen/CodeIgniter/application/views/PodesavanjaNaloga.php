@@ -34,7 +34,7 @@
         ?>
 
     <center>
-        <?php if ($admin == 0) { ?>
+        <?php if ($admin == 0 || $flagAdmin == 1) { ?>
         <form name="rezervacija" method="post" <?php echo "action='{$link}'/>"; ?>
         <?php } else ?><form name="rezervacija" method="post" <?php echo "action='{$link2}'/>"; ?>
       
@@ -142,7 +142,7 @@
 
                     <tr>
                         <td width="50%" align="center"><br/> </td>
-                        <td width="50%" align="center"> <br/> <?php if ($admin==0) { ?><input name="dugme" type="image" value="" src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/>
+                        <td width="50%" align="center"> <br/> <?php if ($admin==0 || $flagAdmin==1) { ?><input name="dugme" type="image" value="" src="http://localhost:8080/Slike/potvrdi.jpeg" width="120" height="35"/>
                         <?php } else { ?><input name="dugme" type="image" value="" src="http://localhost:8080/Slike/obrisi.jpeg" width="120" height="35"/><?php } ?>
                         </td>
                     </tr>

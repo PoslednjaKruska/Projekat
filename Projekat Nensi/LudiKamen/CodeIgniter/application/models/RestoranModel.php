@@ -209,6 +209,7 @@ class RestoranModel extends CI_Model {
             $red['IDKorisnik'] = $idKor1;
             $red['IDUsluga'] = $idUsl;
             $red['DatumRezervacije'] = $datum;
+            $red['DatumUnosa'] = date("d/m/Y");
 
             $this->db->insert('Koristi', $red);        
             return 1;          

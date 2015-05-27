@@ -41,7 +41,7 @@
                 Na sledećim linkovima su dostupne početna stranica i <br>izmene u bazi od tvog poslednjeg logovanja.<br><br>
                 <br>   <table align="center" cellpadding="6" style="background-color:#e3f2f2" >
                     <tr>
-                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/Nalog">Moj nalog</font></a>
+                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/korisnikPodesavanja">Moj nalog</font></a>
                         </td>
                     </tr>
                     
