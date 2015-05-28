@@ -21,7 +21,7 @@
             <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pretraga/Pozivnice">Pozivnice</a><br />
         </td>
         <td class="center"  >
-            <a href="#">Galerija</a><br />
+            <a href="http://localhost/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Galerija">Galerija</a><br />
         </td> 
         <td class="center" >
             <a href="#">Kontakt</a><br />
