@@ -35,7 +35,10 @@
              foreach ($query as $row) { 
                 $ime = str_replace(' ', '', $row->Naziv);
                 $slika = 'http://localhost:8080/Slike/' . $ime . '.jpg';
+                if ($admin == 1)
                 $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/AdminKontroler/brisanjeUsluge/' . $ime;
+                else
+                $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/brisanjeUsluge/' . $ime;
             ?>
                 
             <div id="radnja">
