@@ -105,11 +105,17 @@ class KorisnikKontroler extends CI_Controller {
                 }
             }
         }
-            $this->load->view('UspesanUnosSlika', $data);
-        
+        $this->load->view('UspesanUnosSlika', $data);
+
         /*     else {
           $this->load->view('GreskaUnos', $data);
           } */
+    }
+
+    function brisanjeUsluge($ime) {
+        $this->load->model('AdminModel');
+        $this->AdminModel->brisiUslugu($ime);
+        $this->pruzalac();
     }
 
 }
