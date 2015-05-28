@@ -180,7 +180,7 @@ class Logovanje extends CI_Controller {
 //        $data = $this->LoginModel->getParams($data);
         if ($data['kategorija'] == 0)
             $data['admin'] = 1;
-
+        $data['flagAdmin'] = 0; // admin ne podesava svoj nalog
         $this->load->view("PodesavanjaNaloga", $data);
     }
     
@@ -201,8 +201,10 @@ class Logovanje extends CI_Controller {
 //        $this->load->model('LoginModel');
 //        $data = $this->LoginModel->getParams($data);
         if ($data['kategorija'] == 0)
+        {
             $data['admin'] = 1;
-
+            $data['flagAdmin'] = 1; // znaci da admin pregleda svoj nalog
+        }
         $this->load->view("PodesavanjaNaloga", $data);
    
         

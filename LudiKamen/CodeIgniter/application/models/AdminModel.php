@@ -24,6 +24,7 @@ class AdminModel extends CI_Model {
 
     function getFromDate($data) {
         $date = $this->getAdminDate($data['username']);
+       
          $this->load->database();
         //      echo 'datum poslednjeg logovanja: '. $date;
         if ($data['kateg'] == 1) {    // dohvatamo najnovije naloge
