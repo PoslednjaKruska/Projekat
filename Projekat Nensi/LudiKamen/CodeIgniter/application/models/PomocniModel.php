@@ -94,6 +94,21 @@ class PomocniModel extends CI_Model {
         $red['DatumIzmene'] = date("d/m/Y");
         $this->db->insert('Usluga', $red);        
         return 1;    
+    }
+    
+    function azurirajUslugu ($naziv, $opis, $cena, $idPruzalac,$idUsluga, $velicina, $kategorija) {
+        $this->load->database();
+        $niz = array (
+            'Naziv' => $naziv,
+            'Opis' => $opis,
+            'Cena' => $cena,
+            'IDPruzalac' => $idPruzalac,
+            'Velicina' => $velicina,
+            'DatumIzmene' => date("d/m/Y")
+        );
+        
+        $this->db->where('IDUsluga', $idUsluga);
+        $this->db->update('usluga', $niz);
         
     }
    

@@ -118,4 +118,55 @@ class KorisnikKontroler extends CI_Controller {
         $this->pruzalac();
     }
 
+    function otkazivanje($ime) {
+        $data['username'] = $_SESSION['username'];
+        $data['admin'] = 0;
+        $data['sesija'] = 1;
+        $this->load->model('LoginModel');
+        $this->LoginModel->brisiRez($data['username'], $ime);
+        $this->load->view('UspesnoOtkazivanje', $data);
+    }
+
+    function rezervisanePruzalac() {
+        $data = array(
+            'username' => $_SESSION['username'],
+            'sesija' => 0,
+            'admin' => 0,
+            'numOfRows' => 0,
+            'users' => "",
+            'services' => "",
+            'dates' => "",
+            'empty' => 0,
+        );
+        $this->load->model('LoginModel');
+        $data = $this->LoginModel->dohvatiRez($data);
+        if (!$data['users'])
+            $data['empty'] = 1;
+        if ($_SESSION['kategorija'] == 0)
+            $data['admin'] = 1;
+        else
+            $data['admin'] = 0;
+        if ($_SESSION['kategorija'] > 2)
+            $data['admin'] = 10; // ako je pruzalac u pitanju, drugaciji meni
+        $this->load->view('Rezervacije', $data);
+    }
+
+    function izmenaUsluge($usluga) {
+        $data = array(
+            'username' => $_SESSION['username'],
+            'sesija' => 0,
+            'admin' => 0,
+            'naziv' => "",
+            'opis' => "",
+            'cena' => "",
+            'velicina' => "",
+            'id' => $usluga,
+            'idPruzalac' => ""
+        );
+        $this->load->helper(array('form', 'url'));
+        $this->load->model('AdminModel');
+        $data = $this->AdminModel->uslugaRet($data);
+        $this->load->view('IzmenaUsluge', $data);
+    }
+
 }
