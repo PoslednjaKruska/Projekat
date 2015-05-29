@@ -41,6 +41,29 @@ class LudiKamen extends CI_Controller {
 
         $this->load->view('Galerija', $data);
     }
+    
+    function Kontakt() {
+        $data['admin'] = 0;
+        if ($_SESSION == TRUE)
+        {
+            $data['sesija'] = $_SESSION['username'];
+            $this->load->model('LoginModel');
+            $data['username'] = $_SESSION['username'];
+            $data =$this->LoginModel->getParams($data);
+         }
+        else {
+            $data['sesija'] = 0;
+            $this->load->view('Kontakt', $data);
+            return;
+        }
+        $this->load->model('LoginModel');
+        $data['username'] = $_SESSION['username'];
+        $data = $this->LoginModel->getParams($data);
+        if ($data['kategorija'] == 0)
+            $data['admin'] = 1;
+        else $data['admin'] = 0;
+        $this->load->view('Kontakt', $data);
+    }
 
 }
 

@@ -1,3 +1,0 @@
-1. Folder sa projektom staviti u folder wamp/www.
-2. CodeIgniter folder staviti u folder sa projektom.
-3. Folder Slike staviti u wamp/www.

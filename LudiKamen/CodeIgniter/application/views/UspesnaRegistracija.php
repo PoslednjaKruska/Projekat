@@ -1,7 +1,5 @@
  <!DOCTYPE html>
 
- <!-- Autor: Nevena Milinković -->
- 
 <html>
     
     <head>
@@ -31,7 +29,7 @@
                     <font color="#16698b" size="3"> 
                     <b> Čestitamo! </b> <br><br>
                     Uspešno ste se registrovali na naš sajt! <br><br>
-                    Uskoro ćete dobiti potvrdu na Vašu e-mail adresu. <br><br><br>
+                  <br><br><br>
                     </font>
                     <center>
                         <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Pocetna"> <image src="http://localhost:8080/Slike/pocetna.jpeg" width="120" height="35"/> </a>

@@ -26,7 +26,7 @@
             <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Galerija">Galerija</a><br />
         </td> 
         <td class="center" >
-            <a href="#">Kontakt</a><br />
+            <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Kontakt">Kontakt</a><br />
         </td>
         <td class="center" >
             <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/Login"><img src="http://localhost:8080/Slike/login.jpeg" width="80" height="35" /></a>&nbsp;&nbsp;
