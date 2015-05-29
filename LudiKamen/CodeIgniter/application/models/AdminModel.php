@@ -1,6 +1,7 @@
 <?php
 
 class AdminModel extends CI_Model {
+    // Autor: Nevena Milinković
 
     function getAdminDate($username) {
         $id;

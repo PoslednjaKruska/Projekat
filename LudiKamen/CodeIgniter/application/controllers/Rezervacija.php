@@ -3,6 +3,7 @@
 session_start();
 
 class Rezervacija extends CI_Controller {
+    // Autor: Maša Reko
 
     function Restoran($ime = '') {
         $data['admin'] = 0;

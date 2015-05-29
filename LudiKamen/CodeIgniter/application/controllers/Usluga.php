@@ -3,6 +3,7 @@
 session_start();
 
 class Usluga extends CI_Controller {
+    // Autori: Nevena Milinković, Maša Reko
     
     function Unos() {
         $data['admin'] = 0;

@@ -1,6 +1,7 @@
 <?php
 
 class PomocniModel extends CI_Model {
+    // Autori: Nevena Milinković, Maša Reko
     
     function getPrice ($naziv) {
         $this->load->database();

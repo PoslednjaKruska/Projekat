@@ -3,6 +3,7 @@
 session_start();
 
 class LudiKamen extends CI_Controller {
+    // Autor: Maša Reko
 
     function Pocetna() {
         $data['admin'] = 0;

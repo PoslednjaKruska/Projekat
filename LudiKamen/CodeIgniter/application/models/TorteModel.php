@@ -1,6 +1,7 @@
 <?php
 
 class TorteModel extends CI_Model {
+    // Autor: Maša Reko
     
     function numRows() {
         $this->load->database();

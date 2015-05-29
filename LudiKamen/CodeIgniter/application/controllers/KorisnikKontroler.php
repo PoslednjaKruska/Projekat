@@ -3,6 +3,7 @@
 session_start();
 
 class KorisnikKontroler extends CI_Controller {
+    // Autor: Nevena Milinković
 
     function rezervacije() {
         $data['admin'] = 0;

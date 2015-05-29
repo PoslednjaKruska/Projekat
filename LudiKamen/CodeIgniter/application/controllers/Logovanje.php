@@ -3,6 +3,7 @@
 session_start();
 
 class Logovanje extends CI_Controller {
+    // Autor: Nevena Milinković
 
     function login() {
         $data['flag'] = 0;

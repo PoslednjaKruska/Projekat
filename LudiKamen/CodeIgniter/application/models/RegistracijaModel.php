@@ -1,6 +1,7 @@
 <?php
 
 class RegistracijaModel extends CI_Model {
+    // Autor: Nevena Milinković
 
     function checkIfExists() {
         $flag = 0;
