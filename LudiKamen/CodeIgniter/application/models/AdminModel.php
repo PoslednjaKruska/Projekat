@@ -106,4 +106,21 @@ class AdminModel extends CI_Model {
         $rez = $this->db->get()->result();
         return $rez;
     }
+    
+    function uslugaRet ($data) {
+        $id = $data['id'];
+        $this->load->database();
+        $this->db->select('*');
+        $this->db->from('usluga');
+        $this->db->where('IDUsluga', $id);
+        $rez = $this->db->get()->result();
+        foreach ($rez as $red) {
+            $data['naziv'] = $red->Naziv;
+            $data['opis'] = $red->Opis;
+            $data['cena'] = $red->Cena;
+            $data['velicina'] = $red->Velicina;
+            $data['idPruzalac'] = $red->IDPruzalac;
+        }
+        return $data;
+    }
 }

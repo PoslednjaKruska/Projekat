@@ -66,6 +66,6 @@ class AdminKontroler extends CI_Controller {
     function brisanjeUsluge ($ime) {
         $this->load->model('AdminModel');
         $this->AdminModel->brisiUslugu($ime);
-        $this->usluge();
+         $this->usluge();
     }
 }

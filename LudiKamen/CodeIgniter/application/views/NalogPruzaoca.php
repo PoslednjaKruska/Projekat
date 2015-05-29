@@ -61,6 +61,10 @@
                         <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/PruzalacSlike">Dodajte slike za Vaš nalog</font></a>
                         </td>
                     </tr>
+                    <tr>
+                        <td align="center"><a id="admin" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/RezervisanePruzalac">Vaše rezervisane usluge</font></a>
+                        </td>
+                    </tr>
 
                 </table>
                 </font>
@@ -68,7 +72,7 @@
         </div>
     </center>
 
-    <br><br><br><br>
+    <br><br>
     <font color="black"><!--<p>Ovde bi mogli linkovi za najnovije ponude...--></font></p>
 <?php
 include_once("footer.php");

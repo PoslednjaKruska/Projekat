@@ -1,9 +1,12 @@
+<?php
+?>
+
  <!DOCTYPE html>
 
 <html>
     
     <head>
-        <title> Uspešan unos </title>
+        <title>Success</title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
@@ -11,7 +14,7 @@
             <?php include 'JavaScript/meniScript.js'; ?>
         </script>
     </head>
-          <?php
+        <?php
             if ($admin == 1)
                 include_once("header3.php");
             else
@@ -19,9 +22,8 @@
         ?>
 
     <body>
-      
         <br /><br />
-        
+<br /><br />        
         <center>
             <div id="tabela-rez" height="100%">
                 <div style="margin:30px">
@@ -29,18 +31,19 @@
                 </div>
                 <div style="margin:50px">
                     <font color="#16698b" size="3"> 
-                    Usluga je uspešno dodata! <br><br>
-                    Možete je izmeniti ili obrisati odabirom odgovarajuće opcije u Vašem meniju. <br><br>
+                    <b>
+                    Uspešno ste otkazali Vašu rezervaciju! <br><br>
+                    Možete dalje nastaviti sa pretraživanjem sadržaja. <br><br><br></b>
                     </font>
                     <center>
-                        <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/Nalog"> <image src="http://localhost:8080/Slike/povratak.jpeg" width="120" height="35"/> </a>
+                        <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Pocetna"> <image src="http://localhost:8080/Slike/pocetna.jpeg" width="120" height="35"/> </a>
                     </center>
                 </div>
             </div>
         </center>
         
         <br>
-    
+        <font color="black"><!--<p>Ovde bi mogli linkovi za najnovije ponude...--></font></p>
         <?php
            include_once("footer.php");
         ?>

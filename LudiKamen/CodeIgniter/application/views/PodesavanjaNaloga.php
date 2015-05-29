@@ -93,13 +93,13 @@
                         <td width="50%" align="left"><font color="#16698b" size="3">*Kategorija:&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
                         <td width="50%" align="center">
                             <select name="kategorija" style="width: 174px; margin-left: -5px;">
-                                <option value="1">Mlada</option>
-                                <option value="2">Mladoženja</option>
-                                <option value="3">Poslastičarnica</option>
-                                <option value="4">Muzika</option>
-                                <option value="5">Salon venčanica</option>
-                                <option value="6">Izrađivač pozivnica</option>
-                                <option value="7">Restoran</option>
+                                <option value="1" <?php if ($kategorija==1) { ?> selected="selected" <?php } ?>>Mlada</option>
+                                <option value="2" <?php if ($kategorija==2) { ?> selected="selected" <?php } ?>>Mladoženja</option>
+                                <option value="3" <?php if ($kategorija==3) { ?> selected="selected" <?php } ?>>Poslastičarnica</option>
+                                <option value="4" <?php if ($kategorija==4) { ?> selected="selected" <?php } ?>>Muzika</option>
+                                <option value="5" <?php if ($kategorija==5) { ?> selected="selected"; <?php } ?>>Salon venčanica</option>
+                                <option value="6" <?php if ($kategorija==6) { ?> selected="selected"; <?php } ?>>Izrađivač pozivnica</option>
+                                <option value="7" <?php if ($kategorija==7) { ?> selected="selected"; <?php } ?>>Restoran</option>
                             </select>
                         </td>
                     </tr>

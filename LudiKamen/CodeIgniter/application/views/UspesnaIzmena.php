@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title> Uspešan unos </title>
+        <title> Uspešna izmena</title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
@@ -29,8 +29,8 @@
                 </div>
                 <div style="margin:50px">
                     <font color="#16698b" size="3"> 
-                    Usluga je uspešno dodata! <br><br>
-                    Možete je izmeniti ili obrisati odabirom odgovarajuće opcije u Vašem meniju. <br><br>
+                    Usluga je uspešno ažurirana! <br><br>
+                    Možete nastaviti sa pregledanjem Vašeg naloga. <br><br>
                     </font>
                     <center>
                         <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/Nalog"> <image src="http://localhost:8080/Slike/povratak.jpeg" width="120" height="35"/> </a>

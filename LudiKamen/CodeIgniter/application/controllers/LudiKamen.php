@@ -26,7 +26,8 @@ class LudiKamen extends CI_Controller {
         else $data['admin'] = 0;
         $this->load->view('Pocetna', $data);
     }
-	function Galerija() {
+    
+    function Galerija() {
         $data['admin'] = 0;
         if ($_SESSION == TRUE)
             $data['sesija'] = $_SESSION['username'];
@@ -39,6 +40,7 @@ class LudiKamen extends CI_Controller {
 
         $this->load->view('Galerija', $data);
     }
+
 }
 
 ?>

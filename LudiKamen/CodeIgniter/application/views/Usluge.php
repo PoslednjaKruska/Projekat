@@ -38,7 +38,7 @@
                 if ($admin == 1)
                 $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/AdminKontroler/brisanjeUsluge/' . $ime;
                 else
-                $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/brisanjeUsluge/' . $ime;
+                    $link = 'http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/brisanjeUsluge/' . $ime;
             ?>
                 
             <div id="radnja">
@@ -56,10 +56,12 @@
                             </td>
 			</tr>
 			<tr>  
-                            <td> <font color="red" size="4"> &nbsp;&nbsp; Ocena: <b> <?php echo $row->Ocena; ?> </b> </font> </td>
                             <td> <font color="#62c2e8" size="4"> Cena po osobi: <b> <?php echo $row->Cena; ?> € </b> </font> </td>
-                            <td colspan="2"> <?php echo "<a href='{$link}'/>"; ?> <font color="#16698b" size="4"> <image src="http://localhost:8080/Slike/obrisi.jpeg" width="120" height="35"/> </font> </a> </td>
-			</tr> 
+                            <?php if ($admin == 0) { ?>
+                            <td > <a href="<?php echo "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/izmenaUsluge/" .$row->IDUsluga; ?>"> <font color="#16698b" size="4"> <image src="http://localhost:8080/Slike/izmeni.jpeg" width="120" height="35"/> </font> </a> </td> <?php } ?>
+                            
+                            <td><?php echo "<a href='{$link}'/>"; ?> <font color="#16698b" size="4"> <image src="http://localhost:8080/Slike/obrisi.jpeg" width="120" height="35"/> </font> </a> </td> 
+                        </tr> 
 		</table>
 		<br>
             </div>

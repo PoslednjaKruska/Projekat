@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title> Unos usluge </title>
+        <title> Izmena usluge </title>
         <style>
             <?php include 'CSS/stilovi.css'; ?>
         </style>
@@ -13,14 +13,11 @@
     </head>
     
         <?php
-        if ($sesija) {
             if ($admin)
                 include_once("header3.php");
             else
                 include_once("header2.php");
-        } else {
-           include_once("header.php");
-        }
+     
         ?>
 
     <body>
@@ -28,13 +25,13 @@
         <br /><br />
         
         <?php
-            $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Usluga/ProveraUnosa";
-            $povratak = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/Nalog";
+            $link = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Usluga/proveraIzmene/" .$idPruzalac .'/' .$id;
+            $povratak = "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/Pruzalac";
         ?>
         
         <center>
             <form name="unos" method="post" enctype="multipart/form-data" <?php echo "action='{$link}'/>"; ?>
-                <font id="naslov2" style="font-size:30px"> Unos usluge </font>
+                <font id="naslov2" style="font-size:30px"> Izmena usluge </font>
                 <br><br>
                 
                 <div id="l">
@@ -42,13 +39,12 @@
                         <image src="http://localhost:8080/Slike/logoHD.png" width="150" height="171"/>
                     </div>
                 </div>
-                
                 <div id="tabela-rez">
                     <br>
                     <table style="background-color:#e3f2f2" width="50%">
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Naziv usluge </font> </td>
-                            <td width="50%" align="center"> <font color="#16698b" size="3"> <input type="text" name="naziv" size="30" value="<?php echo set_value('naziv'); ?>" /> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="3"> <input type="text" name="naziv" size="30" value="<?php echo set_value('naziv'); echo $naziv; ?>" /> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> </td>
@@ -56,7 +52,7 @@
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Opis </font> </td>
-                            <td width="50%" align="center"> <font color="#16698b" size="3"> <input type="text" name="opis" size="30" value="<?php echo set_value('opis'); ?>" /> </td>
+                            <td width="50%" align="center"> <font color="#16698b" size="3"> <input type="text" name="opis" size="30" value="<?php echo set_value('opis'); echo $opis; ?>" /> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> </td>
@@ -64,7 +60,7 @@
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Cena </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="cena" size="30" value="<?php echo set_value('cena'); ?>"/> </td>
+                            <td width="50%" align="center"> <input type="text" name="cena" size="30" value="<?php echo set_value('cena'); echo $cena; ?>"/> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> </td>
@@ -72,7 +68,7 @@
                         </tr>
                         <tr>
                             <td width="50%" align="center"> <font color="#16698b" size="3"> Veličina </font> </td>
-                            <td width="50%" align="center"> <input type="text" name="velicina" size="30" value="<?php echo set_value('velicina'); ?>"/> </td>
+                            <td width="50%" align="center"> <input type="text" name="velicina" size="30" value="<?php echo set_value('velicina'); echo $velicina; ?>"/> </td>
                         </tr>
                         <tr>
                             <td width="50%" align="center"> </td>

@@ -61,6 +61,8 @@ class Logovanje extends CI_Controller {
             $data['admin'] = 1;
         if ($data['kategorija'] > 2)
             $this->load->view('NalogPruzaoca', $data);
+        elseif ($data['kategorija'] == 0)
+            $this->load->view('AdminsPage', $data);
         else
             $this->load->view("Nalog", $data);  // if kategorija pruzaoca, usmeri na drugi view !!!
     }
