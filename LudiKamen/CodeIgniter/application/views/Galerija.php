@@ -47,34 +47,32 @@
         <div id="wrap">
 					<table>
 						<tr>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/1.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/1.jpg" height="250" width="300"></a></a>  </td>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/2.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/2.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/3.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/3.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/1.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/1.jpg" height="250" width="300"></a></a>  </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/2.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/2.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/3.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/3.jpg" height="250" width="300"></a> </td>
 						</tr>
 						<tr>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/4.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/4.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/5.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/5.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/6.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/6.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/4.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/4.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/5.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/5.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/6.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/6.jpg" height="250" width="300"></a> </td>
 						</tr>
 						<tr>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/7.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/7.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/8.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/8.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/9.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/9.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/7.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/7.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/8.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/8.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/9.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/9.jpg" height="250" width="300"></a> </td>
 						</tr>
 						<tr>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/10.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/10.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/11.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/11.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/12.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/12.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/10.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/10.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/11.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/11.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/12.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/12.jpg" height="250" width="300"></a> </td>
 						</tr>
 						<tr>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/13.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/13.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/14.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/14.jpg" height="250" width="300"></a> </td>
-							<td height="250" width="300"> <a href="http://localhost/Slike/Galerija/15.jpg" rel="lightbox[wrap]"><img src="http://localhost/Slike/Galerija/15.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/13.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/13.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/14.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/14.jpg" height="250" width="300"></a> </td>
+							<td height="250" width="300"> <a href="http://localhost:8080/Slike/Galerija/15.jpg" rel="lightbox[wrap]"><img src="http://localhost:8080/Slike/Galerija/15.jpg" height="250" width="300"></a> </td>
 						</tr>
 					</table>
 				</div>
-
-
 	</center>
 
    <div id="cena">
