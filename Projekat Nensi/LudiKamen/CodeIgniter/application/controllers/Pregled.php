@@ -2,6 +2,7 @@
 session_start();
 
 class Pregled extends CI_Controller {
+    // Autor: Maša Reko
 
     function Restoran($ime = '') {
         $data['admin'] = 0;

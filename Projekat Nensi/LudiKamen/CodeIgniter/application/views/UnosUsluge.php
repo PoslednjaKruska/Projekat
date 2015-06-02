@@ -1,5 +1,7 @@
  <!DOCTYPE html>
 
+ <!-- Autori: Maša Reko, Aleksandra Šegrt -->
+ 
 <html>
     
     <head>

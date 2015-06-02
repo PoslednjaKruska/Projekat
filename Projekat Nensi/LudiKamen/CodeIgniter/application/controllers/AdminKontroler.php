@@ -2,6 +2,8 @@
 session_start();
 
 class AdminKontroler extends CI_Controller {
+    // Autor: Nevena Milinković
+    
     function nalozi () {
        $this->load->model('AdminModel');
        $data['admin'] = 1;

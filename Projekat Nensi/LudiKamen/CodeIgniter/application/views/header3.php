@@ -1,3 +1,5 @@
+<!-- Autor: Nevena Milinković -->
+
 <div class="center">
  
 <table class="center" width="100%" height="50"  > 	
@@ -21,10 +23,10 @@
             <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Pretraga/Pozivnice">Pozivnice</a><br />
         </td>
         <td class="center"  >
-            <a href="#">Galerija</a><br />
+            <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Galerija">Galerija</a><br />
         </td> 
         <td class="center" >
-            <a href="#">Kontakt</a><br />
+            <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Kontakt">Kontakt</a><br />
         </td>
         <td class="center" >
             <a href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/AdminKontroler/adminsPage"><img src="http://localhost:8080/Slike/adminMeni.jpeg" width="80" height="35" /></a>&nbsp;&nbsp;

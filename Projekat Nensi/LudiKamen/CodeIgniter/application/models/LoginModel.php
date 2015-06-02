@@ -1,6 +1,7 @@
 <?php
 
 class LoginModel extends CI_Model {
+    // Autor: Nevena Milinković
 
     function check() {
         $this->load->database();

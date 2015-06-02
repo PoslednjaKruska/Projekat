@@ -2,6 +2,7 @@
 
 
 class RegistracijaKontroler extends CI_Controller {
+    // Autor: Nevena Milinković
 
     function Registracija() {
         $data['flag'] = 0;

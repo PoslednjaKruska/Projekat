@@ -3,6 +3,7 @@
 session_start();
 
 class Pretraga extends CI_Controller {
+    // Autor: Maša Reko
 
     function Restorani() {
         $data['admin'] = 0;
