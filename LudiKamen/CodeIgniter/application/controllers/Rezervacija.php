@@ -7,8 +7,10 @@ class Rezervacija extends CI_Controller {
 
     function Restoran($ime = '') {
         $data['admin'] = 0;
-        if ($_SESSION == TRUE)
+        if ($_SESSION == TRUE) {
             $data['sesija'] = $_SESSION['username'];
+            $data['kat'] = $_SESSION['kategorija'];
+        }
         else
             $data['sesija'] = 0;
         
@@ -38,8 +40,10 @@ class Rezervacija extends CI_Controller {
 
     function Muzika($ime = '') {
         $data['admin'] = 0;
-        if ($_SESSION == TRUE)
+        if ($_SESSION == TRUE) {
             $data['sesija'] = $_SESSION['username'];
+            $data['kat'] = $_SESSION['kategorija'];
+        }
         else
             $data['sesija'] = 0;
         
@@ -69,8 +73,10 @@ class Rezervacija extends CI_Controller {
 
     function Torta($imeP = '', $imeT = '') {
         $data['admin'] = 0;
-        if ($_SESSION == TRUE)
+        if ($_SESSION == TRUE) {
             $data['sesija'] = $_SESSION['username'];
+            $data['kat'] = $_SESSION['kategorija'];
+        }
         else
             $data['sesija'] = 0;
         
@@ -102,8 +108,10 @@ class Rezervacija extends CI_Controller {
 
     function Vencanica($imeS = '', $imeV = '') {
         $data['admin'] = 0;
-        if ($_SESSION == TRUE)
+        if ($_SESSION == TRUE) {
             $data['sesija'] = $_SESSION['username'];
+            $data['kat'] = $_SESSION['kategorija'];
+        }
         else
             $data['sesija'] = 0;
         
@@ -135,8 +143,10 @@ class Rezervacija extends CI_Controller {
 
     function Pozivnica($imeS = '', $imeP = '') {
         $data['admin'] = 0;
-        if ($_SESSION == TRUE)
+        if ($_SESSION == TRUE) {
             $data['sesija'] = $_SESSION['username'];
+            $data['kat'] = $_SESSION['kategorija'];
+        }
         else
             $data['sesija'] = 0;
         
@@ -756,6 +766,18 @@ class Rezervacija extends CI_Controller {
             $poruka = $ukupno . " €";
         }
         echo $poruka;
+    }
+    
+    function Zabranjeno () {
+        $data['admin'] = 0;
+        if ($_SESSION == TRUE)
+            $data['sesija'] = $_SESSION['username'];
+        else
+            $data['sesija'] = 0;
+        if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
+            $data['admin'] = 1;
+
+        $this->load->view('ZabranjenaRezervacija', $data);
     }
 
 }

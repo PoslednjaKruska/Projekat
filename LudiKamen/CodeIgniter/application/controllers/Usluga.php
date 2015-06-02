@@ -21,7 +21,7 @@ class Usluga extends CI_Controller {
     
     function ProveraUnosa() {
         $data['admin'] = 0;
-        if ($_SESSION == TRUE)
+        if ($_SESSION == TRUE) 
             $data['sesija'] = $_SESSION['username'];
         else
             $data['sesija'] = 0;
@@ -58,9 +58,20 @@ class Usluga extends CI_Controller {
            if ($rezultat == 1) {
                if($_FILES['slika']['name']) {
                     if(!$_FILES['slika']['error']) {
-                        $naziv = $this->input->post('naziv');
+                        
+                        if ($_SESSION['kategorija'] == 7 || $_SESSION['kategorija'] == 4) {
+                            $q = $this->PomocniModel->getName($pruzalac);
+                            $naziv = "";
+                            foreach ($q as $row) {
+                                $naziv = $row->ImePrezime;
+                            }
+                        }
+                        else {
+                            $naziv = $this->input->post('naziv');                            
+                        }
                         $i = preg_replace('/\s+/', '', $naziv);
                         $new_file_name = $i . ".jpg";
+                        
                         $valid_file = true;
                         if($_FILES['slika']['size'] > (1024000)) {
                             $valid_file = false;

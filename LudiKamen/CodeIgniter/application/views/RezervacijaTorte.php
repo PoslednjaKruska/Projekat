@@ -45,15 +45,20 @@
         }
 </script>
     </head>
+    
         <?php
         if ($sesija) {
             if ($admin)
                 include_once("header3.php");
+            else if ($kat != 0 && $kat != 1 && $kat != 2) {
+                header("Location: http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Rezervacija/Zabranjeno"); 
+                exit();
+            }
             else
                 include_once("header2.php");
         } else {
-            header("Location: http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/Login"); 
-            exit();
+           header("Location: http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/Login"); 
+           exit();
         }
         ?>
 

@@ -112,6 +112,19 @@ class PomocniModel extends CI_Model {
         $this->db->update('usluga', $niz);
         
     }
+    
+    function getName ($username) {
+        $this->load->database();
+         
+        $this->db->select('k.ImePrezime');
+        $this->db->distinct();
+        $this->db->from('korisnik k');
+        $this->db->where('k.Username', $username);
+        
+        $query = $this->db->get('korisnik');
+        
+        return $query->result();
+    }
    
 }
 
