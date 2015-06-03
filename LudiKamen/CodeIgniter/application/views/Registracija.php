@@ -94,6 +94,7 @@
                                 <option value="5">Salon venčanica</option>
                                 <option value="6">Izrađivač pozivnica</option>
                                 <option value="7">Restoran</option>
+                                <option value="8">Štamparija</option>
                             </select>
                         </td>
                     </tr>

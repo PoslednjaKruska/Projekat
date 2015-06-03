@@ -45,7 +45,7 @@
     </head>
     
     <body onLoad="sledecaSlika()">
-        
+       
         <?php
         if ($sesija)
         {

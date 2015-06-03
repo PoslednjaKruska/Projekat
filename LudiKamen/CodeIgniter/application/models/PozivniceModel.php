@@ -10,7 +10,7 @@ class PozivniceModel extends CI_Model {
         $this->db->select('k.ImePrezime, k.Adresa');
         $this->db->distinct();
         $this->db->from('korisnik k');
-        $this->db->where('k.Kategorija', 6);
+        $this->db->where('k.Kategorija', 8);
         
         if ($grad != "") { $this->db->like('k.Grad', $grad); }
                 
@@ -27,7 +27,7 @@ class PozivniceModel extends CI_Model {
         $this->db->select('k.ImePrezime, k.Adresa');
         $this->db->distinct();
         $this->db->from('korisnik k');
-        $this->db->where('k.Kategorija', 6);
+        $this->db->where('k.Kategorija', 8);
         
         if ($grad != "") { $this->db->like('k.Grad', $grad); }
                 
