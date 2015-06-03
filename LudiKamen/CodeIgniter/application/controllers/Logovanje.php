@@ -94,7 +94,7 @@ class Logovanje extends CI_Controller {
                 if ($data['kategorija'] == 0)
                     $data['admin'] = 1;
 
-                $this->load->view('Nalog', $data);
+                $this->load->view('PodesavanjaNaloga', $data);
                 return;
             }
         }
@@ -106,7 +106,7 @@ class Logovanje extends CI_Controller {
             if ($data['kategorija'] == 0)
                 $data['admin'] = 1;
 
-            $this->load->view('Nalog', $data);
+            $this->load->view('PodesavanjaNaloga', $data);
             return;
         }
         $data['username'] = $this->input->post('korime');
@@ -126,7 +126,7 @@ class Logovanje extends CI_Controller {
                 $data['admin'] = 1;
 
             $data['flag'] = 5;
-            $this->load->view('Nalog', $data);
+            $this->load->view('PodesavanjaNaloga', $data);
             return;
         }
 
@@ -139,7 +139,7 @@ class Logovanje extends CI_Controller {
             $data['flag'] = 6;
             if ($data['kategorija'] == 0)
                 $data['admin'] = 1;
-            $this->load->view('Nalog', $data);
+            $this->load->view('PodesavanjaNaloga', $data);
             return;
         }
         $data['adresa'] = $this->input->post('adresa');
@@ -154,13 +154,16 @@ class Logovanje extends CI_Controller {
             if ($data['kategorija'] == 0)
                 $data['admin'] = 1;
 
-            $this->load->view('Nalog', $data);
+            $this->load->view('PodesavanjaNaloga', $data);
             return;
         }
         if ($data['kategorija'] == 0)
             $data['admin'] = 1;
 
         $this->RegistracijaModel->updateUser($data, $_SESSION['username']);
+        $_SESSION['username'] = $data['username'];
+        $_SESSION['password'] = $data['password'];
+        $_SESSION['kategorija'] = $data['kategorija'];
         $this->load->view('UspesnaPromena', $data);
     }
 
@@ -187,7 +190,13 @@ class Logovanje extends CI_Controller {
         $this->load->view("PodesavanjaNaloga", $data);
     }
     
-    function korisnikPodesavanja () {   
+    function korisnikPodesavanja () {  
+           if ($_SESSION == false)
+        {
+            $this->load->view('GreskaStranica');
+            return;
+        }
+     
         $data = array(
             'username' => $_SESSION['username'],
             'password' => $_SESSION['password'],
@@ -199,7 +208,7 @@ class Logovanje extends CI_Controller {
             'flag' => 0,
             'admin' => 0
         );
-          $this->load->model('LoginModel');
+        $this->load->model('LoginModel');
         $data = $this->LoginModel->getParams($data);
 //        $this->load->model('LoginModel');
 //        $data = $this->LoginModel->getParams($data);

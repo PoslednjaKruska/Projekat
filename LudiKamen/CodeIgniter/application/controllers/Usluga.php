@@ -3,25 +3,56 @@
 session_start();
 
 class Usluga extends CI_Controller {
+
     // Autori: Nevena Milinković, Maša Reko
-    
+
     function Unos() {
+        if ($_SESSION == false || $_SESSION['kategorija'] < 3) {
+            if ($_SESSION == true) {
+                $data['sesija'] = 1;
+                $data['kategorija'] = $_SESSION['kategorija'];
+                $data['username'] = $_SESSION['username'];
+                if ($data['kategorija'] == 0)
+                    $data['admin'] = 1;
+                else
+                    $data['admin'] = 0;
+            } else
+                $data['sesija'] = 0;
+            $this->load->view('GreskaStranica', $data);
+            return;
+        }
+
         $data['admin'] = 0;
         if ($_SESSION == TRUE)
             $data['sesija'] = $_SESSION['username'];
         else
             $data['sesija'] = 0;
-        
+
         if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
             $data['admin'] = 1;
-        
+
         $this->load->helper(array('form', 'url'));
         $this->load->view("UnosUsluge", $data);
     }
-    
+
     function ProveraUnosa() {
+          if ($_SESSION == false || $_SESSION['kategorija'] < 3) {
+            if ($_SESSION == true) {
+                $data['sesija'] = 1;
+                $data['kategorija'] = $_SESSION['kategorija'];
+                $data['username'] = $_SESSION['username'];
+                if ($data['kategorija'] == 0)
+                    $data['admin'] = 1;
+                else
+                    $data['admin'] = 0;
+            } else
+                $data['sesija'] = 0;
+            $this->load->view('GreskaStranica', $data);
+            return;
+        }
+        
         $data['admin'] = 0;
-        if ($_SESSION == TRUE) 
+        if ($_SESSION == TRUE)
             $data['sesija'] = $_SESSION['username'];
         else
             $data['sesija'] = 0;
@@ -44,56 +75,52 @@ class Usluga extends CI_Controller {
             $this->load->view('UnosUsluge', $data);
         }
         else {
-           if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
+            if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-           $this->load->model("PomocniModel");
-           $naziv = $this->input->post('naziv');
-           $opis = $this->input->post('opis');
-           $cena = $this->input->post('cena');
-           $pruzalac = $_SESSION['username'];
-           $velicina = $this->input->post('velicina');
-           $kategorija = $_SESSION['kategorija'];
-           $rezultat = $this->PomocniModel->unesiUslugu($naziv, $opis, $cena, $pruzalac, $velicina, $kategorija);
-           
-           if ($rezultat == 1) {
-               if($_FILES['slika']['name']) {
-                    if(!$_FILES['slika']['error']) {
-                        
+            $this->load->model("PomocniModel");
+            $naziv = $this->input->post('naziv');
+            $opis = $this->input->post('opis');
+            $cena = $this->input->post('cena');
+            $pruzalac = $_SESSION['username'];
+            $velicina = $this->input->post('velicina');
+            $kategorija = $_SESSION['kategorija'];
+            $rezultat = $this->PomocniModel->unesiUslugu($naziv, $opis, $cena, $pruzalac, $velicina, $kategorija);
+
+            if ($rezultat == 1) {
+                if ($_FILES['slika']['name']) {
+                    if (!$_FILES['slika']['error']) {
+
                         if ($_SESSION['kategorija'] == 7 || $_SESSION['kategorija'] == 4) {
                             $q = $this->PomocniModel->getName($pruzalac);
                             $naziv = "";
                             foreach ($q as $row) {
                                 $naziv = $row->ImePrezime;
                             }
-                        }
-                        else {
-                            $naziv = $this->input->post('naziv');                            
+                        } else {
+                            $naziv = $this->input->post('naziv');
                         }
                         $i = preg_replace('/\s+/', '', $naziv);
                         $new_file_name = $i . ".jpg";
-                        
+
                         $valid_file = true;
-                        if($_FILES['slika']['size'] > (1024000)) {
+                        if ($_FILES['slika']['size'] > (1024000)) {
                             $valid_file = false;
                         }
-                        if($valid_file) {
-                            move_uploaded_file($_FILES['slika']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/Slike/'.$new_file_name);
+                        if ($valid_file) {
+                            move_uploaded_file($_FILES['slika']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/Slike/' . $new_file_name);
                         }
                     }
                 }
-               $this->load->view('UspesanUnos', $data);
-           }
-           else if ($rezultat == 2) {
-               $this->load->view('GreskaUnos', $data);
-           }
-           else {
-               $this->load->view('GreskaUnos1', $data);
-           }
+                $this->load->view('UspesanUnos', $data);
+            } else if ($rezultat == 2) {
+                $this->load->view('GreskaUnos', $data);
+            } else {
+                $this->load->view('GreskaUnos1', $data);
+            }
         }
     }
-    
-    
-        function ProveraIzmene($idPruzalac, $idUsluga) {
+
+    function ProveraIzmene($idPruzalac, $idUsluga) {
         $data['admin'] = 0;
         $data['sesija'] = 1;
         $data['idPruzalac'] = $idPruzalac;
@@ -111,39 +138,38 @@ class Usluga extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-            
+
             $this->load->view('IzmenaUsluge', $data);
         }
         else {
-           if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
+            if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-           $this->load->model("PomocniModel");
-           $naziv = $this->input->post('naziv');
-           $opis = $this->input->post('opis');
-           $cena = $this->input->post('cena');
-           $velicina = $this->input->post('velicina');
-           $kategorija = $_SESSION['kategorija'];
-           $this->PomocniModel->azurirajUslugu($naziv, $opis, $cena, $idPruzalac, $idUsluga, $velicina, $kategorija);
-      
-           if($_FILES['slika']['name']) {
-                    if(!$_FILES['slika']['error']) {
-                        $naziv = $this->input->post('naziv');
-                        $i = preg_replace('/\s+/', '', $naziv);
-                        $new_file_name = $i . ".jpg";
-                        $valid_file = true;
-                        if($_FILES['slika']['size'] > (1024000)) {
-                            $valid_file = false;
-                        }
-                        if($valid_file) {
-                            move_uploaded_file($_FILES['slika']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/Slike/'.$new_file_name);
-                        }
+            $this->load->model("PomocniModel");
+            $naziv = $this->input->post('naziv');
+            $opis = $this->input->post('opis');
+            $cena = $this->input->post('cena');
+            $velicina = $this->input->post('velicina');
+            $kategorija = $_SESSION['kategorija'];
+            $this->PomocniModel->azurirajUslugu($naziv, $opis, $cena, $idPruzalac, $idUsluga, $velicina, $kategorija);
+
+            if ($_FILES['slika']['name']) {
+                if (!$_FILES['slika']['error']) {
+                    $naziv = $this->input->post('naziv');
+                    $i = preg_replace('/\s+/', '', $naziv);
+                    $new_file_name = $i . ".jpg";
+                    $valid_file = true;
+                    if ($_FILES['slika']['size'] > (1024000)) {
+                        $valid_file = false;
+                    }
+                    if ($valid_file) {
+                        move_uploaded_file($_FILES['slika']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/Slike/' . $new_file_name);
                     }
                 }
-               $this->load->view('UspesnaIzmena', $data);
-           
+            }
+            $this->load->view('UspesnaIzmena', $data);
         }
     }
-}
 
+}
 ?>
 

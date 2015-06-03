@@ -3,6 +3,7 @@
 session_start();
 
 class Rezervacija extends CI_Controller {
+
     // Autor: Maša Reko
 
     function Restoran($ime = '') {
@@ -10,10 +11,9 @@ class Rezervacija extends CI_Controller {
         if ($_SESSION == TRUE) {
             $data['sesija'] = $_SESSION['username'];
             $data['kat'] = $_SESSION['kategorija'];
-        }
-        else
+        } else
             $data['sesija'] = 0;
-        
+
         $this->load->model('PomocniModel');
         $korisnik = $this->PomocniModel->getKorisnik($data['sesija']);
         $imePrezime = null;
@@ -24,7 +24,7 @@ class Rezervacija extends CI_Controller {
             $adresa = $row->Adresa;
             $email = $row->Email;
         }
-        
+
         $data['imePrezime'] = $imePrezime;
         $data['adresa'] = $adresa;
         $data['email'] = $email;
@@ -43,10 +43,9 @@ class Rezervacija extends CI_Controller {
         if ($_SESSION == TRUE) {
             $data['sesija'] = $_SESSION['username'];
             $data['kat'] = $_SESSION['kategorija'];
-        }
-        else
+        } else
             $data['sesija'] = 0;
-        
+
         $this->load->model('PomocniModel');
         $korisnik = $this->PomocniModel->getKorisnik($data['sesija']);
         $imePrezime = null;
@@ -57,7 +56,7 @@ class Rezervacija extends CI_Controller {
             $adresa = $row->Adresa;
             $email = $row->Email;
         }
-        
+
         $data['imePrezime'] = $imePrezime;
         $data['adresa'] = $adresa;
         $data['email'] = $email;
@@ -76,10 +75,9 @@ class Rezervacija extends CI_Controller {
         if ($_SESSION == TRUE) {
             $data['sesija'] = $_SESSION['username'];
             $data['kat'] = $_SESSION['kategorija'];
-        }
-        else
+        } else
             $data['sesija'] = 0;
-        
+
         $this->load->model('PomocniModel');
         $korisnik = $this->PomocniModel->getKorisnik($data['sesija']);
         $imePrezime = null;
@@ -90,10 +88,10 @@ class Rezervacija extends CI_Controller {
             $adresa = $row->Adresa;
             $email = $row->Email;
         }
-        
+
         $data['imePrezime'] = $imePrezime;
         $data['adresa'] = $adresa;
-        $data['email'] = $email;        
+        $data['email'] = $email;
 
         $nazivP = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeP);
         $nazivT = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeT);
@@ -111,10 +109,9 @@ class Rezervacija extends CI_Controller {
         if ($_SESSION == TRUE) {
             $data['sesija'] = $_SESSION['username'];
             $data['kat'] = $_SESSION['kategorija'];
-        }
-        else
+        } else
             $data['sesija'] = 0;
-        
+
         $this->load->model('PomocniModel');
         $korisnik = $this->PomocniModel->getKorisnik($data['sesija']);
         $imePrezime = null;
@@ -125,10 +122,10 @@ class Rezervacija extends CI_Controller {
             $adresa = $row->Adresa;
             $email = $row->Email;
         }
-        
+
         $data['imePrezime'] = $imePrezime;
         $data['adresa'] = $adresa;
-        $data['email'] = $email;        
+        $data['email'] = $email;
 
         $nazivS = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeS);
         $nazivV = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeV);
@@ -146,10 +143,9 @@ class Rezervacija extends CI_Controller {
         if ($_SESSION == TRUE) {
             $data['sesija'] = $_SESSION['username'];
             $data['kat'] = $_SESSION['kategorija'];
-        }
-        else
+        } else
             $data['sesija'] = 0;
-        
+
         $this->load->model('PomocniModel');
         $korisnik = $this->PomocniModel->getKorisnik($data['sesija']);
         $imePrezime = null;
@@ -160,10 +156,10 @@ class Rezervacija extends CI_Controller {
             $adresa = $row->Adresa;
             $email = $row->Email;
         }
-        
+
         $data['imePrezime'] = $imePrezime;
         $data['adresa'] = $adresa;
-        $data['email'] = $email;        
+        $data['email'] = $email;
 
         $nazivS = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeS);
         $nazivP = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeP);
@@ -178,9 +174,10 @@ class Rezervacija extends CI_Controller {
 
     function ProveraRestoran($ime = '') {
         $data['admin'] = 0;
-        if ($_SESSION == TRUE)
+        if ($_SESSION == TRUE) {
             $data['sesija'] = $_SESSION['username'];
-        else
+            $data['kat'] = $_SESSION['kategorija'];
+        } else
             $data['sesija'] = 0;
 
         $this->load->helper(array('form', 'url'));
@@ -205,7 +202,7 @@ class Rezervacija extends CI_Controller {
             $data['naziv'] = $naziv;
             if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-            
+
             $this->load->model('PomocniModel');
             $korisnik = $this->PomocniModel->getKorisnik($data['sesija']);
             $imePrezime = null;
@@ -219,11 +216,10 @@ class Rezervacija extends CI_Controller {
 
             $data['imePrezime'] = $imePrezime;
             $data['adresa'] = $adresa;
-            $data['email'] = $email;  
+            $data['email'] = $email;
 
             $this->load->view('RezervacijaRestorana', $data);
-        }
-        else {
+        } else {
             /*        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
               $from = "ludikamen@gmail.com";
 
@@ -246,33 +242,32 @@ class Rezervacija extends CI_Controller {
               mail($emailUsl, $subjectUsl, $commentUsl, $from); */
             if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-            
+
             $this->load->model('RestoranModel');
             $korisnik = $_SESSION['username'];
             $usluga = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
             $datum = $this->input->post('datum');
-            $rezultat = $this->RestoranModel->rezervisi($korisnik, $usluga, $datum);     
-            
+            $rezultat = $this->RestoranModel->rezervisi($korisnik, $usluga, $datum);
+
             if ($rezultat == 1) {
                 $this->load->view('UspesnaRezervacija', $data);
-            }
-            else if ($rezultat == 2) {
+            } else if ($rezultat == 2) {
                 $this->load->view('VecRezervisano', $data);
-            }
-            else if ($rezultat == 3) {
+            } else if ($rezultat == 3) {
                 $this->load->view('Nedostupno', $data);
-            }
-            else {
+            } else {
                 $this->load->view('Greska', $data);
             }
-            
         }
     }
 
     function ProveraMuzika($ime = '') {
         $data['admin'] = 0;
         if ($_SESSION == TRUE)
+        {
             $data['sesija'] = $_SESSION['username'];
+            $data['kat'] = $_SESSION['kategorija'];
+        }
         else
             $data['sesija'] = 0;
 
@@ -298,7 +293,7 @@ class Rezervacija extends CI_Controller {
             $data['naziv'] = $naziv;
             if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-            
+
             $this->load->model('PomocniModel');
             $korisnik = $this->PomocniModel->getKorisnik($data['sesija']);
             $imePrezime = null;
@@ -312,11 +307,10 @@ class Rezervacija extends CI_Controller {
 
             $data['imePrezime'] = $imePrezime;
             $data['adresa'] = $adresa;
-            $data['email'] = $email;             
+            $data['email'] = $email;
 
             $this->load->view('RezervacijaMuzike', $data);
-        }
-        else {
+        } else {
             /*        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
               $from = "ludikamen@gmail.com";
 
@@ -339,23 +333,20 @@ class Rezervacija extends CI_Controller {
               mail($emailUsl, $subjectUsl, $commentUsl, $from); */
             if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-            
+
             $this->load->model('MuzikaModel');
             $korisnik = $_SESSION['username'];
             $usluga = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
             $datum = $this->input->post('datum');
-            $rezultat = $this->MuzikaModel->rezervisi($korisnik, $usluga, $datum);     
-            
+            $rezultat = $this->MuzikaModel->rezervisi($korisnik, $usluga, $datum);
+
             if ($rezultat == 1) {
                 $this->load->view('UspesnaRezervacija', $data);
-            }
-            else if ($rezultat == 2) {
+            } else if ($rezultat == 2) {
                 $this->load->view('VecRezervisano', $data);
-            }
-            else if ($rezultat == 3) {
+            } else if ($rezultat == 3) {
                 $this->load->view('Nedostupno', $data);
-            }
-            else {
+            } else {
                 $this->load->view('Greska', $data);
             }
         }
@@ -364,7 +355,10 @@ class Rezervacija extends CI_Controller {
     function ProveraTorta($imeP = '', $imeT = '') {
         $data['admin'] = 0;
         if ($_SESSION == TRUE)
+        {
             $data['sesija'] = $_SESSION['username'];
+            $data['kat'] = $_SESSION['kategorija'];            
+        }
         else
             $data['sesija'] = 0;
 
@@ -392,7 +386,7 @@ class Rezervacija extends CI_Controller {
             $data['nazivT'] = $nazivT;
             if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-            
+
             $this->load->model('PomocniModel');
             $korisnik = $this->PomocniModel->getKorisnik($data['sesija']);
             $imePrezime = null;
@@ -406,11 +400,10 @@ class Rezervacija extends CI_Controller {
 
             $data['imePrezime'] = $imePrezime;
             $data['adresa'] = $adresa;
-            $data['email'] = $email;             
+            $data['email'] = $email;
 
             $this->load->view('RezervacijaTorte', $data);
-        }
-        else {
+        } else {
             /*        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
               $from = "ludikamen@gmail.com";
 
@@ -433,20 +426,18 @@ class Rezervacija extends CI_Controller {
               mail($emailUsl, $subjectUsl, $commentUsl, $from); */
             if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-            
+
             $this->load->model('TorteModel');
             $korisnik = $_SESSION['username'];
             $usluga = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeT);
             $datum = $this->input->post('datum');
-            $rezultat = $this->TorteModel->rezervisi($korisnik, $usluga, $datum);     
-            
+            $rezultat = $this->TorteModel->rezervisi($korisnik, $usluga, $datum);
+
             if ($rezultat == 1) {
                 $this->load->view('UspesnaRezervacija', $data);
-            }
-            else if ($rezultat == 2) {
+            } else if ($rezultat == 2) {
                 $this->load->view('VecRezervisano', $data);
-            }
-            else {
+            } else {
                 $this->load->view('Greska', $data);
             }
         }
@@ -455,7 +446,10 @@ class Rezervacija extends CI_Controller {
     function ProveraVencanica($imeS = '', $imeV = '') {
         $data['admin'] = 0;
         if ($_SESSION == TRUE)
+        {
             $data['sesija'] = $_SESSION['username'];
+            $data['kat'] = $_SESSION['kategorija'];
+        }
         else
             $data['sesija'] = 0;
 
@@ -483,7 +477,7 @@ class Rezervacija extends CI_Controller {
             $data['nazivV'] = $nazivV;
             if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-            
+
             $this->load->model('PomocniModel');
             $korisnik = $this->PomocniModel->getKorisnik($data['sesija']);
             $imePrezime = null;
@@ -497,11 +491,10 @@ class Rezervacija extends CI_Controller {
 
             $data['imePrezime'] = $imePrezime;
             $data['adresa'] = $adresa;
-            $data['email'] = $email;             
+            $data['email'] = $email;
 
             $this->load->view('RezervacijaVencanice', $data);
-        }
-        else {
+        } else {
             /*        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
               $from = "ludikamen@gmail.com";
 
@@ -524,23 +517,20 @@ class Rezervacija extends CI_Controller {
               mail($emailUsl, $subjectUsl, $commentUsl, $from); */
             if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-            
+
             $this->load->model('VencaniceModel');
             $korisnik = $_SESSION['username'];
             $usluga = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeV);
             $datum = $this->input->post('datum');
-            $rezultat = $this->VencaniceModel->rezervisi($korisnik, $usluga, $datum);     
-            
+            $rezultat = $this->VencaniceModel->rezervisi($korisnik, $usluga, $datum);
+
             if ($rezultat == 1) {
                 $this->load->view('UspesnaRezervacija', $data);
-            }
-            else if ($rezultat == 2) {
+            } else if ($rezultat == 2) {
                 $this->load->view('VecRezervisano', $data);
-            }
-            else if ($rezultat == 3) {
+            } else if ($rezultat == 3) {
                 $this->load->view('Nedostupno', $data);
-            }
-            else {
+            } else {
                 $this->load->view('Greska', $data);
             }
         }
@@ -549,7 +539,10 @@ class Rezervacija extends CI_Controller {
     function ProveraPozivnica($imeS = '', $imeP = '') {
         $data['admin'] = 0;
         if ($_SESSION == TRUE)
+        {
             $data['sesija'] = $_SESSION['username'];
+            $data['kat'] = $_SESSION['kategorija'];            
+        }
         else
             $data['sesija'] = 0;
 
@@ -577,7 +570,7 @@ class Rezervacija extends CI_Controller {
             $data['nazivP'] = $nazivP;
             if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-            
+
             $this->load->model('PomocniModel');
             $korisnik = $this->PomocniModel->getKorisnik($data['sesija']);
             $imePrezime = null;
@@ -591,11 +584,10 @@ class Rezervacija extends CI_Controller {
 
             $data['imePrezime'] = $imePrezime;
             $data['adresa'] = $adresa;
-            $data['email'] = $email;             
+            $data['email'] = $email;
 
             $this->load->view('RezervacijaPozivnica', $data);
-        }
-        else {
+        } else {
             /*        $naziv = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
               $from = "ludikamen@gmail.com";
 
@@ -618,20 +610,18 @@ class Rezervacija extends CI_Controller {
               mail($emailUsl, $subjectUsl, $commentUsl, $from); */
             if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
                 $data['admin'] = 1;
-            
+
             $this->load->model('PozivniceModel');
             $korisnik = $_SESSION['username'];
             $usluga = preg_replace('/(?<!^)([A-Z])/', ' \\1', $imeP);
             $datum = $this->input->post('datum');
-            $rezultat = $this->PozivniceModel->rezervisi($korisnik, $usluga, $datum);     
-            
+            $rezultat = $this->PozivniceModel->rezervisi($korisnik, $usluga, $datum);
+
             if ($rezultat == 1) {
                 $this->load->view('UspesnaRezervacija', $data);
-            }
-            else if ($rezultat == 2) {
+            } else if ($rezultat == 2) {
                 $this->load->view('VecRezervisano', $data);
-            }
-            else {
+            } else {
                 $this->load->view('Greska', $data);
             }
         }
@@ -653,7 +643,7 @@ class Rezervacija extends CI_Controller {
             }
         }
     }
-    
+
     function card_check($card) {
         $card = preg_replace('/\s+/', '', $card);
         $uzorak = '@(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})@';
@@ -664,13 +654,12 @@ class Rezervacija extends CI_Controller {
             return TRUE;
         }
     }
-    
-    function safetyno_check ($no) {
+
+    function safetyno_check($no) {
         if ($no < 100 || $no > 999) {
             $this->form_validation->set_message('safetyno_check', 'The field %s must contain a valid safety number.');
             return FALSE;
-        }
-        else {
+        } else {
             return TRUE;
         }
     }
@@ -681,7 +670,10 @@ class Rezervacija extends CI_Controller {
         else
             $data['admin'] = 0;
         if ($_SESSION == TRUE)
+        {
             $data['sesija'] = $_SESSION['username'];
+            $data['kat'] = $_SESSION['kategorija'];
+        }
         else
             $data['sesija'] = 0;
 
@@ -767,16 +759,18 @@ class Rezervacija extends CI_Controller {
         }
         echo $poruka;
     }
-    
-    function Zabranjeno () {
+
+    function Zabranjeno() {
         $data['admin'] = 0;
         if ($_SESSION == TRUE)
+        {
             $data['sesija'] = $_SESSION['username'];
+            $data['kat'] = $_SESSION['kategorija'];            
+        }
         else
             $data['sesija'] = 0;
         if ($_SESSION == TRUE && $_SESSION['kategorija'] == 0)
             $data['admin'] = 1;
-
         $this->load->view('ZabranjenaRezervacija', $data);
     }
 

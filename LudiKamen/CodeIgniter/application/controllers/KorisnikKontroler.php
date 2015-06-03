@@ -3,9 +3,41 @@
 session_start();
 
 class KorisnikKontroler extends CI_Controller {
+
     // Autor: Nevena Milinković
+    function checkIfPruzalac() {
+        if ($_SESSION == false) {
+            //   $this->load->view('GreskaStranica');
+            return 1;
+        }
+        if ($_SESSION['kategorija'] < 3)
+            return 2;
+    }
+
+    function checkIfUser() {
+        if ($_SESSION == false) {
+            return 1;
+        }
+        if ($_SESSION['kategorija'] == 0 || $_SESSION['kategorija'] > 2)
+            return 2;
+    }
 
     function rezervacije() {
+        $pom = $this->checkIfUser();
+        if ($pom == 1 || $pom == 2) {
+            if ($_SESSION == true) {
+                $data['sesija'] = 1;
+                $data['kategorija'] = $_SESSION['kategorija'];
+                $data['username'] = $_SESSION['username'];
+                if ($data['kategorija'] == 0)
+                    $data['admin'] = 1;
+                else
+                    $data['admin'] = 0;
+            } else
+                $data['sesija'] = 0;
+            $this->load->view('GreskaStranica', $data);
+            return;
+        }
         $data['admin'] = 0;
         $data['sesija'] = 1;
         $data['username'] = $_SESSION['username'];
@@ -21,6 +53,21 @@ class KorisnikKontroler extends CI_Controller {
     }
 
     function pruzalac() {
+        $pom = $this->checkIfPruzalac();
+        if ($pom == 1 || $pom == 2) {
+            if ($_SESSION == true) {
+                $data['sesija'] = 1;
+                $data['kategorija'] = $_SESSION['kategorija'];
+                $data['username'] = $_SESSION['username'];
+                if ($data['kategorija'] == 0)
+                    $data['admin'] = 1;
+                else
+                    $data['admin'] = 0;
+            } else
+                $data['sesija'] = 0;
+            $this->load->view('GreskaStranica', $data);
+            return;
+        }
         $this->load->model('AdminModel');
         $data['admin'] = 0;
         $data['sesija'] = 1;
@@ -35,6 +82,22 @@ class KorisnikKontroler extends CI_Controller {
     }
 
     function pruzalacSlike() {
+        $pom = $this->checkIfPruzalac();
+
+        if ($pom == 1 || $pom == 2) {
+            if ($_SESSION == true) {
+                $data['sesija'] = 1;
+                $data['kategorija'] = $_SESSION['kategorija'];
+                $data['username'] = $_SESSION['username'];
+                if ($data['kategorija'] == 0)
+                    $data['admin'] = 1;
+                else
+                    $data['admin'] = 0;
+            } else
+                $data['sesija'] = 0;
+            $this->load->view('GreskaStranica', $data);
+            return;
+        }
         $data['username'] = $_SESSION['username'];
         $data['admin'] = 0;
         $data['sesija'] = 1;
@@ -43,6 +106,23 @@ class KorisnikKontroler extends CI_Controller {
     }
 
     function dodavanjeSlika() {
+        $pom = $this->checkIfPruzalac();
+
+        if ($pom == 1 || $pom == 2) {
+            if ($_SESSION == true) {
+                $data['sesija'] = 1;
+                $data['kategorija'] = $_SESSION['kategorija'];
+                $data['username'] = $_SESSION['username'];
+                if ($data['kategorija'] == 0)
+                    $data['admin'] = 1;
+                else
+                    $data['admin'] = 0;
+            } else
+                $data['sesija'] = 0;
+            $this->load->view('GreskaStranica', $data);
+            return;
+        }
+
         $data['admin'] = 0;
         $data['sesija'] = $_SESSION['username'];
         $data['flag'] = 0;
@@ -114,6 +194,22 @@ class KorisnikKontroler extends CI_Controller {
     }
 
     function brisanjeUsluge($ime) {
+             $pom = $this->checkIfPruzalac();
+        if ($pom == 1 || $pom == 2) {
+            if ($_SESSION == true) {
+                $data['sesija'] = 1;
+                $data['kategorija'] = $_SESSION['kategorija'];
+                $data['username'] = $_SESSION['username'];
+                if ($data['kategorija'] == 0)
+                    $data['admin'] = 1;
+                else
+                    $data['admin'] = 0;
+            } else
+                $data['sesija'] = 0;
+            $this->load->view('GreskaStranica', $data);
+            return;
+        }
+   
         $this->load->model('AdminModel');
         $this->AdminModel->brisiUslugu($ime);
         $this->pruzalac();
@@ -129,6 +225,21 @@ class KorisnikKontroler extends CI_Controller {
     }
 
     function rezervisanePruzalac() {
+        $pom = $this->checkIfPruzalac();
+        if ($pom == 1 || $pom == 2) {
+            if ($_SESSION == true) {
+                $data['sesija'] = 1;
+                $data['kategorija'] = $_SESSION['kategorija'];
+                $data['username'] = $_SESSION['username'];
+                if ($data['kategorija'] == 0)
+                    $data['admin'] = 1;
+                else
+                    $data['admin'] = 0;
+            } else
+                $data['sesija'] = 0;
+            $this->load->view('GreskaStranica', $data);
+            return;
+        }
         $data = array(
             'username' => $_SESSION['username'],
             'sesija' => 0,

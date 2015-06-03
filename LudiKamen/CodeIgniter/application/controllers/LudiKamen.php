@@ -21,6 +21,7 @@ class LudiKamen extends CI_Controller {
         }
         $this->load->model('LoginModel');
         $data['username'] = $_SESSION['username'];
+        $data['kategorija'] = 1;
         $data = $this->LoginModel->getParams($data);
         if ($data['kategorija'] == 0)
             $data['admin'] = 1;

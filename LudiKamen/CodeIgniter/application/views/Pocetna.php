@@ -49,7 +49,7 @@
         <?php
         if ($sesija)
         {
-            if ($admin)
+            if ($admin == 1)
                 include_once("header3.php");
             else
                include_once("header2.php");
