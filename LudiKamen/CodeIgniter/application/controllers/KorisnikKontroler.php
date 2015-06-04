@@ -219,6 +219,7 @@ class KorisnikKontroler extends CI_Controller {
         $data['username'] = $_SESSION['username'];
         $data['admin'] = 0;
         $data['sesija'] = 1;
+        $ime = preg_replace('/(?<!^)([A-Z])/', ' \\1', $ime);
         $this->load->model('LoginModel');
         $this->LoginModel->brisiRez($data['username'], $ime);
         $this->load->view('UspesnoOtkazivanje', $data);

@@ -54,7 +54,7 @@
                         <td width="25%" align="left"><font id="slova"> &nbsp;&nbsp; <?php echo $services[$i]; ?></font> </td>
                         <td width="25%" align="left"><font id="slova"> &nbsp;&nbsp; <?php echo $dates[$i++]; ?> </font> </td>
                         <?php if ($admin == 0 && !($admin==10)) { ?>
-                        <td width="25%" align="left"><a href="<?php echo "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/Otkazivanje/" .$services[$i-1]; ?>"> <image src="http://localhost:8080/Slike/odustani.jpeg" width="100" height="35"/> </a> </td>
+                        <td width="25%" align="left"><?php $services[$i-1] = preg_replace('/\s+/', '', $services[$i-1]); ?><a href="<?php echo "http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/KorisnikKontroler/Otkazivanje/" .$services[$i-1]; ?>"> <image src="http://localhost:8080/Slike/odustani.jpeg" width="100" height="35"/> </a> </td>
                 <?php } else { ?> <td width="25%" align="left"><td/> <?php } ?>
                     </tr>
 		</table>
