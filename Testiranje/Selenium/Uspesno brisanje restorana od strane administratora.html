@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/Projekat/LudiKamen/Codeigniter/index.php/LudiKamen/Pocetna" />
+<title>Uspesno brisanje restorana od strane administratora</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Uspesno brisanje restorana od strane administratora</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/Projekat/LudiKamen/Codeigniter/index.php/Logovanje/provera</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=korime</td>
+	<td>mn120110</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=lozinka</td>
+	<td>nensiCaoPoz</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Ćao, Admine!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Najskorije izmene usluga</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=body</td>
+	<td>Restorani<br /> Torte<br /> Muzika<br /> Venčanice<br /> Pozivnice<br /> Galerija<br /> Kontakt<br />&nbsp;&nbsp;&nbsp;&nbsp;<br /> <br /><br /><br /> <br /> <br /><br /> Najnovije usluge <br />&nbsp;&nbsp;&nbsp;&nbsp;Vencanica2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i ovu iznajmljujemo... Cena po osobi: 200.12 € <br /> <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;Torta1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cokoladaaaa Cena po osobi: 200 € <br /> <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;Sviranje&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do zore!!! Cena po osobi: 200 € <br /> <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;Iznajmljivanje sale&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vel'ka je... Cena po osobi: 200 € <br /> <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;Vencanica1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ljepa vencanica Cena po osobi: 150.4 € <br /> <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;Restoran&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restoran Cena po osobi: 40 € <br /> <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;Glamur&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nudimo prostranu salu za vencanja Cena po osobi: 40 € <br /> <br /> <br /> <br /> <br /> #footer { // position: initial; bottom: 0; width: 100%; } ©&nbsp;&nbsp;Copyright 2015, Tim Poslednja Kruška, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta u Beogradu</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//font[@id='naslov2']/u)[7]</td>
+	<td>Glamur</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//img[contains(@src,'http://localhost:8080/Slike/obrisi.jpeg')])[7]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//img[contains(@src,'http://localhost:8080/Slike/obrisi.jpeg')])[7]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=body</td>
+	<td>Restorani<br /> Torte<br /> Muzika<br /> Venčanice<br /> Pozivnice<br /> Galerija<br /> Kontakt<br />&nbsp;&nbsp;&nbsp;&nbsp;<br /> <br /><br /><br /> <br /> <br /><br /> Najnovije usluge <br />&nbsp;&nbsp;&nbsp;&nbsp;Vencanica2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i ovu iznajmljujemo... Cena po osobi: 200.12 € <br /> <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;Torta1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cokoladaaaa Cena po osobi: 200 € <br /> <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;Sviranje&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do zore!!! Cena po osobi: 200 € <br /> <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;Iznajmljivanje sale&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vel'ka je... Cena po osobi: 200 € <br /> <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;Vencanica1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ljepa vencanica Cena po osobi: 150.4 € <br /> <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;Restoran&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restoran Cena po osobi: 40 € <br /> <br /> <br /> <br /> <br /> #footer { // position: initial; bottom: 0; width: 100%; } ©&nbsp;&nbsp;Copyright 2015, Tim Poslednja Kruška, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta u Beogradu</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
