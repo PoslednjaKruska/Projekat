@@ -48,7 +48,7 @@ class MuzikaTest extends PHPUnit_Framework_TestCase
     
     public function testRezervisi2()
     {   
-        $korisnik = 'udavaca';
+        $korisnik = 'markoMarko';
         $usluga = 'Muzicari Koji Piju';
         $datum = '10/22/2015';
         $qty = $this->CI->MuzikaModel->rezervisi($korisnik, $usluga, $datum);
@@ -59,7 +59,7 @@ class MuzikaTest extends PHPUnit_Framework_TestCase
     {   
         $korisnik = 'markoMarko';
         $usluga = 'Muzicari Koji Piju';
-        $datum = '07/15/2015';
+        $datum = '10/22/2015';
         $qty = $this->CI->MuzikaModel->rezervisi($korisnik, $usluga, $datum);
         $this->assertEquals($qty, 3);
     }
