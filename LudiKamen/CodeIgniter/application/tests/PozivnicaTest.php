@@ -21,7 +21,7 @@ class PozivnicaTest extends PHPUnit_Framework_TestCase
         $query = $this->CI->PozivniceModel->getAll();
         $poslednji = '';
         foreach ($query as $row) {
-            $poslednji = $row->Naziv;
+            $poslednji = $row->ImePrezime;
         }
         $this->assertEquals($poslednji, 'Stamparija pozivnica');
     }
@@ -55,29 +55,11 @@ class PozivnicaTest extends PHPUnit_Framework_TestCase
     
     public function testRezervisi1()
     {   
-        $korisnik = 'markoMarko';
-        $usluga = 'Restoran Gajic';
-        $datum = '10/22/2015';
-        $qty = $this->CI->RestoranModel->rezervisi($korisnik, $usluga, $datum);
+        $username='galinda';
+        $naziv = 'Pozivnice';
+        $datum = '07/15/2015';
+        $qty = $this->CI->PozivniceModel->rezervisi($username,$naziv, $datum);
         $this->assertEquals($qty, 2);
-    }
-    
-    public function testRezervisi2()
-    {   
-        $korisnik = 'udavaca';
-        $usluga = 'Restoran Gajic';
-        $datum = '10/22/2015';
-        $qty = $this->CI->RestoranModel->rezervisi($korisnik, $usluga, $datum);
-        $this->assertEquals($qty, 1);
-    }
-    
-    public function testRezervisi3()
-    {   
-        $korisnik = 'tiksiMacka';
-        $usluga = 'Restoran Gajic';
-        $datum = '11/12/2015';
-        $qty = $this->CI->RestoranModel->rezervisi($korisnik, $usluga, $datum);
-        $this->assertEquals($qty, 3);
     }
     
 }
